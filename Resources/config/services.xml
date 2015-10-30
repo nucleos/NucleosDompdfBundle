@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+	<parameters>
+		<parameter key="core23.dompdf.wrapper.class">Core23\DompdfBundle\Wrapper\DompdfWrapper</parameter>
+	</parameters>
+
+	<services>
+		<service id="dompdf" class="%core23.dompdf.wrapper.class%">
+			<argument type="service" id="kernel" />
+			<argument>%core23.dompdf.config%</argument>
+		</service>
+	</services>
+
+</container>

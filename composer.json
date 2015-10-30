@@ -1,0 +1,36 @@
+{
+  "name": "core23/dompdf-bundle",
+  "type": "symfony-bundle",
+  "description": "This bundle provides a wrapper for using dompdf inside symfony.",
+  "keywords": [
+    "symfony",
+    "pdf",
+    "dompdf",
+    "bundle"
+  ],
+  "homepage": "https://core23.de",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Gripp",
+      "email": "mail@core23.de"
+    }
+  ],
+  "require": {
+    "symfony/symfony": "~2.3",
+    "dompdf/dompdf": "~0.6"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "~2.7|~3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core23\\DompdfBundle\\": ""
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
