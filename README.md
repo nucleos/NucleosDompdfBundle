@@ -1,6 +1,9 @@
 What is DompdfBundle?
 =============================
-[![Build Status](https://secure.travis-ci.org/core23/DompdfBundle.png?branch=master)](http://travis-ci.org/core23/DompdfBundle)
+[![Latest Stable Version](http://img.shields.io/packagist/v/core23/dompdf-bundle.svg)](https://packagist.org/packages/core23/dompdf-bundle)
+[![Build Status](http://img.shields.io/travis/core23/DompdfBundle.svg)](http://travis-ci.org/core23/DompdfBundle)
+[![Latest Stable Version](https://poser.pugx.org/core23/dompdf-bundle/v/stable.png)](https://packagist.org/packages/core23/dompdf-bundle)
+[![License](http://img.shields.io/packagist/l/core23/dompdf-bundle.svg)](https://packagist.org/packages/core23/dompdf-bundle)
 
 This bundle provides a wrapper for using [dompdf] inside symfony.
 
