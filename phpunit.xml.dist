@@ -12,7 +12,7 @@
          bootstrap="Tests/tests/bootstrap.php"
 >
     <testsuites>
-        <testsuite name="SystemCronBundle Test Suite">
+        <testsuite name="DompdfBundle Test Suite">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
