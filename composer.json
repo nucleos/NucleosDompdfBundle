@@ -18,7 +18,7 @@
   ],
   "require": {
     "symfony/symfony": "~2.3",
-    "dompdf/dompdf": "~0.6"
+    "dompdf/dompdf": "~0.7|0.7.2-beta2"
   },
   "require-dev": {
     "symfony/phpunit-bridge": "~2.7|~3.0"

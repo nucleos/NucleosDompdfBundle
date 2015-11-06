@@ -54,10 +54,9 @@ You can configure each constant starting with ``DOMPDF_`` under the ``config`` k
 
 ```yaml
 core23_dompdf:
-	config:
-		DOMPDF_DPI: 150
-		DOMPDF_DEFAULT_PAPER_SIZE: A4
-		DOMPDF_KEY_XXX: value
+	defaultOptions:
+		dpi: 150
+		defaultPaperSize: A4
 		...
 ```
 

@@ -25,20 +25,10 @@ class Configuration implements ConfigurationInterface
         $rootNode    = $treeBuilder->root('core23_dompdf')->children();
 
         $rootNode
-            ->arrayNode('config')
-                ->defaultValue(array())
+            ->scalarNode('webDir')->defaultValue('%kernel.root_dir%/../web')->end()
+            ->arrayNode('defaultOptions')
                 ->useAttributeAsKey('name')
                 ->prototype('scalar')->end()
-            ->validate()
-            ->ifTrue(function ($element) {
-                foreach ($element as $key => $value) {
-                    if (0 !== stripos($key, 'dompdf_')) {
-                        return true;
-                    }
-                }
-
-                return false;
-            })->thenInvalid('The config has invalid dompdf keys. A key should start with "DOMPDF_"')->end()
             ->end()
         ;
 

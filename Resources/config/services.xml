@@ -9,8 +9,8 @@
 
 	<services>
 		<service id="dompdf" class="%core23.dompdf.wrapper.class%">
-			<argument type="service" id="kernel" />
-			<argument>%core23.dompdf.config%</argument>
+			<argument>%core23.dompdf_web%</argument>
+			<argument>%core23.dompdf_options%</argument>
 		</service>
 	</services>
 

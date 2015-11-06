@@ -11,7 +11,8 @@
 
 namespace Core23\DompdfBundle\Wrapper;
 
-use Symfony\Component\HttpKernel\KernelInterface;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class DompdfWrapper
 {
@@ -21,75 +22,66 @@ class DompdfWrapper
     private $basePath;
 
     /**
-     * @param KernelInterface $kernel
-     * @param array           $config
+     * @var string[]
      */
-    public function __construct(KernelInterface $kernel, array $config = array())
+    private $options;
+
+    /**
+     * @param string   $basePath
+     * @param string[] $options
+     */
+    public function __construct($basePath, array $options = array())
     {
-        $this->basePath = $kernel->getRootdir().'/../web';
-
-        require_once dirname(__FILE__).'/../../../../vendor/dompdf/dompdf/dompdf_config.inc.php';
-
-        foreach ($config as $key => $value) {
-            def(strtoupper($key), $value);
-        }
+        $this->basePath = $basePath;
+        $this->options  = $options;
     }
 
     /**
      * Renders a pdf document and streams it to the browser.
      *
-     * @param string     $html     The html sourcecode to render
-     * @param string     $filename The name of the docuemtn
-     * @param array|null $options  The rendering options (see dompdf docs)
+     * @param string    $html         The html sourcecode to render
+     * @param string    $filename     The name of the docuemtn
+     * @param string[]  $options      The rendering options (see dompdf docs)
+     * @param bool|true $replacePaths Appends the basepath to file links
      *
      * @throws \Exception
      */
-    public function streamHtml($html, $filename, $options = null)
+    public function streamHtml($html, $filename, array $options = array(), $replacePaths = true)
     {
-        $html = $this->replaceBasePath($html);
+        if ($replacePaths) {
+            $html = $this->replaceBasePath($html);
+        }
 
-        $pdf = $this->getPdfContent($html);
-        $pdf->stream($filename, $options);
+        $pdf = $this->createDompdf();
+        $pdf->setOptions($this->createOptions($options));
+        $pdf->loadHtml($html);
+        $pdf->render();
+        $pdf->stream($filename);
     }
 
     /**
      * Renders a pdf document and return the binary content.
      *
-     * @param string     $html    The html sourcecode to render
-     * @param array|null $options The rendering options (see dompdf docs)
+     * @param string    $html         The html sourcecode to render
+     * @param array     $options      The rendering options (see dompdf docs)
+     * @param bool|true $replacePaths Appends the basepath to file links
      *
      * @throws \Exception
      *
      * @return string
      */
-    public function getPdf($html, $options = null)
+    public function getPdf($html, array $options = array(), $replacePaths = true)
     {
-        $html = $this->replaceBasePath($html);
-
-        $pdf = $this->getPdfContent($html);
-
-        return $pdf->output($options);
-    }
-
-    /**
-     * Renders a pdf document and streams it to the browser.
-     *
-     * @param string $html The html sourcecode to render
-     *
-     * @return \DOMPDF
-     */
-    private function getPdfContent($html)
-    {
-        $pdf = new \DOMPDF();
-
-        if (defined('DOMPDF_DEFAULT_PAPER_SIZE')) {
-            $pdf->set_paper(DOMPDF_DEFAULT_PAPER_SIZE);
+        if ($replacePaths) {
+            $html = $this->replaceBasePath($html);
         }
 
-        $pdf->load_html($html);
+        $pdf = $this->createDompdf();
+        $pdf->setOptions($this->createOptions($options));
+        $pdf->loadHtml($html);
         $pdf->render();
 
-        return $pdf;
+        return $pdf->output();
     }
 
     /**
@@ -97,13 +89,35 @@ class DompdfWrapper
      *
      * @param string $html The html sourcecode
      *
-     * @return string sourceode
+     * @return string Modified html sourcecode
      */
     private function replaceBasePath($html)
     {
-        $pattern = '#<([^>]* )(src|href)="(?![A-z]*:)([^"]*)"#';
-        $replace = '<$1$2="'.$this->basePath.'$3"';
+        $pattern = '#<([^>]* )(src|href)=([\'"])(?![A-z]*:)([^"]*)([\'"])#';
+        $replace = '<$1$2=$3'.$this->basePath.'$4$5';
 
         return preg_replace($pattern, $replace, $html);
+    }
+
+    /**
+     * Creates a new Dompdf instance.
+     *
+     * @return Dompdf
+     */
+    public function createDompdf()
+    {
+        return new Dompdf();
+    }
+
+    /**
+     * Creates a a new Option instance.
+     *
+     * @param string[] $options An array of dompdf options
+     *
+     * @return Options
+     */
+    public function createOptions(array $options = array())
+    {
+        return new Options(array_merge($this->options, $options));
     }
 }
