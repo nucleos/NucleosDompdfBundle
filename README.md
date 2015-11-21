@@ -18,18 +18,18 @@ php composer.phar require core23/dompdf-bundle
 
 ```php
 <?php
-// app/AppKernel.php
+    // app/AppKernel.php
 
-	public function registerBundles()
-	{
-		return array(
-			// ...
+    public function registerBundles()
+    {
+        return array(
+            // ...
 
-			new Core23\DompdfBundle\Core23DompdfBundle(),
+            new Core23\DompdfBundle\Core23DompdfBundle(),
 
-			// ...
-		);
-	}
+            // ...
+        );
+    }
 ```
 
 ### Usage
@@ -54,10 +54,10 @@ You can configure each dompdf option under the ``config`` key.
 
 ```yaml
 core23_dompdf:
-	defaultOptions:
-		dpi: 150
-		defaultPaperSize: A4
-		...
+    defaultOptions:
+        dpi: 150
+        defaultPaperSize: A4
+        ...
 ```
 
 This bundle is available under the [MIT license](LICENSE.md).
