@@ -50,7 +50,7 @@ $dompdf->getPdf($html);
 
 ### Configuration
 
-You can configure each constant starting with ``DOMPDF_`` under the ``config`` key.
+You can configure each dompdf option under the ``config`` key.
 
 ```yaml
 core23_dompdf:
