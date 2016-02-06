@@ -95,10 +95,8 @@
         <exec executable="phpcpd">
             <arg value="--log-pmd" />
             <arg path="${dir.reports.check}/cpd.xml" />
-            <arg value="--exclude" />
-            <arg path="${dir.src}/vendor/" />
-            <arg value="--exclude" />
-            <arg path="${dir.src}/Tests/" />
+            <arg value="--exclude=vendor" />
+            <arg value="--exclude=Tests" />
             <arg path="${dir.src}" />
         </exec>
 
@@ -114,9 +112,7 @@
             <arg value="xml" />
             <arg path="${dir.reports.check}/pmd.xml" />
             <arg value="--exclude" />
-            <arg path="${dir.src}/vendor/" />
-            <arg value="--exclude" />
-            <arg path="${dir.src}/Tests/" />
+            <arg value="vendor,Tests" />
         </exec>
 
     </target>
@@ -129,10 +125,7 @@
             <arg value="--count-tests" />
             <arg value="--log-xml" />
             <arg path="${dir.reports.check}/phploc.xml" />
-            <arg value="--exclude" />
-            <arg path="${dir.src}/vendor/" />
-            <arg value="--exclude" />
-            <arg path="${dir.src}/Tests/" />
+            <arg value="--exclude=vendor,Tests" />
             <arg path="${dir.src}" />
         </exec>
 
