@@ -142,7 +142,9 @@
             description="Generate pdepend report"
             depends="check:prepare" >
 
-        <exec executable="pdepend">
+          <mkdir dir="${dir.reports.check.pdepend}" />
+
+          <exec executable="pdepend">
             <arg value="--jdepend-xml=${dir.reports.check.pdepend}/jdepend.xml" />
             <arg value="--jdepend-chart=${dir.reports.check.pdepend}//dependencies.svg" />
             <arg value="--overview-pyramid=${dir.reports.check.pdepend}/overview-pyramid.svg" />
