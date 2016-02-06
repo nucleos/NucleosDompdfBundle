@@ -165,11 +165,11 @@
     <target name="test:prepare"
             description="Prepare the test environment">
 
-        <echo message="Prepare test report directory" />
         <mkdir dir="${dir.reports.test}" />
 
-        <echo message="Installing/Updating vendors..." />
-        <exec command="composer update" />
+        <exec executable="composer">
+            <arg value="update" />
+        </exec>
 
     </target>
 
