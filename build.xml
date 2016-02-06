@@ -48,12 +48,12 @@
     <!-- Check Project -->
     <target name="build:check"
             description="Check source code"
-            depends="build:prepare, check:prepare, check:cs, check:md, check:cpd, check:pdepend, check:phploc"/>
+            depends="build:prepare, check:prepare, check:cs, check:md, check:cpd, check:pdepend, check:phploc, check:cs-fixer"/>
 
     <!-- Test Project -->
     <target name="build:test"
             description="Perform all tests"
-            depends="build:prepare, test:prepare, test:unit, test:cs-fixer"/>
+            depends="build:prepare, test:prepare, test:unit"/>
 
 
 
@@ -147,6 +147,18 @@
 
     </target>
 
+    <target name="check:cs-fixer"
+            description="Perform unit tests and code coverage"
+            depends="test:prepare, test:unit:prepare">
+
+        <exec executable="php-cs-fixer">
+            <arg line="fix" />
+            <arg line="--verbose" />
+            <arg line="--dry-run" />
+        </exec>
+
+    </target>
+
 
 
 
@@ -187,19 +199,6 @@
             <arg line="-c ${config.phpunit}" />
         </exec>
 
-    </target>
-
-    <!-- Execute cs fixer -->
-    <target name="test:cs-fixer"
-            description="Perform unit tests and code coverage"
-            depends="test:prepare, test:unit:prepare">
-
-        <exec executable="php-cs-fixer">
-            <arg line="fix" />
-            <arg line="--verbose" />
-            <arg line="--dry-run" />
-        </exec>
-
-    </target>
+    </target>depends="build:prepare, test:prepare, test:unit"/>
 
 </project>
