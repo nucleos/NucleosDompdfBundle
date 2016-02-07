@@ -197,6 +197,6 @@
             <arg line="-c ${config.phpunit}" />
         </exec>
 
-    </target>depends="build:prepare, test:prepare, test:unit"/>
+    </target>
 
 </project>
