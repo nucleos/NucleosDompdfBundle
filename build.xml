@@ -96,7 +96,6 @@
             <arg value="--log-pmd" />
             <arg path="${dir.reports.check}/cpd.xml" />
             <arg value="--exclude=vendor" />
-            <arg value="--exclude=Tests" />
             <arg path="${dir.src}" />
         </exec>
 
@@ -111,7 +110,7 @@
             <arg path="${dir.src}" />
             <arg value="xml" />
             <arg path="${dir.reports.check}/pmd.xml" />
-            <arg value="--exclude=vendor,Tests" />
+            <arg value="--exclude=vendor" />
         </exec>
 
     </target>
@@ -124,7 +123,7 @@
             <arg value="--count-tests" />
             <arg value="--log-xml" />
             <arg path="${dir.reports.check}/phploc.xml" />
-            <arg value="--exclude=vendor,Tests" />
+            <arg value="--exclude=vendor" />
             <arg path="${dir.src}" />
         </exec>
 
@@ -147,8 +146,8 @@
     </target>
 
     <target name="check:cs-fixer"
-            description="Perform unit tests and code coverage"
-            depends="test:prepare, test:unit:prepare">
+            description="Executes php-cs-fixer"
+            depends="check:prepare">
 
         <exec executable="php-cs-fixer">
             <arg line="fix" />
