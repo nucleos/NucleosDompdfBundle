@@ -111,8 +111,7 @@
             <arg path="${dir.src}" />
             <arg value="xml" />
             <arg path="${dir.reports.check}/pmd.xml" />
-            <arg value="--exclude" />
-            <arg value="vendor,Tests" />
+            <arg value="--exclude=vendor,Tests" />
         </exec>
 
     </target>
