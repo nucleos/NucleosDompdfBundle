@@ -3,3 +3,4 @@ phpunit.xml
 coverage
 composer.lock
 vendor
+.php_cs.cache
