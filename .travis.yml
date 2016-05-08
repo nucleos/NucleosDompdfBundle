@@ -1,6 +1,10 @@
 language: php
 
 php:
+  - 5.5
+  - 5.6
+  - 7.0
+  - nightly
   - hhvm
 
 sudo: false
@@ -14,18 +18,15 @@ env:
   global:
     - PATH="$HOME/.composer/vendor/bin:$PATH"
     - SYMFONY_DEPRECATIONS_HELPER=weak
+    - TARGET=test
 
 matrix:
   fast_finish: true
   include:
     - php: 7.0
-      env: CS_FIXER=run
+      env: TARGET=cs_dry_run
     - php: 5.5
       env: COMPOSER_FLAGS="--prefer-lowest"
-    - php: 5.6
-      env: SYMFONY_VERSION=2.3.*
-    - php: 5.6
-      env: SYMFONY_VERSION=2.6.*
     - php: 5.6
       env: SYMFONY_VERSION=2.7.*
     - php: 5.6
@@ -36,6 +37,8 @@ matrix:
       env: SYMFONY_VERSION=3.0.*
   allow_failures:
     - php: hhvm
+    - php: nightly
+    - env: SYMFONY_VERSION=3.0.*
 
 before_script:
   - (phpenv config-rm xdebug.ini || exit 0)
@@ -49,5 +52,4 @@ before_script:
   - export PATH=$HOME/.local/bin:$PATH
 
 script:
- - if [ "$CS_FIXER" = "run" ]; then make cs_dry_run ; fi;
- - make test
+ - make $TARGET
