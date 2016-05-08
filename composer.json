@@ -17,14 +17,13 @@
     }
   ],
   "require": {
-    "symfony/symfony-framework": "~2.7 || ~3.0",
-    "dompdf/dompdf": "~0.7"
+    "php": "^5.5 || ^7.0",
+    "dompdf/dompdf": "~0.7",
+    "symfony/symfony-framework": "~2.7 || ~3.0"
   },
   "require-dev": {
     "symfony/phpunit-bridge": "~2.7 || ~3.0"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "autoload": {
     "psr-4": {
       "Core23\\DompdfBundle\\": ""
