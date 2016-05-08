@@ -18,7 +18,7 @@
   ],
   "require": {
     "php": "^5.5 || ^7.0",
-    "dompdf/dompdf": "~0.7",
+    "dompdf/dompdf": "~0.7@dev",
     "symfony/framework-bundle": "~2.7 || ~3.0"
   },
   "require-dev": {
