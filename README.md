@@ -58,7 +58,7 @@ You can configure each dompdf option under the ``config`` key.
 
 ```yaml
 core23_dompdf:
-    defaultOptions:
+    defaults:
         dpi: 150
         defaultPaperSize: A4
         ...

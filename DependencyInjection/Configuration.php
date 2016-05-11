@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->scalarNode('webDir')->defaultValue('%kernel.root_dir%/../web')->end()
-            ->arrayNode('defaultOptions')
+            ->arrayNode('defaults')
                 ->useAttributeAsKey('name')
                 ->prototype('scalar')->end()
             ->end()
