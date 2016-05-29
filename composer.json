@@ -18,11 +18,11 @@
   ],
   "require": {
     "php": "^5.5 || ^7.0",
-    "dompdf/dompdf": "~0.7",
-    "symfony/framework-bundle": "~2.7 || ~3.0"
+    "dompdf/dompdf": "^0.7",
+    "symfony/framework-bundle": "^2.7 || ^3.0"
   },
   "require-dev": {
-    "symfony/phpunit-bridge": "~2.7 || ~3.0"
+    "symfony/phpunit-bridge": "^2.7 || ^3.0"
   },
   "autoload": {
     "psr-4": {
