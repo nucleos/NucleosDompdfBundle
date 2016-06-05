@@ -31,7 +31,7 @@ class DompdfWrapperTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->dompdf = $this->getMockBuilder('Dompdf\Dompdf')->disableOriginalConstructor()->getMock();
+        $this->dompdf = $this->createMock('Dompdf\Dompdf');
 
         $this->dompdfWrapper = $this->createMock('Core23\DompdfBundle\Wrapper\DompdfWrapper');
         $this->dompdfWrapper->expects($this->any())
