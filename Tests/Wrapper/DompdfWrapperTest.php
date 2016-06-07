@@ -33,7 +33,10 @@ class DompdfWrapperTest extends \PHPUnit_Framework_TestCase
     {
         $this->dompdf = $this->createMock('Dompdf\Dompdf');
 
-        $this->dompdfWrapper = $this->createMock('Core23\DompdfBundle\Wrapper\DompdfWrapper');
+        $this->dompdfWrapper = $this->getMockBuilder('Core23\DompdfBundle\Wrapper\DompdfWrapper')
+            ->setConstructorArgs(array('web_prefix/'))
+            ->setMethods(array('createDompdf'))
+            ->getMock();
         $this->dompdfWrapper->expects($this->any())
             ->method('createDompdf')
             ->will($this->returnValue($this->dompdf));
