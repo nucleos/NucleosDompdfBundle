@@ -27,7 +27,10 @@
   "autoload": {
     "psr-4": {
       "Core23\\DompdfBundle\\": ""
-    }
+    },
+    "exclude-from-classmap": [
+        "/Tests/"
+    ]
   },
   "extra": {
     "branch-alias": {
