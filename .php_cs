@@ -19,15 +19,20 @@ $finder = Symfony\CS\Finder\DefaultFinder::create()
 return Symfony\CS\Config\Config::create()
     ->level(Symfony\CS\FixerInterface::SYMFONY_LEVEL)
     ->fixers(array(
-        'header_comment',
-        '-unalign_double_arrow',
-        '-unalign_equals',
         'align_double_arrow',
-        'newline_after_open_tag',
-        'ordered_use',
+        'combine_consecutive_unsets',
+        'header_comment',
         'long_array_syntax',
+        'newline_after_open_tag',
+        'no_php4_constructor',
+        'ordered_use',
+        // 'ordered_class_elements',
         'php_unit_construct',
         'php_unit_strict',
+        // 'strict',
+        // 'strict_param',
+        '-unalign_double_arrow',
+        '-unalign_equals',
     ))
     ->setUsingCache(true)
     ->finder($finder)
