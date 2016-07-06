@@ -32,6 +32,9 @@
         "/Tests/"
     ]
   },
+  "autoload-dev": {
+    "psr-4": { "Core23\\DompdfBundle\\Tests\\": "Tests/" }
+  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
