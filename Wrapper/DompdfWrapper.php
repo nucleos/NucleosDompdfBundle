@@ -85,21 +85,6 @@ class DompdfWrapper
     }
 
     /**
-     * Replaces relative paths with absolute paths.
-     *
-     * @param string $html The html sourcecode
-     *
-     * @return string Modified html sourcecode
-     */
-    private function replaceBasePath($html)
-    {
-        $pattern = '#<([^>]* )(src|href)=([\'"])(?![A-z]*:)([^"]*)([\'"])#';
-        $replace = '<$1$2=$3'.$this->basePath.'$4$5';
-
-        return preg_replace($pattern, $replace, $html);
-    }
-
-    /**
      * Creates a new Dompdf instance.
      *
      * @return Dompdf
@@ -119,5 +104,20 @@ class DompdfWrapper
     public function createOptions(array $options = array())
     {
         return new Options(array_merge($this->options, $options));
+    }
+
+    /**
+     * Replaces relative paths with absolute paths.
+     *
+     * @param string $html The html sourcecode
+     *
+     * @return string Modified html sourcecode
+     */
+    private function replaceBasePath($html)
+    {
+        $pattern = '#<([^>]* )(src|href)=([\'"])(?![A-z]*:)([^"]*)([\'"])#';
+        $replace = '<$1$2=$3'.$this->basePath.'$4$5';
+
+        return preg_replace($pattern, $replace, $html);
     }
 }
