@@ -1,0 +1,21 @@
+preset: symfony
+
+enabled:
+  - align_double_arrow
+  - combine_consecutive_unsets
+  - long_array_syntax
+  - newline_after_open_tag
+  - no_php4_constructor
+  - no_useless_else
+  - ordered_class_elements
+  - ordered_use
+  - php_unit_construct
+  - php_unit_strict
+
+disabled:
+  - unalign_double_arrow
+  - unalign_equals
+
+finder:
+  exclude:
+    - 'Tests/Fixtures'
