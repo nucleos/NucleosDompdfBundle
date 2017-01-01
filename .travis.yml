@@ -22,8 +22,6 @@ env:
 matrix:
   fast_finish: true
   include:
-    - php: 7.1
-      env: TARGET=cs_dry_run
     - php: 7.0
       env: COMPOSER_FLAGS="--prefer-lowest"
     - php: 7.1
