@@ -3,7 +3,6 @@ What is DompdfBundle?
 [![Latest Stable Version](https://poser.pugx.org/core23/dompdf-bundle/v/stable)](https://packagist.org/packages/core23/dompdf-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/core23/dompdf-bundle/v/unstable)](https://packagist.org/packages/core23/dompdf-bundle)
 [![Build Status](http://img.shields.io/travis/core23/DompdfBundle.svg)](http://travis-ci.org/core23/DompdfBundle)
-[![Dependency Status](https://www.versioneye.com/php/core23:dompdf-bundle/badge.svg)](https://www.versioneye.com/php/core23:dompdf-bundle)
 [![License](http://img.shields.io/packagist/l/core23/dompdf-bundle.svg)](https://packagist.org/packages/core23/dompdf-bundle)
 
 
