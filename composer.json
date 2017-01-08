@@ -19,7 +19,7 @@
   "require": {
     "php": "^7.0",
     "dompdf/dompdf": "^0.7",
-    "symfony/framework-bundle": "^2.7 || ^3.0"
+    "symfony/framework-bundle": "^2.8.6 || ^3.0"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.0",
