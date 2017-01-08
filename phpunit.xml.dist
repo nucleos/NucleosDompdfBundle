@@ -1,32 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.3/phpunit.xsd"
-         backupGlobals="false"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
-         bootstrap="Tests/tests/bootstrap.php"
->
-    <testsuites>
-        <testsuite name="DompdfBundle Test Suite">
-            <directory>./Tests</directory>
-        </testsuite>
-    </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory>./</directory>
-            <exclude>
-                <directory>./Tests/</directory>
-                <directory>./DataFixtures/</directory>
-                <directory>./Resources/</directory>
-                <directory>./vendor/</directory>
-            </exclude>
-        </whitelist>
-    </filter>
-
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.3/phpunit.xsd" backupGlobals="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" bootstrap="Tests/tests/bootstrap.php">
+  <testsuites>
+    <testsuite name="DompdfBundle Test Suite">
+      <directory>./Tests</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist>
+      <directory>./</directory>
+      <exclude>
+        <directory>./Tests/</directory>
+        <directory>./DataFixtures/</directory>
+        <directory>./Resources/</directory>
+        <directory>./vendor/</directory>
+      </exclude>
+    </whitelist>
+  </filter>
 </phpunit>
