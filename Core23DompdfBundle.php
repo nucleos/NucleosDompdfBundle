@@ -13,6 +13,6 @@ namespace Core23\DompdfBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class Core23DompdfBundle extends Bundle
+final class Core23DompdfBundle extends Bundle
 {
 }
