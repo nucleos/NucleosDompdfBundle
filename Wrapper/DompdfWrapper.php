@@ -14,7 +14,7 @@ namespace Core23\DompdfBundle\Wrapper;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-final class DompdfWrapper
+final class DompdfWrapper implements DompdfWrapperInterface
 {
     /**
      * @var string
@@ -37,14 +37,7 @@ final class DompdfWrapper
     }
 
     /**
-     * Renders a pdf document and streams it to the browser.
-     *
-     * @param string    $html         The html sourcecode to render
-     * @param string    $filename     The name of the docuemtn
-     * @param string[]  $options      The rendering options (see dompdf docs)
-     * @param bool|true $replacePaths Appends the basepath to file links
-     *
-     * @throws \Exception
+     * @inheritdoc
      */
     public function streamHtml($html, $filename, array $options = array(), $replacePaths = true)
     {
@@ -60,15 +53,7 @@ final class DompdfWrapper
     }
 
     /**
-     * Renders a pdf document and return the binary content.
-     *
-     * @param string    $html         The html sourcecode to render
-     * @param array     $options      The rendering options (see dompdf docs)
-     * @param bool|true $replacePaths Appends the basepath to file links
-     *
-     * @throws \Exception
-     *
-     * @return string
+     * @inheritdoc
      */
     public function getPdf($html, array $options = array(), $replacePaths = true)
     {
@@ -85,9 +70,7 @@ final class DompdfWrapper
     }
 
     /**
-     * Creates a new Dompdf instance.
-     *
-     * @return Dompdf
+     * @inheritdoc
      */
     public function createDompdf()
     {
@@ -95,11 +78,7 @@ final class DompdfWrapper
     }
 
     /**
-     * Creates a a new Option instance.
-     *
-     * @param string[] $options An array of dompdf options
-     *
-     * @return Options
+     * @inheritdoc
      */
     public function createOptions(array $options = array())
     {
