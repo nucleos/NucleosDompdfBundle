@@ -14,7 +14,7 @@ namespace Core23\DompdfBundle\Wrapper;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-final class DompdfWrapper implements DompdfWrapperInterface
+class DompdfWrapper implements DompdfWrapperInterface
 {
     /**
      * @var string
