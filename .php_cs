@@ -13,8 +13,6 @@ if (count($files) > 0) {
 use SLLH\StyleCIBridge\ConfigBridge;
 
 $header = <<<EOF
-This file is part of the ni-ju-san CMS.
-
 (c) Christian Gripp <mail@core23.de>
 
 For the full copyright and license information, please view the LICENSE
