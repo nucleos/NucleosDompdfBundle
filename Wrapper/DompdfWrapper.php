@@ -1,8 +1,6 @@
 <?php
 
 /*
- * This file is part of the ni-ju-san CMS.
- *
  * (c) Christian Gripp <mail@core23.de>
  *
  * For the full copyright and license information, please view the LICENSE
@@ -37,7 +35,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function streamHtml($html, $filename, array $options = array(), $replacePaths = true)
     {
@@ -53,7 +51,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getPdf($html, array $options = array(), $replacePaths = true)
     {
@@ -70,7 +68,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function createDompdf()
     {
@@ -78,7 +76,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function createOptions(array $options = array())
     {
