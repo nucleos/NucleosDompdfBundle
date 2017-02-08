@@ -23,7 +23,7 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.0",
-    "phpunit/phpunit": "^5.4",
+    "phpunit/phpunit": "^5.7",
     "sllh/php-cs-fixer-styleci-bridge": "^2.0",
     "symfony/phpunit-bridge": "^2.8 || ^3.0"
   },
