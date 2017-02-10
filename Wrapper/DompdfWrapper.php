@@ -89,9 +89,13 @@ class DompdfWrapper implements DompdfWrapperInterface
      * @param string $html The html sourcecode
      *
      * @return string Modified html sourcecode
+     *
+     * @deprecated
      */
     private function replaceBasePath($html): string
     {
+        @trigger_error('Replacing paths is deprecated and will be removed with 2.0.', E_USER_DEPRECATED);
+
         $pattern = '#<([^>]* )(src|href)=([\'"])(?![A-z]*:)([^"]*)([\'"])#';
         $replace = '<$1$2=$3'.$this->basePath.'$4$5';
 
