@@ -24,7 +24,7 @@ interface DompdfWrapperInterface
      *
      * @throws \Exception
      */
-    public function streamHtml($html, $filename, array $options = array(), $replacePaths = true);
+    public function streamHtml(string $html, string $filename, array $options = array(), bool $replacePaths = true);
 
     /**
      * Renders a pdf document and return the binary content.
@@ -37,14 +37,14 @@ interface DompdfWrapperInterface
      *
      * @return string
      */
-    public function getPdf($html, array $options = array(), $replacePaths = true);
+    public function getPdf(string $html, array $options = array(), bool $replacePaths = true);
 
     /**
      * Creates a new Dompdf instance.
      *
      * @return Dompdf
      */
-    public function createDompdf();
+    public function createDompdf(): Dompdf;
 
     /**
      * Creates a a new Option instance.
@@ -53,5 +53,5 @@ interface DompdfWrapperInterface
      *
      * @return Options
      */
-    public function createOptions(array $options = array());
+    public function createOptions(array $options = array()): Options;
 }

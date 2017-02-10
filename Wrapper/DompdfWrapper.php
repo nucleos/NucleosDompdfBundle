@@ -28,7 +28,7 @@ class DompdfWrapper implements DompdfWrapperInterface
      * @param string   $basePath
      * @param string[] $options
      */
-    public function __construct($basePath, array $options = array())
+    public function __construct(string $basePath, array $options = array())
     {
         $this->basePath = $basePath;
         $this->options  = $options;
@@ -37,7 +37,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function streamHtml($html, $filename, array $options = array(), $replacePaths = true)
+    public function streamHtml(string $html, string $filename, array $options = array(), bool $replacePaths = true)
     {
         if ($replacePaths) {
             $html = $this->replaceBasePath($html);
@@ -53,7 +53,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function getPdf($html, array $options = array(), $replacePaths = true)
+    public function getPdf(string $html, array $options = array(), bool $replacePaths = true)
     {
         if ($replacePaths) {
             $html = $this->replaceBasePath($html);
@@ -70,7 +70,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function createDompdf()
+    public function createDompdf(): Dompdf
     {
         return new Dompdf();
     }
@@ -78,7 +78,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function createOptions(array $options = array())
+    public function createOptions(array $options = array()): Options
     {
         return new Options(array_merge($this->options, $options));
     }
@@ -90,7 +90,7 @@ class DompdfWrapper implements DompdfWrapperInterface
      *
      * @return string Modified html sourcecode
      */
-    private function replaceBasePath($html)
+    private function replaceBasePath($html): string
     {
         $pattern = '#<([^>]* )(src|href)=([\'"])(?![A-z]*:)([^"]*)([\'"])#';
         $replace = '<$1$2=$3'.$this->basePath.'$4$5';

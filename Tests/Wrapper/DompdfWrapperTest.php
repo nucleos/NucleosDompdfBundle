@@ -59,7 +59,6 @@ class DompdfWrapperTest extends TestCase
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        /* @var \PHPUnit_Framework_MockObject_MockObject|Dompdf $dompdf */
         $this->dompdf->expects($this->once())
             ->method('setOptions');
         $this->dompdf->expects($this->once())
@@ -83,7 +82,6 @@ class DompdfWrapperTest extends TestCase
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='web_prefix/img/foo'>";
 
-        /* @var \PHPUnit_Framework_MockObject_MockObject|Dompdf $dompdf */
         $this->dompdf->expects($this->once())
             ->method('setOptions');
         $this->dompdf->expects($this->once())
@@ -106,7 +104,6 @@ class DompdfWrapperTest extends TestCase
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        /* @var \PHPUnit_Framework_MockObject_MockObject|Dompdf $dompdf */
         $this->dompdf->expects($this->once())
             ->method('setOptions');
         $this->dompdf->expects($this->once())
@@ -129,7 +126,6 @@ class DompdfWrapperTest extends TestCase
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='web_prefix/img/foo'>";
 
-        /* @var \PHPUnit_Framework_MockObject_MockObject|Dompdf $dompdf */
         $this->dompdf->expects($this->once())
             ->method('setOptions');
         $this->dompdf->expects($this->once())
