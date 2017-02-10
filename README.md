@@ -2,10 +2,13 @@ What is DompdfBundle?
 =============================
 [![Latest Stable Version](https://poser.pugx.org/core23/dompdf-bundle/v/stable)](https://packagist.org/packages/core23/dompdf-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/core23/dompdf-bundle/v/unstable)](https://packagist.org/packages/core23/dompdf-bundle)
-[![Build Status](http://img.shields.io/travis/core23/DompdfBundle.svg)](http://travis-ci.org/core23/DompdfBundle)
-[![License](http://img.shields.io/packagist/l/core23/dompdf-bundle.svg)](https://packagist.org/packages/core23/dompdf-bundle)
+[![License](https://poser.pugx.org/core23/dompdf-bundle/license)](https://packagist.org/packages/core23/dompdf-bundle)
 
-
+[![Build Status](https://travis-ci.org/core23/DompdfBundle.svg)](https://travis-ci.org/core23/DompdfBundle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/DompdfBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/core23/DompdfBundle)
+[![Code Climate](https://codeclimate.com/github/core23/DompdfBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/DompdfBundle)
+[![Coverage Status](https://coveralls.io/repos/core23/DompdfBundle/badge.svg)](https://coveralls.io/r/core23/DompdfBundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/37449e7c-132b-424c-a9ec-97a5e99a0bf0/mini.png)](https://insight.sensiolabs.com/projects/37449e7c-132b-424c-a9ec-97a5e99a0bf0)
 
 [![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/core23)
 [![Donate to this project using PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/gripp)
