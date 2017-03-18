@@ -1,0 +1,30 @@
+vcs: git
+
+prerequisites:
+  - working-copy-check
+  - display-last-changes
+  - composer-json-check:
+      composer: composer
+  - command:
+      cmd: composer update
+  - tests-check:
+      command: vendor/bin/phpunit --stop-on-failure
+  - composer-security-check
+  - composer-stability-check
+  - command:
+      cmd: git remote -v
+
+pre-release-actions:
+    composer-update: ~
+    changelog-update:
+        format: simple
+        dump-commits: true
+        exclude-merge-commits: true
+    vcs-commit: ~
+
+version-generator: semantic
+version-persister: vcs-tag
+
+post-release-actions:
+    vcs-publish:
+        ask-remote-name: true
