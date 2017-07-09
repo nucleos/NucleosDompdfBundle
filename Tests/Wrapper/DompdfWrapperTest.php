@@ -12,6 +12,7 @@ namespace Core23\DompdfBundle\Tests\Wrapper;
 use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
 use PHPUnit\Framework\TestCase;
+use Dompdf\Options;
 
 class DompdfWrapperTest extends TestCase
 {
@@ -30,9 +31,9 @@ class DompdfWrapperTest extends TestCase
      */
     protected function setUp()
     {
-        $this->dompdf = $this->createMock('Dompdf\Dompdf');
+        $this->dompdf = $this->createMock(Dompdf::class);
 
-        $this->dompdfWrapper = $this->getMockBuilder('Core23\DompdfBundle\Wrapper\DompdfWrapper')
+        $this->dompdfWrapper = $this->getMockBuilder(DompdfWrapper::class)
             ->setConstructorArgs(array('web_prefix/', array('dpi' => '200')))
             ->setMethods(array('createDompdf'))
             ->getMock();
@@ -50,7 +51,7 @@ class DompdfWrapperTest extends TestCase
     {
         $options = $this->dompdfWrapper->createOptions(array('tempDir' => 'foo'));
 
-        $this->assertInstanceOf('Dompdf\Options', $options);
+        $this->assertInstanceOf(Options::class, $options);
         $this->assertSame('foo', $options->getTempDir());
         $this->assertSame('200', $options->getDpi());
     }
@@ -97,7 +98,7 @@ class DompdfWrapperTest extends TestCase
             ->method('createDompdf')
             ->will($this->returnValue($this->dompdf));
 
-        $this->dompdfWrapper->streamHtml($input, 'file.pdf', array('tempDir' => 'bar'), true);
+        $this->dompdfWrapper->streamHtml($input, 'file.pdf', array('tempDir' => 'bar'));
     }
 
     public function testGetPdf()
@@ -140,6 +141,6 @@ class DompdfWrapperTest extends TestCase
             ->method('createDompdf')
             ->will($this->returnValue($this->dompdf));
 
-        $this->dompdfWrapper->getPdf($input, array('tempDir' => 'bar'), true);
+        $this->dompdfWrapper->getPdf($input, array('tempDir' => 'bar'));
     }
 }
