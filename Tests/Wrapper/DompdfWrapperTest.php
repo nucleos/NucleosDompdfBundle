@@ -11,8 +11,8 @@ namespace Core23\DompdfBundle\Tests\Wrapper;
 
 use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
-use PHPUnit\Framework\TestCase;
 use Dompdf\Options;
+use PHPUnit\Framework\TestCase;
 
 class DompdfWrapperTest extends TestCase
 {
