@@ -40,7 +40,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function getPdf(string $html, array $options = array()) : string
+    public function getPdf(string $html, array $options = array()): string
     {
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);

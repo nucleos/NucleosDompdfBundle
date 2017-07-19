@@ -14,23 +14,23 @@ interface DompdfWrapperInterface
     /**
      * Renders a pdf document and streams it to the browser.
      *
-     * @param string    $html         The html sourcecode to render
-     * @param string    $filename     The name of the docuemtn
-     * @param string[]  $options      The rendering options (see dompdf docs)
+     * @param string   $html     The html sourcecode to render
+     * @param string   $filename The name of the docuemtn
+     * @param string[] $options  The rendering options (see dompdf docs)
      *
      * @throws \Exception
      */
-    public function streamHtml(string $html, string $filename, array $options = array()) : void;
+    public function streamHtml(string $html, string $filename, array $options = array()): void;
 
     /**
      * Renders a pdf document and return the binary content.
      *
-     * @param string    $html         The html sourcecode to render
-     * @param array     $options      The rendering options (see dompdf docs)
+     * @param string $html    The html sourcecode to render
+     * @param array  $options The rendering options (see dompdf docs)
      *
      * @throws \Exception
      *
      * @return string
      */
-    public function getPdf(string $html, array $options = array()) : string;
+    public function getPdf(string $html, array $options = array()): string;
 }

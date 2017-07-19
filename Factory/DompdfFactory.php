@@ -21,9 +21,9 @@ final class DompdfFactory implements DompdfFactoryInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
-    public function create(array $options = array()) : Dompdf
+    public function create(array $options = array()): Dompdf
     {
         return new Dompdf($this->createOptions($options));
     }

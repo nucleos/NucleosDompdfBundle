@@ -7,7 +7,7 @@ use Dompdf\Dompdf;
 interface DompdfFactoryInterface
 {
     /**
-     * Creates a new dompdf instance
+     * Creates a new dompdf instance.
      *
      * @param array $options
      *
