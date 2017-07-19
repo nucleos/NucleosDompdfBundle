@@ -23,7 +23,6 @@ class ConfigurationTest extends TestCase
         )));
 
         $expected = array(
-            'webDir'   => '%kernel.root_dir%/../web',
             'defaults' => array(),
         );
 
@@ -35,7 +34,6 @@ class ConfigurationTest extends TestCase
         $processor = new Processor();
 
         $config = $processor->processConfiguration(new Configuration(), array(array(
-            'webDir'   => '%kernel.root_dir%/../customWeb',
             'defaults' => array(
                 'foo' => 'bar',
                 'bar' => 'baz',
@@ -43,7 +41,6 @@ class ConfigurationTest extends TestCase
         )));
 
         $expected = array(
-            'webDir'   => '%kernel.root_dir%/../customWeb',
             'defaults' => array(
                 'foo' => 'bar',
                 'bar' => 'baz',

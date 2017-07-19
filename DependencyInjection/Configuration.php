@@ -23,10 +23,6 @@ final class Configuration implements ConfigurationInterface
         $rootNode    = $treeBuilder->root('core23_dompdf')->children();
 
         $rootNode
-            ->scalarNode('webDir')
-                ->defaultValue('%kernel.root_dir%/../web')
-                ->info('webDir is deprecated and will be removed with 2.0.')
-            ->end()
             ->arrayNode('defaults')
                 ->useAttributeAsKey('name')
                 ->prototype('scalar')->end()

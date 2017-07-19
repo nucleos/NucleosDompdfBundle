@@ -27,7 +27,6 @@ final class Core23DompdfExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        $container->setParameter('core23.dompdf_web', $config['webDir']);
         $container->setParameter('core23.dompdf_options', $config['defaults']);
     }
 }

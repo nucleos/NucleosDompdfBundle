@@ -17,14 +17,12 @@ class Core23DompdfExtensionTest extends AbstractExtensionTestCase
     public function testLoadDefault()
     {
         $this->load(array(
-            'webDir'   => '%kernel.root_dir%/../customWeb',
             'defaults' => array(
                 'foo' => 'bar',
                 'bar' => 'baz',
             ),
         ));
 
-        $this->assertContainerBuilderHasParameter('core23.dompdf_web', '%kernel.root_dir%/../customWeb');
         $this->assertContainerBuilderHasParameter('core23.dompdf_options', array(
             'foo' => 'bar',
             'bar' => 'baz',

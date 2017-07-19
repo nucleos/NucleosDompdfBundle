@@ -20,24 +20,22 @@ interface DompdfWrapperInterface
      * @param string    $html         The html sourcecode to render
      * @param string    $filename     The name of the docuemtn
      * @param string[]  $options      The rendering options (see dompdf docs)
-     * @param bool|true $replacePaths Appends the basepath to file links
      *
      * @throws \Exception
      */
-    public function streamHtml(string $html, string $filename, array $options = array(), bool $replacePaths = true);
+    public function streamHtml(string $html, string $filename, array $options = array());
 
     /**
      * Renders a pdf document and return the binary content.
      *
      * @param string    $html         The html sourcecode to render
      * @param array     $options      The rendering options (see dompdf docs)
-     * @param bool|true $replacePaths Appends the basepath to file links
      *
      * @throws \Exception
      *
      * @return string
      */
-    public function getPdf(string $html, array $options = array(), bool $replacePaths = true);
+    public function getPdf(string $html, array $options = array());
 
     /**
      * Creates a new Dompdf instance.

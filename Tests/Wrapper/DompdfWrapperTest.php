@@ -34,7 +34,7 @@ class DompdfWrapperTest extends TestCase
         $this->dompdf = $this->createMock(Dompdf::class);
 
         $this->dompdfWrapper = $this->getMockBuilder(DompdfWrapper::class)
-            ->setConstructorArgs(array('web_prefix/', array('dpi' => '200')))
+            ->setConstructorArgs(array(array('dpi' => '200')))
             ->setMethods(array('createDompdf'))
             ->getMock();
         $this->dompdfWrapper->expects($this->any())
@@ -75,13 +75,13 @@ class DompdfWrapperTest extends TestCase
             ->method('createDompdf')
             ->will($this->returnValue($this->dompdf));
 
-        $this->dompdfWrapper->streamHtml($input, 'file.pdf', array('tempDir' => 'bar'), false);
+        $this->dompdfWrapper->streamHtml($input, 'file.pdf', array('tempDir' => 'bar'));
     }
 
     public function testStreamHtmlWithImg()
     {
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
-        $output = "<h1>Foo</h1>Bar <b>baz</b><img src='web_prefix/img/foo'>";
+        $output = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $this->dompdf->expects($this->once())
             ->method('setOptions');
@@ -110,28 +110,6 @@ class DompdfWrapperTest extends TestCase
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
             ->with($this->equalTo($input));
-        $this->dompdf->expects($this->once())
-            ->method('render');
-        $this->dompdf->expects($this->once())
-            ->method('output');
-
-        $this->dompdfWrapper->expects($this->once())
-            ->method('createDompdf')
-            ->will($this->returnValue($this->dompdf));
-
-        $this->dompdfWrapper->getPdf($input, array('tempDir' => 'bar'), false);
-    }
-
-    public function testGetPdfWithImg()
-    {
-        $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
-        $output = "<h1>Foo</h1>Bar <b>baz</b><img src='web_prefix/img/foo'>";
-
-        $this->dompdf->expects($this->once())
-            ->method('setOptions');
-        $this->dompdf->expects($this->once())
-            ->method('loadHtml')
-            ->with($this->equalTo($output));
         $this->dompdf->expects($this->once())
             ->method('render');
         $this->dompdf->expects($this->once())
