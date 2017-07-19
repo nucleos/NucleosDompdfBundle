@@ -9,9 +9,6 @@
 
 namespace Core23\DompdfBundle\Wrapper;
 
-use Dompdf\Dompdf;
-use Dompdf\Options;
-
 interface DompdfWrapperInterface
 {
     /**
