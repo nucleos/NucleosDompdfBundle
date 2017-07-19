@@ -9,15 +9,21 @@
 
 namespace Core23\DompdfBundle\Tests\Wrapper;
 
+use Core23\DompdfBundle\Factory\DompdfFactory;
+use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
-use Dompdf\Options;
 use PHPUnit\Framework\TestCase;
 
 class DompdfWrapperTest extends TestCase
 {
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|DompdfWrapper
+     * @var \PHPUnit_Framework_MockObject_MockObject|DompdfFactory
+     */
+    private $dompdfFactory;
+
+    /**
+     * @var DompdfWrapper
      */
     private $dompdfWrapper;
 
@@ -31,37 +37,20 @@ class DompdfWrapperTest extends TestCase
      */
     protected function setUp()
     {
-        $this->dompdf = $this->createMock(Dompdf::class);
+        $this->dompdf        = $this->createMock(Dompdf::class);
+        $this->dompdfFactory = $this->createMock(DompdfFactoryInterface::class);
 
-        $this->dompdfWrapper = $this->getMockBuilder(DompdfWrapper::class)
-            ->setConstructorArgs(array(array('dpi' => '200')))
-            ->setMethods(array('createDompdf'))
-            ->getMock();
-        $this->dompdfWrapper->expects($this->any())
-            ->method('createDompdf')
-            ->will($this->returnValue($this->dompdf));
-    }
-
-    public function testCreateDompdf()
-    {
-        $this->assertSame($this->dompdf, $this->dompdfWrapper->createDompdf());
-    }
-
-    public function testCreateOptions()
-    {
-        $options = $this->dompdfWrapper->createOptions(array('tempDir' => 'foo'));
-
-        $this->assertInstanceOf(Options::class, $options);
-        $this->assertSame('foo', $options->getTempDir());
-        $this->assertSame('200', $options->getDpi());
+        $this->dompdfWrapper = new DompdfWrapper($this->dompdfFactory);
     }
 
     public function testStreamHtml()
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        $this->dompdf->expects($this->once())
-            ->method('setOptions');
+        $this->dompdfFactory->expects($this->any())
+            ->method('create')
+            ->will($this->returnValue($this->dompdf));
+
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
             ->with($this->equalTo($input));
@@ -71,11 +60,7 @@ class DompdfWrapperTest extends TestCase
             ->method('stream')
             ->with($this->equalTo('file.pdf'));
 
-        $this->dompdfWrapper->expects($this->once())
-            ->method('createDompdf')
-            ->will($this->returnValue($this->dompdf));
-
-        $this->dompdfWrapper->streamHtml($input, 'file.pdf', array('tempDir' => 'bar'));
+        $this->dompdfWrapper->streamHtml($input, 'file.pdf');
     }
 
     public function testStreamHtmlWithImg()
@@ -83,8 +68,11 @@ class DompdfWrapperTest extends TestCase
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        $this->dompdf->expects($this->once())
-            ->method('setOptions');
+        $this->dompdfFactory->expects($this->any())
+            ->method('create')
+            ->with($this->equalTo(array('tempDir' => 'bar')))
+            ->will($this->returnValue($this->dompdf));
+
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
             ->with($this->equalTo($output));
@@ -94,10 +82,6 @@ class DompdfWrapperTest extends TestCase
             ->method('stream')
             ->with($this->equalTo('file.pdf'));
 
-        $this->dompdfWrapper->expects($this->once())
-            ->method('createDompdf')
-            ->will($this->returnValue($this->dompdf));
-
         $this->dompdfWrapper->streamHtml($input, 'file.pdf', array('tempDir' => 'bar'));
     }
 
@@ -105,8 +89,10 @@ class DompdfWrapperTest extends TestCase
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        $this->dompdf->expects($this->once())
-            ->method('setOptions');
+        $this->dompdfFactory->expects($this->any())
+            ->method('create')
+            ->will($this->returnValue($this->dompdf));
+
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
             ->with($this->equalTo($input));
@@ -115,10 +101,6 @@ class DompdfWrapperTest extends TestCase
         $this->dompdf->expects($this->once())
             ->method('output')
             ->willReturn('BINARY_CONTENT');
-
-        $this->dompdfWrapper->expects($this->once())
-            ->method('createDompdf')
-            ->will($this->returnValue($this->dompdf));
 
         $this->dompdfWrapper->getPdf($input, array('tempDir' => 'bar'));
     }

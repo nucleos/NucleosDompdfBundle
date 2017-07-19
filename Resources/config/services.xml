@@ -2,6 +2,9 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
     <service id="dompdf" class="Core23\DompdfBundle\Wrapper\DompdfWrapper">
+      <argument type="service" id="dompdf.factory"/>
+    </service>
+    <service id="dompdf.factory" class="Core23\DompdfBundle\Factory\DompdfFactory">
       <argument>%core23.dompdf_options%</argument>
     </service>
   </services>

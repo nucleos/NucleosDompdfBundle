@@ -36,20 +36,4 @@ interface DompdfWrapperInterface
      * @return string
      */
     public function getPdf(string $html, array $options = array()) : string;
-
-    /**
-     * Creates a new Dompdf instance.
-     *
-     * @return Dompdf
-     */
-    public function createDompdf(): Dompdf;
-
-    /**
-     * Creates a a new Option instance.
-     *
-     * @param string[] $options An array of dompdf options
-     *
-     * @return Options
-     */
-    public function createOptions(array $options = array()): Options;
 }

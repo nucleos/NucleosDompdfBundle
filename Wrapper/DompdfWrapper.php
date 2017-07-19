@@ -9,22 +9,21 @@
 
 namespace Core23\DompdfBundle\Wrapper;
 
-use Dompdf\Dompdf;
-use Dompdf\Options;
+use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 
-class DompdfWrapper implements DompdfWrapperInterface
+final class DompdfWrapper implements DompdfWrapperInterface
 {
     /**
-     * @var string[]
+     * @var DompdfFactoryInterface
      */
-    private $options;
+    private $dompdfFactory;
 
     /**
-     * @param string[] $options
+     * @param DompdfFactoryInterface $dompdfFactory
      */
-    public function __construct(array $options = array())
+    public function __construct(DompdfFactoryInterface $dompdfFactory)
     {
-        $this->options  = $options;
+        $this->dompdfFactory = $dompdfFactory;
     }
 
     /**
@@ -32,8 +31,7 @@ class DompdfWrapper implements DompdfWrapperInterface
      */
     public function streamHtml(string $html, string $filename, array $options = array()): void
     {
-        $pdf = $this->createDompdf();
-        $pdf->setOptions($this->createOptions($options));
+        $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
         $pdf->render();
         $pdf->stream($filename);
@@ -44,27 +42,10 @@ class DompdfWrapper implements DompdfWrapperInterface
      */
     public function getPdf(string $html, array $options = array()) : string
     {
-        $pdf = $this->createDompdf();
-        $pdf->setOptions($this->createOptions($options));
+        $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
         $pdf->render();
 
         return $pdf->output();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function createDompdf(): Dompdf
-    {
-        return new Dompdf();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function createOptions(array $options = array()): Options
-    {
-        return new Options(array_merge($this->options, $options));
     }
 }
