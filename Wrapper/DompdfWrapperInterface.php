@@ -23,7 +23,7 @@ interface DompdfWrapperInterface
      *
      * @throws \Exception
      */
-    public function streamHtml(string $html, string $filename, array $options = array());
+    public function streamHtml(string $html, string $filename, array $options = array()) : void;
 
     /**
      * Renders a pdf document and return the binary content.
@@ -35,7 +35,7 @@ interface DompdfWrapperInterface
      *
      * @return string
      */
-    public function getPdf(string $html, array $options = array());
+    public function getPdf(string $html, array $options = array()) : string;
 
     /**
      * Creates a new Dompdf instance.

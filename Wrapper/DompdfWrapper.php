@@ -30,7 +30,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function streamHtml(string $html, string $filename, array $options = array())
+    public function streamHtml(string $html, string $filename, array $options = array()): void
     {
         $pdf = $this->createDompdf();
         $pdf->setOptions($this->createOptions($options));
@@ -42,7 +42,7 @@ class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function getPdf(string $html, array $options = array())
+    public function getPdf(string $html, array $options = array()) : string
     {
         $pdf = $this->createDompdf();
         $pdf->setOptions($this->createOptions($options));

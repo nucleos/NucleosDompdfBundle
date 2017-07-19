@@ -113,7 +113,8 @@ class DompdfWrapperTest extends TestCase
         $this->dompdf->expects($this->once())
             ->method('render');
         $this->dompdf->expects($this->once())
-            ->method('output');
+            ->method('output')
+            ->willReturn('BINARY_CONTENT');
 
         $this->dompdfWrapper->expects($this->once())
             ->method('createDompdf')
