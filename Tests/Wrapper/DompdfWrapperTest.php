@@ -9,7 +9,6 @@
 
 namespace Core23\DompdfBundle\Tests\Wrapper;
 
-use Core23\DompdfBundle\Factory\DompdfFactory;
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
@@ -18,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 class DompdfWrapperTest extends TestCase
 {
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|DompdfFactory
+     * @var \PHPUnit_Framework_MockObject_MockObject|DompdfFactoryInterface
      */
     private $dompdfFactory;
 
