@@ -33,6 +33,8 @@ matrix:
       env: SYMFONY_VERSION=3.3.*
   allow_failures:
     - php: nightly
+    - php: 7.1
+      env: TARGET=phpstan
 
 before_install:
  - phpenv config-rm xdebug.ini
