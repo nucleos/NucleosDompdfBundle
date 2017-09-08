@@ -29,7 +29,7 @@ class Core23DompdfExtensionTest extends AbstractExtensionTestCase
         ));
     }
 
-    protected function getContainerExtensions()
+    protected function getContainerExtensions(): array
     {
         return array(
             new Core23DompdfExtension(),
