@@ -31,11 +31,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Core23\\DompdfBundle\\": ""
-    },
-    "exclude-from-classmap": [
-        "/Tests/"
-    ]
+      "Core23\\DompdfBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Core23\\DompdfBundle\\Tests\\": "tests/"
+    }
   },
   "extra": {
     "branch-alias": {

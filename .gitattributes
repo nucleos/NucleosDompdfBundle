@@ -7,4 +7,4 @@
 build.xml        export-ignore
 Makefile         export-ignore
 phpunit.xml.dist export-ignore
-Tests/           export-ignore
+tests/           export-ignore
