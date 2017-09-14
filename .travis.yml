@@ -36,17 +36,11 @@ matrix:
     - php: 7.1
       env: TARGET=phpstan
 
-before_install:
- - phpenv config-rm xdebug.ini
-
 install:
  - composer global require satooshi/php-coveralls sllh/composer-lint codeclimate/php-test-reporter --prefer-dist --no-interaction
  - if [ "$SYMFONY_VERSION" != "" ]; then composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update; fi;
  - if [ "$TARGET" == "phpstan" ]; then composer require --dev phpstan/phpstan:^0.8 --no-update; fi
  - composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
-
-before_script:
- - echo "zend_extension=xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 script: make $TARGET
 
