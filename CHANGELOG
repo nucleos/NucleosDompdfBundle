@@ -1,0 +1,64 @@
+14/09/2017 07:32  2.0.0  2.0.0
+acc38fd Added type hints
+c659aa7 [travis] Moved phpstan to allow failures
+46273ca Refactor folder structure
+c7a90eb Use latest phpstan version
+bfdea56 Fixed PHPStan runner
+49e3315 Fixed PHPDoc
+870c352 Fixed PHPStan check directory
+c1a6193 Added PHPStan checks to travis
+3d7e344 Added option to sort composer packages
+9c3b843 Removed HHVM from travis setup
+62158e0 Dropped support for PHP 7.0
+931814a Dropped support for outdated symfony versions
+855ee8b Fixed wrong export-ignore entry
+80a6308 Apply fixes from StyleCI
+56a5d3a Removed unused imports
+319b6e9 Separated factory from wrapper
+0a440f4 Removed service parameter key
+1a52284 Adding PHP 7 type hinting
+ba27f07 Removed deprecated option to replace paths
+f482061 Dropped support for outdated symfony versions
+ffdc378 bump dompdf/dompdf version to 0.8
+7661bca Apply fixes from StyleCI
+1d581e6 Use new PHP features (::class, null coalescing)
+c48479b Fixed CS
+b692833 Added workaround for composer bug #6207
+8d6dc7f Created liip/rmt config
+bbfb02a Added unit tests for dependency injection
+2dff829 Drop old phpunit-bridge
+68361e4 Updated travis config
+59c639e Updated badges
+5d29469 Deprecate replacing paths in DompdfWrapper
+0d8e35c Added PHP 7 type declarations
+f1b6862 Update for PHPUnit 5.7
+9fbd111 Fixed cs
+aac09d5 Updated file header
+cf460e3 Revert: Closing public API
+a56d43f Extract wrapper interface
+d01dbc9 Removed useless autoload-dev entry
+445fc3a Revert: Disallow simplified_null_return fixer
+dfbc971 Disallow simplified_null_return fixer
+6626736 Closing public API
+67d5c2e Removed precise branch alias
+b8c6a84 Fixed cs
+244a369 Removed support for symfony 2.7
+4326f71 Drop support for symfony 3.0.x
+9f6f73d Use StyleCI instead of travis for cs check
+fbc65a1 Removed VersionEye status
+64fd358 Drop PHP 5 support
+cd133bd Require latest php-cs-fixer version
+13b4d81 Added php-cs-fixer dependency
+55c12dc Use local tools in Makefile
+e9f9e4a Fixed travis config
+a82afbd Fixed wrong phpUnit version
+3850696 Moved phpunit and php-cs-fixer dependency to composer file
+972f66e Specifiy phpunit version in composer file
+bb267c0 Updated StyleCI config
+82043d4 Reformat XML files
+6aeb47e Reformat XML files
+b954e99 Fixed abandoned php-cs-fixer package
+fdffc47 Fixed cs
+c638f5c Added StyleCI settings
+8cf23b7 Added tests to dev autoloader
+e5caab1 Added test for constructor options
