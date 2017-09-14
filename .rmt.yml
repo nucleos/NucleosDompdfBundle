@@ -1,9 +1,12 @@
 vcs: git
 
 prerequisites:
+  - working-copy-check
   - display-last-changes
   - composer-json-check:
       composer: composer
+  - command:
+      cmd: composer update
   - tests-check:
       command: vendor/bin/phpunit --stop-on-failure
   - composer-security-check
