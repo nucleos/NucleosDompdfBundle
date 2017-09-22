@@ -7,13 +7,7 @@
   </testsuites>
   <filter>
     <whitelist>
-      <directory>./</directory>
-      <exclude>
-        <directory>./Tests/</directory>
-        <directory>./DataFixtures/</directory>
-        <directory>./Resources/</directory>
-        <directory>./vendor/</directory>
-      </exclude>
+      <directory suffix=".php">./src</directory>
     </whitelist>
   </filter>
 </phpunit>
