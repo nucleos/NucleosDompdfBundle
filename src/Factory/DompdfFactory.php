@@ -24,7 +24,7 @@ final class DompdfFactory implements DompdfFactoryInterface
      */
     public function __construct(array $options = array())
     {
-        $this->options  = $options;
+        $this->options = $options;
     }
 
     /**
