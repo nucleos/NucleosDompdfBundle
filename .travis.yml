@@ -33,8 +33,6 @@ matrix:
       env: SYMFONY_VERSION=3.3.*
   allow_failures:
     - php: nightly
-    - php: 7.1
-      env: TARGET=phpstan
 
 install:
  - composer global require satooshi/php-coveralls sllh/composer-lint codeclimate/php-test-reporter --prefer-dist --no-interaction
