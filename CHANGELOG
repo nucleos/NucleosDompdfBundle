@@ -1,3 +1,21 @@
+01/12/2017 15:31  2.1.0  Added font cache option
+dcbc081 Added font cache option
+e134877 Added support for PHP 7.2 and Symfony 3.4 / 4.x
+a96d310 Fixed PHPUnit path config
+fccac2a Revert "Bumped DI test version"
+3b50e0e Added symfony/expression-language dependency to work with sf3
+b160d28 Bumped DI test version
+fbcaf0d Cleanup phpstan config
+f36e2b2 Fixed phpstan runner settings
+8340900 Force phpstan check when running travis
+86cccf7 Added missing dependencies
+58a755f Added SymfonyTestsListener
+855d19e Apply fixes from StyleCI
+7688de4 Fixed CS
+fe47ae6 Cleanup autoloader for tests
+6e7681d Fixed coverage paths
+6d98578 [travis] Removed xdebug config
+4a36689 Revert committing .rmt temp config
 14/09/2017 07:32  2.0.0  2.0.0
 acc38fd Added type hints
 c659aa7 [travis] Moved phpstan to allow failures
