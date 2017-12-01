@@ -19,9 +19,9 @@
   "require": {
     "php": "^7.1",
     "dompdf/dompdf": "^0.7 || ^0.8",
-    "symfony/dependency-injection": "^2.8.6 || ^3.2",
-    "symfony/expression-language": "^2.8.6 || ^3.2",
-    "symfony/framework-bundle": "^2.8.6 || ^3.2"
+    "symfony/dependency-injection": "^2.8.6 || ^3.2 || ^4.0",
+    "symfony/expression-language": "^2.8.6 || ^3.2 || ^4.0",
+    "symfony/framework-bundle": "^2.8.6 || ^3.2 || ^4.0"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.0",
@@ -29,7 +29,7 @@
     "phpunit/phpunit": "^5.7",
     "sebastian/exporter": "^2.0",
     "sllh/php-cs-fixer-styleci-bridge": "^2.0",
-    "symfony/phpunit-bridge": "^3.3.12"
+    "symfony/phpunit-bridge": "^4.0"
   },
   "autoload": {
     "psr-4": {
