@@ -9,6 +9,7 @@
 
 namespace Core23\DompdfBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -20,12 +21,19 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('core23_dompdf')->children();
+
+        /** @var ArrayNodeDefinition $node */
+        $rootNode    = $treeBuilder->root('core23_dompdf');
 
         $rootNode
-            ->arrayNode('defaults')
-                ->useAttributeAsKey('name')
-                ->prototype('scalar')->end()
+            ->children()
+                ->arrayNode('defaults')
+                    ->useAttributeAsKey('name')
+                    ->prototype('scalar')->end()
+                    ->defaultValue(array(
+                        'fontCache' => '%kernel.cache_dir%',
+                    ))
+                ->end()
             ->end()
         ;
 

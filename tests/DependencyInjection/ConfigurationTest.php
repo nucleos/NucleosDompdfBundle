@@ -23,7 +23,9 @@ class ConfigurationTest extends TestCase
         )));
 
         $expected = array(
-            'defaults' => array(),
+            'defaults' => array(
+                'fontCache' => '%kernel.cache_dir%',
+            ),
         );
 
         $this->assertSame($expected, $config);
