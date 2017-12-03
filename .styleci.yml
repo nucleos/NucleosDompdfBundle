@@ -19,4 +19,4 @@ disabled:
 
 finder:
   exclude:
-    - 'Tests/Fixtures'
+    - 'tests/Fixtures'
