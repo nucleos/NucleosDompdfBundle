@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -20,7 +22,7 @@ interface DompdfWrapperInterface
      *
      * @throws \Exception
      */
-    public function streamHtml(string $html, string $filename, array $options = array()): void;
+    public function streamHtml(string $html, string $filename, array $options = []): void;
 
     /**
      * Renders a pdf document and return the binary content.
@@ -32,5 +34,5 @@ interface DompdfWrapperInterface
      *
      * @return string
      */
-    public function getPdf(string $html, array $options = array()): string;
+    public function getPdf(string $html, array $options = []): string;
 }

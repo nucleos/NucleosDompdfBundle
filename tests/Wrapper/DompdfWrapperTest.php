@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -34,7 +36,7 @@ class DompdfWrapperTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->dompdf        = $this->createMock(Dompdf::class);
         $this->dompdfFactory = $this->createMock(DompdfFactoryInterface::class);
@@ -42,7 +44,7 @@ class DompdfWrapperTest extends TestCase
         $this->dompdfWrapper = new DompdfWrapper($this->dompdfFactory);
     }
 
-    public function testStreamHtml()
+    public function testStreamHtml(): void
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
@@ -62,14 +64,14 @@ class DompdfWrapperTest extends TestCase
         $this->dompdfWrapper->streamHtml($input, 'file.pdf');
     }
 
-    public function testStreamHtmlWithImg()
+    public function testStreamHtmlWithImg(): void
     {
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $this->dompdfFactory->expects($this->any())
             ->method('create')
-            ->with($this->equalTo(array('tempDir' => 'bar')))
+            ->with($this->equalTo(['tempDir' => 'bar']))
             ->will($this->returnValue($this->dompdf));
 
         $this->dompdf->expects($this->once())
@@ -81,10 +83,10 @@ class DompdfWrapperTest extends TestCase
             ->method('stream')
             ->with($this->equalTo('file.pdf'));
 
-        $this->dompdfWrapper->streamHtml($input, 'file.pdf', array('tempDir' => 'bar'));
+        $this->dompdfWrapper->streamHtml($input, 'file.pdf', ['tempDir' => 'bar']);
     }
 
-    public function testGetPdf()
+    public function testGetPdf(): void
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
@@ -101,6 +103,6 @@ class DompdfWrapperTest extends TestCase
             ->method('output')
             ->willReturn('BINARY_CONTENT');
 
-        $this->dompdfWrapper->getPdf($input, array('tempDir' => 'bar'));
+        $this->dompdfWrapper->getPdf($input, ['tempDir' => 'bar']);
     }
 }

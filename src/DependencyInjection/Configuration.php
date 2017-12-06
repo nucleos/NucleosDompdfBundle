@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -23,16 +25,16 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
 
         /** @var ArrayNodeDefinition $node */
-        $rootNode    = $treeBuilder->root('core23_dompdf');
+        $rootNode = $treeBuilder->root('core23_dompdf');
 
         $rootNode
             ->children()
                 ->arrayNode('defaults')
                     ->useAttributeAsKey('name')
                     ->prototype('scalar')->end()
-                    ->defaultValue(array(
+                    ->defaultValue([
                         'fontCache' => '%kernel.cache_dir%',
-                    ))
+                    ])
                 ->end()
             ->end()
         ;

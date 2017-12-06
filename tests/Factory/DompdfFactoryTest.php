@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -24,14 +26,14 @@ class DompdfFactoryTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->dompdfFactory = new DompdfFactory(array(
+        $this->dompdfFactory = new DompdfFactory([
             'dpi' => '100',
-        ));
+        ]);
     }
 
-    public function testCreate()
+    public function testCreate(): void
     {
         $dompdf = $this->dompdfFactory->create();
 
@@ -43,12 +45,12 @@ class DompdfFactoryTest extends TestCase
         $this->assertSame('100', $options->getDpi());
     }
 
-    public function testCreateWithOptions()
+    public function testCreateWithOptions(): void
     {
-        $dompdf = $this->dompdfFactory->create(array(
+        $dompdf = $this->dompdfFactory->create([
             'dpi'     => '200',
             'tempDir' => 'foo',
-        ));
+        ]);
 
         $this->assertInstanceOf(Dompdf::class, $dompdf);
 

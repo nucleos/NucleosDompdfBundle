@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -20,5 +22,5 @@ interface DompdfFactoryInterface
      *
      * @return Dompdf
      */
-    public function create(array $options = array()): Dompdf;
+    public function create(array $options = []): Dompdf;
 }

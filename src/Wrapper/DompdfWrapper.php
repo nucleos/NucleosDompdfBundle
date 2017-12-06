@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -29,7 +31,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function streamHtml(string $html, string $filename, array $options = array()): void
+    public function streamHtml(string $html, string $filename, array $options = []): void
     {
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
@@ -40,7 +42,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
     /**
      * {@inheritdoc}
      */
-    public function getPdf(string $html, array $options = array()): string
+    public function getPdf(string $html, array $options = []): string
     {
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);

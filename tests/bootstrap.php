@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -14,12 +16,12 @@ if (file_exists($file = __DIR__.'/autoload.php')) {
 }
 
 // try to get Symfony's PHPunit Bridge
-$files = array_filter(array(
+$files = array_filter([
     __DIR__.'/../vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/bootstrap.php',
     __DIR__.'/../vendor/symfony/phpunit-bridge/bootstrap.php',
     __DIR__.'/../../../../vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/bootstrap.php',
     __DIR__.'/../../../../vendor/symfony/phpunit-bridge/bootstrap.php',
-), 'file_exists');
+], 'file_exists');
 if (count($files) > 0) {
     require_once current($files);
 }

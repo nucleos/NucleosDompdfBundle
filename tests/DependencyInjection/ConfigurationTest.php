@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -15,39 +17,39 @@ use Symfony\Component\Config\Definition\Processor;
 
 class ConfigurationTest extends TestCase
 {
-    public function testDefaultOptions()
+    public function testDefaultOptions(): void
     {
         $processor = new Processor();
 
-        $config = $processor->processConfiguration(new Configuration(), array(array(
-        )));
+        $config = $processor->processConfiguration(new Configuration(), [[
+        ]]);
 
-        $expected = array(
-            'defaults' => array(
+        $expected = [
+            'defaults' => [
                 'fontCache' => '%kernel.cache_dir%',
-            ),
-        );
+            ],
+        ];
 
         $this->assertSame($expected, $config);
     }
 
-    public function testOptions()
+    public function testOptions(): void
     {
         $processor = new Processor();
 
-        $config = $processor->processConfiguration(new Configuration(), array(array(
-            'defaults' => array(
+        $config = $processor->processConfiguration(new Configuration(), [[
+            'defaults' => [
                 'foo' => 'bar',
                 'bar' => 'baz',
-            ),
-        )));
+            ],
+        ]]);
 
-        $expected = array(
-            'defaults' => array(
+        $expected = [
+            'defaults' => [
                 'foo' => 'bar',
                 'bar' => 'baz',
-            ),
-        );
+            ],
+        ];
 
         $this->assertSame($expected, $config);
     }

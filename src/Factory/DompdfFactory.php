@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -22,7 +24,7 @@ final class DompdfFactory implements DompdfFactoryInterface
     /**
      * @param string[] $options
      */
-    public function __construct(array $options = array())
+    public function __construct(array $options = [])
     {
         $this->options = $options;
     }
@@ -30,7 +32,7 @@ final class DompdfFactory implements DompdfFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create(array $options = array()): Dompdf
+    public function create(array $options = []): Dompdf
     {
         return new Dompdf($this->createOptions($options));
     }
@@ -38,7 +40,7 @@ final class DompdfFactory implements DompdfFactoryInterface
     /**
      * {@inheritdoc}
      */
-    private function createOptions(array $options = array()): Options
+    private function createOptions(array $options = []): Options
     {
         return new Options(array_merge($this->options, $options));
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -14,25 +16,25 @@ use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 
 class Core23DompdfExtensionTest extends AbstractExtensionTestCase
 {
-    public function testLoadDefault()
+    public function testLoadDefault(): void
     {
-        $this->load(array(
-            'defaults' => array(
+        $this->load([
+            'defaults' => [
                 'foo' => 'bar',
                 'bar' => 'baz',
-            ),
-        ));
+            ],
+        ]);
 
-        $this->assertContainerBuilderHasParameter('core23.dompdf_options', array(
+        $this->assertContainerBuilderHasParameter('core23.dompdf_options', [
             'foo' => 'bar',
             'bar' => 'baz',
-        ));
+        ]);
     }
 
     protected function getContainerExtensions(): array
     {
-        return array(
+        return [
             new Core23DompdfExtension(),
-        );
+        ];
     }
 }
