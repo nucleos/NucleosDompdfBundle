@@ -1,0 +1,59 @@
+<?php
+
+// try to get Symfony's PHPunit Bridge
+$files = array_filter(array(
+    __DIR__.'/vendor/sllh/php-cs-fixer-styleci-bridge/autoload.php',
+    __DIR__.'/../../../vendor/sllh/php-cs-fixer-styleci-bridge/autoload.php',
+), 'file_exists');
+
+if (count($files) > 0) {
+    require_once current($files);
+}
+
+use SLLH\StyleCIBridge\ConfigBridge;
+
+$header = <<<EOF
+(c) Christian Gripp <mail@core23.de>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+EOF;
+
+$rules = [
+    '@Symfony' => true,
+    '@Symfony:risky' => true,
+    '@PHP70Migration' => true,
+    '@PHP71Migration:risky' => true,
+    'array_syntax' => [
+        'syntax' => 'short',
+    ],
+    'binary_operator_spaces' => [
+        'default' => 'align_single_space_minimal',
+    ],
+    'combine_consecutive_issets' => true,
+    'combine_consecutive_unsets' => true,
+    'compact_nullable_typehint' => true,
+    'header_comment' => [
+        'header' => $header,
+    ],
+    'no_extra_consecutive_blank_lines' => true,
+    'no_php4_constructor' => true,
+    'no_useless_else' => true,
+    'no_useless_return' => true,
+    'ordered_class_elements' => true,
+    'ordered_imports' => true,
+    'phpdoc_order' => true,
+    'php_unit_strict' => true,
+];
+
+$finder = PhpCsFixer\Finder::create()
+    ->in( __DIR__)
+    ->exclude('tests/Fixtures')
+    ->exclude('Resources/public/vendor')
+;
+return PhpCsFixer\Config::create()
+    ->setFinder($finder)
+    ->setRiskyAllowed(true)
+    ->setRules($rules)
+    ->setUsingCache(true)
+;
