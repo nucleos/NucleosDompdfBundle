@@ -19,9 +19,9 @@
   "require": {
     "php": "^7.1",
     "dompdf/dompdf": "^0.7 || ^0.8",
-    "symfony/dependency-injection": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/expression-language": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/framework-bundle": "^2.8.6 || ^3.2 || ^4.0"
+    "symfony/dependency-injection": "^3.4 || ^4.0",
+    "symfony/expression-language": "^3.4 || ^4.0",
+    "symfony/framework-bundle": "^3.4 || ^4.0"
   },
   "require-dev": {
     "matthiasnoback/symfony-dependency-injection-test": "^1.1",
