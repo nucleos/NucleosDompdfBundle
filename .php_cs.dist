@@ -28,7 +28,7 @@ $rules = [
         'syntax' => 'short',
     ],
     'binary_operator_spaces' => [
-        'default' => 'align_single_space_minimal',
+        'default' => 'align',
     ],
     'combine_consecutive_issets' => true,
     'combine_consecutive_unsets' => true,

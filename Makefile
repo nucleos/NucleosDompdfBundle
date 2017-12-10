@@ -1,14 +1,16 @@
-cs:
-	./vendor/bin/php-cs-fixer fix --verbose
+.PHONY: lint test
 
-cs_dry_run:
-	./vendor/bin/php-cs-fixer fix --verbose --dry-run
+all:
+	@echo "Please choose a task."
 
 lint:
 	composer validate
+	find . -name '*.yml' -not -path './vendor/*' -not -path './Resources/public/vendor/*' | xargs yaml-lint
+	find . \( -name '*.xml' -or -name '*.xliff' \) \
+		-not -path './vendor/*' -not -path './Resources/public/vendor/*' \
+        | xargs -I'{}' xmllint --encode UTF-8 --output '{}' --format '{}'
+	php-cs-fixer fix --verbose
+    git diff --exit-code
 
 test:
-	./vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover build/logs/clover.xml
-
-phpstan:
-	./vendor/bin/phpstan analyse -c phpstan.neon -l 4 src tests
+	./vendor/bin/phpunit
