@@ -16,4 +16,4 @@ phpstan:
 	phpstan analyse -c phpstan.neon -l 4 src tests
 
 test:
-	./vendor/bin/phpunit
+	phpunit -c phpunit.xml.dist --coverage-clover build/logs/clover.xml

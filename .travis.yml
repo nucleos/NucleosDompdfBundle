@@ -49,5 +49,5 @@ install:
 
 script: make $TARGET
 
-after_script:
- - coveralls -v
+after_success:
+ - php-coveralls -v
