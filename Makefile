@@ -10,7 +10,10 @@ lint:
 		-not -path './vendor/*' -not -path './Resources/public/vendor/*' \
         | xargs -I'{}' xmllint --encode UTF-8 --output '{}' --format '{}'
 	php-cs-fixer fix --verbose
-    git diff --exit-code
+	git diff --exit-code
+
+phpstan:
+	phpstan analyse -c phpstan.neon -l 4 src tests
 
 test:
 	./vendor/bin/phpunit

@@ -3,7 +3,6 @@
 .gitignore       export-ignore
 .php_cs.dist     export-ignore
 .rmt.yml         export-ignore
-.styleci.yml     export-ignore
 .travis          export-ignore
 build.xml        export-ignore
 Makefile         export-ignore

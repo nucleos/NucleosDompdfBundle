@@ -39,13 +39,15 @@ matrix:
     - php: nightly
 
 install:
- - composer global require satooshi/php-coveralls sllh/composer-lint codeclimate/php-test-reporter friendsofphp/php-cs-fixer --prefer-dist --no-interaction
+ - wget "http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar" --output-document="${HOME}/bin/php-cs-fixer" && chmod u+x "${HOME}/bin/php-cs-fixer"
+ - wget "https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar" --output-document="${HOME}/bin/php-coveralls" && chmod u+x "${HOME}/bin/php-coveralls"
  - if [ "$SYMFONY_VERSION" != "" ]; then composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update; fi;
- - if [ "$TARGET" == "phpstan" ]; then composer require --dev phpstan/phpstan:^0.9 --no-update; fi
+ - if [ "$TARGET" == "lint" ]; then gem install yaml-lint && composer global require --dev sllh/composer-lint --no-update; fi
+ - if [ "$TARGET" == "phpstan" ]; then composer global require --dev phpstan/phpstan:^0.9 --no-update; fi
+ - if [ "$TARGET" != "test" ]; then composer global update; fi
  - composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script: make $TARGET
 
 after_script:
  - coveralls -v
- - test-reporter
