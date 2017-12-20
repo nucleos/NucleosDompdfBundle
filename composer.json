@@ -25,8 +25,6 @@
   },
   "require-dev": {
     "matthiasnoback/symfony-dependency-injection-test": "^1.1",
-    "phpunit/phpunit": "^5.7",
-    "sebastian/exporter": "^2.0",
     "symfony/phpunit-bridge": "^4.0"
   },
   "autoload": {
