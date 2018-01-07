@@ -8,7 +8,7 @@ prerequisites:
   - command:
       cmd: composer update
   - tests-check:
-      command: vendor/bin/phpunit --stop-on-failure
+      command: phpunit --stop-on-failure
   - composer-security-check
   - composer-stability-check
   - command:
