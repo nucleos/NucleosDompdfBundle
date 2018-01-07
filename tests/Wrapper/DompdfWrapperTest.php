@@ -18,9 +18,6 @@ use PHPUnit\Framework\TestCase;
 
 class DompdfWrapperTest extends TestCase
 {
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|DompdfFactoryInterface
-     */
     private $dompdfFactory;
 
     /**
@@ -28,9 +25,6 @@ class DompdfWrapperTest extends TestCase
      */
     private $dompdfWrapper;
 
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Dompdf
-     */
     private $dompdf;
 
     /**
