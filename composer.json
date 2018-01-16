@@ -29,6 +29,14 @@
         "sllh/composer-lint": "^1.0",
         "symfony/phpunit-bridge": "^4.0"
     },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Core23\\DompdfBundle\\": "src/"
@@ -46,13 +54,5 @@
         "post-update-cmd": [
             "@composer bin all update --ansi"
         ]
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.x-dev"
-        }
-    },
-    "config": {
-        "sort-packages": true
     }
 }
