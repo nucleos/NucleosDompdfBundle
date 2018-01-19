@@ -5,9 +5,9 @@ all:
 
 lint:
 	composer validate
-	find . -name '*.yml' -not -path './vendor/*' -not -path './src/Resources/public/vendor/*' | xargs yaml-lint
+	find . -name '*.yml' -not -path './vendor/*' -not -path './vendor-bin/*' -not -path './src/Resources/public/vendor/*' | xargs yaml-lint
 	find . \( -name '*.xml' -or -name '*.xlf' \) \
-		-not -path './vendor/*' -not -path './src/Resources/public/vendor/*' \
+		-not -path './vendor/*' -not -path './vendor-bin/*' -not -path './src/Resources/public/vendor/*' \
         | xargs -I'{}' xmllint --encode UTF-8 --output '{}' --format '{}'
 	vendor/bin/php-cs-fixer fix --verbose
 	git diff --exit-code
