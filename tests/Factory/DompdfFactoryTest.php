@@ -16,7 +16,7 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 use PHPUnit\Framework\TestCase;
 
-class DompdfFactoryTest extends TestCase
+final class DompdfFactoryTest extends TestCase
 {
     /**
      * @var DompdfFactory

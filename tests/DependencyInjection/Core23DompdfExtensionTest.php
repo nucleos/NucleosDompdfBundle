@@ -14,7 +14,7 @@ namespace Core23\DompdfBundle\Tests\DependencyInjection;
 use Core23\DompdfBundle\DependencyInjection\Core23DompdfExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 
-class Core23DompdfExtensionTest extends AbstractExtensionTestCase
+final class Core23DompdfExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {

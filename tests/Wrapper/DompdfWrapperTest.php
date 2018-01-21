@@ -16,7 +16,7 @@ use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
 use PHPUnit\Framework\TestCase;
 
-class DompdfWrapperTest extends TestCase
+final class DompdfWrapperTest extends TestCase
 {
     private $dompdfFactory;
 
