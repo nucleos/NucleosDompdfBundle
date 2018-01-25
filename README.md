@@ -17,7 +17,7 @@ This bundle provides a wrapper for using [dompdf] inside symfony.
 ### Installation
 
 ```
-php composer.phar require core23/dompdf-bundle
+composer require core23/dompdf-bundle
 ```
 
 ### Enabling the bundle

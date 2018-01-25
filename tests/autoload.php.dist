@@ -27,7 +27,7 @@ if (!$autoload) {
     die('Unable to find autoload.php file, please use composer to load dependencies:
 
 wget http://getcomposer.org/composer.phar
-php composer.phar install
+composer install
 
 Visit http://getcomposer.org/ for more information.
 
