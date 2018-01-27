@@ -1,45 +1,46 @@
-What is DompdfBundle?
-=============================
+DompdfBundle
+============
 [![Latest Stable Version](https://poser.pugx.org/core23/dompdf-bundle/v/stable)](https://packagist.org/packages/core23/dompdf-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/core23/dompdf-bundle/v/unstable)](https://packagist.org/packages/core23/dompdf-bundle)
-[![License](https://poser.pugx.org/core23/dompdf-bundle/license)](https://packagist.org/packages/core23/dompdf-bundle)
+[![License](https://poser.pugx.org/core23/dompdf-bundle/license)](LICENSE.md)
+
+[![Total Downloads](https://poser.pugx.org/core23/dompdf-bundle/downloads)](https://packagist.org/packages/core23/dompdf-bundle)
+[![Monthly Downloads](https://poser.pugx.org/core23/dompdf-bundle/d/monthly)](https://packagist.org/packages/core23/dompdf-bundle)
+[![Daily Downloads](https://poser.pugx.org/core23/dompdf-bundle/d/daily)](https://packagist.org/packages/core23/dompdf-bundle)
 
 [![Build Status](https://travis-ci.org/core23/DompdfBundle.svg)](https://travis-ci.org/core23/DompdfBundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/DompdfBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/core23/DompdfBundle)
+[![Code Climate](https://codeclimate.com/github/core23/DompdfBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/DompdfBundle)
 [![Coverage Status](https://coveralls.io/repos/core23/DompdfBundle/badge.svg)](https://coveralls.io/r/core23/DompdfBundle)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/37449e7c-132b-424c-a9ec-97a5e99a0bf0/mini.png)](https://insight.sensiolabs.com/projects/37449e7c-132b-424c-a9ec-97a5e99a0bf0)
 
 [![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/core23)
 [![Donate to this project using PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/gripp)
 
 This bundle provides a wrapper for using [dompdf] inside symfony.
 
-### Installation
+## Installation
+
+Open a command console, enter your project directory and execute the following command to download the latest stable version of this bundle:
 
 ```
 composer require core23/dompdf-bundle
 ```
 
-### Enabling the bundle
+### Enable the Bundle
+
+Then, enable the bundle by adding it to the list of registered bundles in `bundles.php` file of your project:
 
 ```php
-    // app/AppKernel.php
+// config/bundles.php
 
-    public function registerBundles()
-    {
-        return array(
-            // ...
-
-            new Core23\DompdfBundle\Core23DompdfBundle(),
-
-            // ...
-        );
-    }
+return [
+    Core23\DompdfBundle\Core23DompdfBundle => ['all' => true],
+];
 ```
 
-### Usage
+## Usage
 
-Whenever you need to turn a html page into a pdf just use this anywhere in your controller:
+Whenever you need to turn a html page into a PDF just use this anywhere in your controller:
 
 ```php
 // Set some html and get the service
@@ -53,9 +54,9 @@ $dompdf->streamHtml($html, "document.pdf");
 $dompdf->getPdf($html);
 ```
 
-### Configuration
+### Configure the Bundle
 
-You can configure each dompdf option under the ``config`` key.
+Create a configuration file called `core23_dompdf.yaml`:
 
 ```yaml
 core23_dompdf:
@@ -65,6 +66,8 @@ core23_dompdf:
         ...
 ```
 
-This bundle is available under the [MIT license](LICENSE.md).
+## License
+
+This bundle is under the [MIT license](LICENSE.md).
 
 [dompdf]: https://github.com/dompdf/dompdf
