@@ -25,7 +25,7 @@ final class Core23DompdfExtensionTest extends AbstractExtensionTestCase
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('core23.dompdf_options', [
+        $this->assertContainerBuilderHasParameter('core23_dompdf.options', [
             'foo' => 'bar',
             'bar' => 'baz',
         ]);

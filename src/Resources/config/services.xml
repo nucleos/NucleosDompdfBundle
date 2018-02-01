@@ -5,7 +5,7 @@
       <argument type="service" id="dompdf.factory"/>
     </service>
     <service id="dompdf.factory" class="Core23\DompdfBundle\Factory\DompdfFactory" public="true">
-      <argument>%core23.dompdf_options%</argument>
+      <argument>%core23_dompdf.options%</argument>
     </service>
   </services>
 </container>
