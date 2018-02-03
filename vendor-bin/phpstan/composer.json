@@ -2,5 +2,8 @@
     "require": {
         "phpstan/phpstan": "^0.9.1",
         "phpstan/phpstan-phpunit": "^0.9.3"
+    },
+    "conflict": {
+        "phpunit/phpunit": ">=7.0"
     }
 }
