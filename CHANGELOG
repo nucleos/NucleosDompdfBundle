@@ -1,3 +1,43 @@
+07/02/2018 18:41  2.2.0  Changed parameter prefix to core23_dompdf
+ffce0f8 Don't use PHPUnit 7 yet
+608de7c Fixed wrong bundle service prefix
+18a33fa Make services public
+85d921e Improved documentation
+9da54dd Adding stages to travis build
+7c09992 Replaced composer.phar with composer in docs
+258b077 Make tests final
+3be52b0 Ignore vendor-bin when calling lint
+1ebf659 Use weak vendors mode
+388d6c8 Added rmt tool
+6982ff3 Normalize composer.json file
+7a8de1a Fixed travis error
+1b48af2 Ignore some errors in PHPStan
+4eef9bd Added dev tools via composer-bin plugin
+55d86d0 Added dev tools via composer-bin plugin
+bb62ede Sync config
+dcaa16e Removed old build config
+acb10ff Use global phpunit version when calling RMT
+b5814d4 Removed PHPUnit from phpstan
+30dc873 Use PHPUnit 6
+3952beb Moved all translation to xlf
+8170d96 Ignore PHPUnit warnings when calling phpstan
+95fe918 Added phpstan extension to travis
+a4a840f Removed hard phpunit dependency
+0298176 Added missing php tag
+1fd2661 Removed version information from phpunit.xml.dist
+9e3c1f5 Ignore PHPUnit errors when calling phpstan
+916fd89 Fixed coveralls build
+03faa63 Sync build config
+6465743 Removed code climate status
+24058d6 Sync config
+45832fe Ignore symfony DI errors when calling phpstan
+b095cbf Updated travis config for outdated symfony versions
+1d0b96a Bumped symfony deps to >=3.4
+98368f2 Require latest phpstan version
+ff2a104 Fixed CS
+1ff026f Sync config
+707867f Sync config
+f727b3b Added .editorconfig
 01/12/2017 15:31  2.1.0  Added font cache option
 dcbc081 Added font cache option
 e134877 Added support for PHP 7.2 and Symfony 3.4 / 4.x
