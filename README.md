@@ -65,6 +65,7 @@ core23_dompdf:
         defaultPaperSize: A4
         ...
 ```
+`defaultPaperSize` is not working; this is a dompdf issue, see https://github.com/dompdf/dompdf/issues/1140
 
 ## License
 
