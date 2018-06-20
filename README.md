@@ -54,6 +54,17 @@ $dompdf->streamHtml($html, "document.pdf");
 $dompdf->getPdf($html);
 ```
 
+If you use Twig to create the content, make sure to use `renderView()` instead of `render()`.
+Otherwise you might get the following HTTP header printed inside your PDF:
+> HTTP/1.0 200 OK Cache-Control: no-cache
+
+```php
+$html = $this->renderView('my_pdf.html.twig', array(
+    // ...
+));
+$dompdf->streamHtml($html, 'document.pdf');
+```
+
 ### Configure the Bundle
 
 Create a configuration file called `core23_dompdf.yaml`:
