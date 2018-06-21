@@ -56,9 +56,9 @@ $dompdf->getPdf($html);
 
 ### Configure the Bundle
 
-Create a configuration file called `core23_dompdf.yaml`:
-
 ```yaml
+# config/packages/core23_dompdf.yml
+
 core23_dompdf:
     defaults:
         dpi: 150
