@@ -11,7 +11,10 @@ declare(strict_types=1);
 
 namespace Core23\DompdfBundle\Wrapper;
 
+use Core23\DompdfBundle\Events;
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class DompdfWrapper implements DompdfWrapperInterface
@@ -22,11 +25,26 @@ final class DompdfWrapper implements DompdfWrapperInterface
     private $dompdfFactory;
 
     /**
+     * @var EventDispatcherInterface
+     */
+    private $eventDispatcher;
+
+    /**
      * @param DompdfFactoryInterface $dompdfFactory
      */
     public function __construct(DompdfFactoryInterface $dompdfFactory)
     {
         $this->dompdfFactory = $dompdfFactory;
+    }
+
+    /**
+     * Set the event dispatcher.
+     *
+     * @param EventDispatcherInterface $eventDispatcher
+     */
+    public function setEventDispatcher(EventDispatcherInterface $eventDispatcher): void
+    {
+        $this->eventDispatcher = $eventDispatcher;
     }
 
     /**
@@ -37,6 +55,12 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
         $pdf->render();
+
+        if ($this->eventDispatcher instanceof EventDispatcherInterface) {
+            $event = new GenericEvent($pdf, ['filename' => $filename, 'html' => $html]);
+            $this->eventDispatcher->dispatch(Events::STREAM, $event);
+        }
+
         $pdf->stream($filename, $options);
     }
 
@@ -65,6 +89,11 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
         $pdf->render();
+
+        if ($this->eventDispatcher instanceof EventDispatcherInterface) {
+            $event = new GenericEvent($pdf, ['html' => $html]);
+            $this->eventDispatcher->dispatch(Events::OUTPUT, $event);
+        }
 
         return $pdf->output();
     }

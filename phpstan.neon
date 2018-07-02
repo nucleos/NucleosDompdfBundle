@@ -11,6 +11,7 @@ parameters:
     ignoreErrors:
         # PHPUnit
         - '#Parameter \#1 \$dompdfFactory of class Core23\\DompdfBundle\\Wrapper\\DompdfWrapper constructor expects Core23\\DompdfBundle\\Factory\\DompdfFactoryInterface, PHPUnit\\Framework\\MockObject\\MockObject given.#'
+        - '#Parameter \#1 \$eventDispatcher of method Core23\\DompdfBundle\\Wrapper\\DompdfWrapper::setEventDispatcher\(\) expects Symfony\\Component\\EventDispatcher\\EventDispatcherInterface, PHPUnit\\Framework\\MockObject\\MockObject given.#'
 
         # Symfony DI
         - '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children\(\).#'
