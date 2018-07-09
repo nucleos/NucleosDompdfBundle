@@ -39,9 +39,7 @@ final class DompdfWrapperTest extends TestCase
         $this->dompdf          = $this->createMock(Dompdf::class);
         $this->dompdfFactory   = $this->createMock(DompdfFactoryInterface::class);
         $this->eventDispatcher = $this->createMock(EventDispatcherInterface::class);
-        $this->dompdfWrapper   = new DompdfWrapper($this->dompdfFactory);
-
-        $this->dompdfWrapper->setEventDispatcher($this->eventDispatcher);
+        $this->dompdfWrapper   = new DompdfWrapper($this->dompdfFactory, $this->eventDispatcher);
     }
 
     public function testStreamHtml(): void
