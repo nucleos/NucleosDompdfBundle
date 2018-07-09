@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\DompdfBundle;
 
-final class Events
+final class DompdfEvents
 {
     const OUTPUT = 'dompdf.output';
     const STREAM = 'dompdf.stream';

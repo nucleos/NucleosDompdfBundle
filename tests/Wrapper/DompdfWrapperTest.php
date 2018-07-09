@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\DompdfBundle\Tests\Wrapper;
 
-use Core23\DompdfBundle\Events;
+use Core23\DompdfBundle\DompdfEvents;
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
@@ -61,7 +61,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->eventDispatcher->expects($this->once())
             ->method('dispatch')
-            ->with($this->equalTo(Events::STREAM));
+            ->with($this->equalTo(DompdfEvents::STREAM));
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf');
     }
@@ -87,7 +87,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->eventDispatcher->expects($this->once())
             ->method('dispatch')
-            ->with($this->equalTo(Events::STREAM));
+            ->with($this->equalTo(DompdfEvents::STREAM));
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf', ['tempDir' => 'bar']);
     }
@@ -111,7 +111,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->eventDispatcher->expects($this->once())
             ->method('dispatch')
-            ->with($this->equalTo(Events::OUTPUT));
+            ->with($this->equalTo(DompdfEvents::OUTPUT));
 
         $this->dompdfWrapper->getPdf($input, ['tempDir' => 'bar']);
     }
