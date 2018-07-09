@@ -12,9 +12,10 @@ declare(strict_types=1);
 namespace Core23\DompdfBundle\Wrapper;
 
 use Core23\DompdfBundle\DompdfEvents;
+use Core23\DompdfBundle\Event\OutputEvent;
+use Core23\DompdfBundle\Event\StreamEvent;
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class DompdfWrapper implements DompdfWrapperInterface
@@ -49,7 +50,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf->render();
 
         if ($this->eventDispatcher instanceof EventDispatcherInterface) {
-            $event = new GenericEvent($pdf, ['filename' => $filename, 'html' => $html]);
+            $event = new StreamEvent($pdf, $filename, $html);
             $this->eventDispatcher->dispatch(DompdfEvents::STREAM, $event);
         }
 
@@ -83,7 +84,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf->render();
 
         if ($this->eventDispatcher instanceof EventDispatcherInterface) {
-            $event = new GenericEvent($pdf, ['html' => $html]);
+            $event = new OutputEvent($pdf, $html);
             $this->eventDispatcher->dispatch(DompdfEvents::OUTPUT, $event);
         }
 
