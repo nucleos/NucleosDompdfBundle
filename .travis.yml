@@ -24,6 +24,7 @@ env:
 
 stages:
     - lint
+    - dependencies
     - test
 
 matrix:
@@ -35,6 +36,9 @@ matrix:
     - stage: lint
       php: 7.2
       env: TARGET=phpstan
+    - stage: dependencies
+      php: 7.2
+      env: TARGET=checkdeps
     - stage: test
       php: 7.1
       env: COMPOSER_FLAGS="--prefer-lowest"

@@ -12,6 +12,9 @@ lint:
 	vendor/bin/php-cs-fixer fix --verbose
 	git diff --exit-code
 
+checkdeps:
+	vendor/bin/composer-require-checker check composer.json
+
 phpstan:
 	vendor/bin/phpstan analyse -c phpstan.neon -l 7 src tests
 
