@@ -1,10 +1,6 @@
-.editorconfig    export-ignore
-.gitattributes   export-ignore
-.gitignore       export-ignore
-.php_cs.dist     export-ignore
-.rmt.yml         export-ignore
-.travis          export-ignore
+.*               export-ignore
 Makefile         export-ignore
 phpunit.xml.dist export-ignore
-tests/           export-ignore
+docs/*           export-ignore
+tests/*          export-ignore
 vendor-bin/      export-ignore
