@@ -19,9 +19,11 @@
     "require": {
         "php": "^7.1",
         "dompdf/dompdf": "^0.7 || ^0.8",
+        "symfony/config": "^3.4 || ^4.0",
         "symfony/dependency-injection": "^3.4 || ^4.0",
         "symfony/expression-language": "^3.4 || ^4.0",
-        "symfony/framework-bundle": "^3.4 || ^4.0"
+        "symfony/framework-bundle": "^3.4 || ^4.0",
+        "symfony/http-kernel": "^3.4 || ^4.0"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.2",
