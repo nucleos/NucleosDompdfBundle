@@ -50,6 +50,8 @@ matrix:
       env: SYMFONY_VERSION=4.0.*
   allow_failures:
     - php: nightly
+    - php: 7.2
+      env: TARGET=checkdeps
 
 before_install:
  - wget "https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar" --output-document="${HOME}/bin/php-coveralls" && chmod u+x "${HOME}/bin/php-coveralls"
