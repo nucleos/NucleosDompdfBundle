@@ -41,7 +41,7 @@ final class OutputEvent extends Event
      *
      * @return Dompdf
      */
-    public function getPdf()
+    public function getPdf(): Dompdf
     {
         return $this->pdf;
     }
@@ -51,7 +51,7 @@ final class OutputEvent extends Event
      *
      * @return string
      */
-    public function getHtml()
+    public function getHtml(): string
     {
         return $this->html;
     }

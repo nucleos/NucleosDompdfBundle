@@ -48,7 +48,7 @@ final class StreamEvent extends Event
      *
      * @return Dompdf
      */
-    public function getPdf()
+    public function getPdf(): Dompdf
     {
         return $this->pdf;
     }
@@ -58,7 +58,7 @@ final class StreamEvent extends Event
      *
      * @return string
      */
-    public function getFilename()
+    public function getFilename(): string
     {
         return $this->filename;
     }
@@ -68,7 +68,7 @@ final class StreamEvent extends Event
      *
      * @return string
      */
-    public function getHtml()
+    public function getHtml(): string
     {
         return $this->html;
     }
