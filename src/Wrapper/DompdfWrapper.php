@@ -36,7 +36,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
         $pdf->render();
-        $pdf->stream($filename);
+        $pdf->stream($filename, $options);
     }
 
     /**
