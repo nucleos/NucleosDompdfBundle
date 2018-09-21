@@ -1,3 +1,21 @@
+21/09/2018 17:15  2.3.0  Symfony service aliases
+873123c Merge pull request #18 from tgeber/patch-1
+865dbd0 Merge branch 'master' of github.com:core23/DompdfBundle
+5bb3c8f Updated .editorconfig
+d9530a9 Update DompdfWrapper.php
+232b165 Merge pull request #12 from ThomasLandauer/patch-3
+f65fddb TRAVIS: Moved dependencies check to allow failures
+efb908b Sync config
+45c8d7b Added composer-require-checker to build
+e905ce2 Added missing symfony dependencies
+96680f5 phpstan findings
+bfd9c1c Sync phpstan config
+65f6953 Prefer symfony class name as service id
+c9ef1b5 Require latest phpstan version
+4c426a5 Merge pull request #10 from ThomasLandauer/patch-1
+3aebee1 Update README.md
+4648aa9 Update README.md
+108ab5c Created issue templates
 07/02/2018 18:41  2.2.0  Changed parameter prefix to core23_dompdf
 ffce0f8 Don't use PHPUnit 7 yet
 608de7c Fixed wrong bundle service prefix
