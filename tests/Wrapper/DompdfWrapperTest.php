@@ -42,7 +42,7 @@ final class DompdfWrapperTest extends TestCase
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        $this->dompdfFactory->expects($this->any())
+        $this->dompdfFactory
             ->method('create')
             ->will($this->returnValue($this->dompdf));
 
@@ -63,7 +63,7 @@ final class DompdfWrapperTest extends TestCase
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        $this->dompdfFactory->expects($this->any())
+        $this->dompdfFactory
             ->method('create')
             ->with($this->equalTo(['tempDir' => 'bar']))
             ->will($this->returnValue($this->dompdf));
@@ -84,7 +84,7 @@ final class DompdfWrapperTest extends TestCase
     {
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
-        $this->dompdfFactory->expects($this->any())
+        $this->dompdfFactory
             ->method('create')
             ->will($this->returnValue($this->dompdf));
 
