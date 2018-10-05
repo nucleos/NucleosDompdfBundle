@@ -1,18 +1,25 @@
 vcs: git
 
 prerequisites:
-  - working-copy-check
-  - display-last-changes
-  - composer-json-check:
-      composer: composer
-  - command:
-      cmd: composer update
-  - tests-check:
-      command: phpunit --stop-on-failure
-  - composer-security-check
-  - composer-stability-check
-  - command:
-      cmd: git remote -v
+    - working-copy-check
+    - display-last-changes
+    - composer-json-check:
+          composer: composer
+    - command:
+          cmd: composer update
+    - tests-check:
+          command: phpunit --stop-on-failure
+    - command:
+          cmd: vendor/bin/phpstan analyse -c phpstan.neon -l 7 src tests
+    - command:
+          cmd: vendor/bin/php-cs-fixer fix --verbose
+    - composer-security-check
+    - composer-stability-check
+    - command:
+          cmd: vendor/bin/composer-require-checker check composer.json
+          stop_on_error: false
+    - command:
+          cmd: git remote -v
 
 pre-release-actions:
     composer-update: ~
