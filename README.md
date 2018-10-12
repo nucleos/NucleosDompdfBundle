@@ -44,8 +44,9 @@ Whenever you need to turn a html page into a PDF just use this anywhere in your 
 $html = '<h1>Sample Title</h1><p>Lorem Ipsum</p>';
 $dompdf = $this->get('dompdf');
 
-// Stream the pdf to the browser
-$dompdf->streamHtml($html, "document.pdf");
+// Get a StreamResponse for your controller to return the pdf to the browser
+$response = $dompdf->getStreamResponse($html, "document.pdf");
+$response->send();
 
 // Get binary content of the pdf document
 $dompdf->getPdf($html);
@@ -59,7 +60,7 @@ Otherwise you might get the following HTTP header printed inside your PDF:
 $html = $this->renderView('my_pdf.html.twig', array(
     // ...
 ));
-$dompdf->streamHtml($html, 'document.pdf');
+$dompdf->getStreamResponse($html, 'document.pdf');
 ```
 
 ### Configure the Bundle
