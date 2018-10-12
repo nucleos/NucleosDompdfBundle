@@ -21,6 +21,8 @@ interface DompdfWrapperInterface
      * @param string[] $options  The rendering options (see dompdf docs)
      *
      * @throws \Exception
+     *
+     * @deprecated use getStreamResponse instead
      */
     public function streamHtml(string $html, string $filename, array $options = []): void;
 

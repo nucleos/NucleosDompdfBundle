@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Core23\DompdfBundle\Wrapper;
 
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class DompdfWrapper implements DompdfWrapperInterface
 {
@@ -37,6 +38,23 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf->loadHtml($html);
         $pdf->render();
         $pdf->stream($filename, $options);
+    }
+
+    /**
+     * @param string $html
+     * @param string $filename
+     * @param array  $options
+     *
+     * @return StreamedResponse
+     */
+    public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse
+    {
+        $response = new StreamedResponse();
+        $response->setCallback(function () use ($html, $filename, $options): void {
+            $this->streamHtml($html, $filename, $options);
+        });
+
+        return $response;
     }
 
     /**
