@@ -13,9 +13,6 @@ DompdfBundle
 [![Code Climate](https://codeclimate.com/github/core23/DompdfBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/DompdfBundle)
 [![Coverage Status](https://coveralls.io/repos/core23/DompdfBundle/badge.svg)](https://coveralls.io/r/core23/DompdfBundle)
 
-[![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/core23)
-[![Donate to this project using PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/gripp)
-
 This bundle provides a wrapper for using [dompdf] inside symfony.
 
 ## Installation
