@@ -45,7 +45,7 @@ $html = '<h1>Sample Title</h1><p>Lorem Ipsum</p>';
 $dompdf = $this->get('dompdf');
 
 // Get a StreamResponse for your controller to return the pdf to the browser
-$response = $dompdf->getStreamResponse($html, "document.pdf");
+$response = $dompdf->streamHtml($html, "document.pdf");
 $response->send();
 
 // Get binary content of the pdf document
@@ -60,7 +60,7 @@ Otherwise you might get the following HTTP header printed inside your PDF:
 $html = $this->renderView('my_pdf.html.twig', array(
     // ...
 ));
-$dompdf->getStreamResponse($html, 'document.pdf');
+$dompdf->streamHtml($html, 'document.pdf');
 ```
 
 ### Configure the Bundle
