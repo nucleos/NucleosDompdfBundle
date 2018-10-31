@@ -1,3 +1,18 @@
+31/10/2018 00:34  2.4.0  Event dispatcher
+fcc9ac6 Added missing composer entries
+4cada13 Add symfony/event-dispatcher to require-dev
+5b7d900 Add return types in event classes
+6bc3883 Add specific events
+33ff935 Rename Events class
+ed30421 Use constructor injection
+2007e22 Dispatch events in DompdfWrapper
+be37ae6 Updated docs
+3685e7d Removed donation from README
+41cde1e Added service aliases for autowiring
+862085a Deprecated DompdfWrapper::streamHtml in favor of DompdfWrapper::getStreamResponse
+8490815 Updated release config
+d38b6e2 Updated style config
+c62c4f0 Clean tests
 21/09/2018 17:15  2.3.0  Symfony service aliases
 873123c Merge pull request #18 from tgeber/patch-1
 865dbd0 Merge branch 'master' of github.com:core23/DompdfBundle
