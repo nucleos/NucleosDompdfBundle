@@ -17,7 +17,7 @@ This bundle provides a wrapper for using [dompdf] inside symfony.
 
 ## Installation
 
-Open a command console, enter your project directory and execute the following command to download the latest stable version of this bundle:
+Open a command console, enter your project directory and execute the following command to download the latest stable version of this bundle (this will also install `dompdf/dompdf`):
 
 ```
 composer require core23/dompdf-bundle
