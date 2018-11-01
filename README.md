@@ -23,14 +23,13 @@ Open a command console, enter your project directory and execute the following c
 composer require core23/dompdf-bundle
 ```
 
-### Enable the Bundle
-
-Then, enable the bundle by adding it to the list of registered bundles in `bundles.php` file of your project:
+If you don't have Symfony Flex, you need to enable the bundle in `config/bundles.php`:
 
 ```php
 // config/bundles.php
 
 return [
+    // ...
     Core23\DompdfBundle\Core23DompdfBundle => ['all' => true],
 ];
 ```
