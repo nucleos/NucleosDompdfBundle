@@ -1,5 +1,7 @@
 {
     "require": {
-        "phpunit/phpunit": "^6.5"
+        "matthiasnoback/symfony-dependency-injection-test": "^3.0",
+        "phpunit/phpunit": "^7.4",
+        "symfony/phpunit-bridge": "^4.1"
     }
 }
