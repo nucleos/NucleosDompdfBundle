@@ -44,6 +44,8 @@ final class DompdfWrapperTest extends TestCase
 
     public function testStreamHtml(): void
     {
+        /** @noinspection HtmlRequiredAltAttribute */
+        /** @noinspection HtmlUnknownTarget */
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $this->dompdfFactory
@@ -68,7 +70,11 @@ final class DompdfWrapperTest extends TestCase
 
     public function testStreamHtmlWithImg(): void
     {
+        /** @noinspection HtmlRequiredAltAttribute */
+        /** @noinspection HtmlUnknownTarget */
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
+        /** @noinspection HtmlRequiredAltAttribute */
+        /** @noinspection HtmlUnknownTarget */
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $this->dompdfFactory
@@ -94,6 +100,8 @@ final class DompdfWrapperTest extends TestCase
 
     public function testGetPdf(): void
     {
+        /** @noinspection HtmlRequiredAltAttribute */
+        /** @noinspection HtmlUnknownTarget */
         $input = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $this->dompdfFactory

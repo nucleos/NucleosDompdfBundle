@@ -21,11 +21,12 @@ final class StreamEventTest extends TestCase
     {
         $dompdf   = $this->createMock(Dompdf::class);
         $filename = 'file.pdf';
-        $html     = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
+        /** @noinspection HtmlRequiredAltAttribute */
+        /** @noinspection HtmlUnknownTarget */
+        $html = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $event = new StreamEvent($dompdf, $filename, $html);
 
-        $this->assertInstanceOf(Dompdf::class, $event->getPdf());
         $this->assertSame($dompdf, $event->getPdf());
         $this->assertSame($filename, $event->getFilename());
         $this->assertSame($html, $event->getHtml());
