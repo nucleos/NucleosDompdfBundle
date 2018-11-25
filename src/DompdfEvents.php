@@ -13,6 +13,6 @@ namespace Core23\DompdfBundle;
 
 final class DompdfEvents
 {
-    const OUTPUT = 'dompdf.output';
-    const STREAM = 'dompdf.stream';
+    public const OUTPUT = 'dompdf.output';
+    public const STREAM = 'dompdf.stream';
 }
