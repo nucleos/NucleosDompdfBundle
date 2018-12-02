@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 7.1
   - 7.2
   - nightly
 
@@ -40,7 +39,7 @@ matrix:
       php: 7.2
       env: TARGET=checkdeps
     - stage: test
-      php: 7.1
+      php: 7.2
       env: COMPOSER_FLAGS="--prefer-lowest"
     - stage: test
       php: 7.2
