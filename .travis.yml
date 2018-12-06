@@ -2,6 +2,7 @@ language: php
 
 php:
   - 7.2
+  - 7.3
   - nightly
 
 sudo: false
@@ -30,26 +31,26 @@ matrix:
   fast_finish: true
   include:
     - stage: lint
-      php: 7.2
+      php: 7.3
       env: TARGET=lint
     - stage: lint
-      php: 7.2
+      php: 7.3
       env: TARGET=phpstan
     - stage: dependencies
-      php: 7.2
+      php: 7.3
       env: TARGET=checkdeps
     - stage: test
       php: 7.2
       env: COMPOSER_FLAGS="--prefer-lowest"
     - stage: test
-      php: 7.2
+      php: 7.3
       env: SYMFONY_VERSION=3.4.*
     - stage: test
-      php: 7.2
+      php: 7.3
       env: SYMFONY_VERSION=4.0.*
   allow_failures:
     - php: nightly
-    - php: 7.2
+    - php: 7.3
       env: TARGET=checkdeps
 
 before_install:
