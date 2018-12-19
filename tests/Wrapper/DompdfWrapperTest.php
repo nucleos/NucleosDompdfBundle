@@ -50,7 +50,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->dompdfFactory
             ->method('create')
-            ->will($this->returnValue($this->dompdf));
+            ->willReturn($this->dompdf);
 
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
@@ -80,7 +80,7 @@ final class DompdfWrapperTest extends TestCase
         $this->dompdfFactory
             ->method('create')
             ->with($this->equalTo(['tempDir' => 'bar']))
-            ->will($this->returnValue($this->dompdf));
+            ->willReturn($this->dompdf);
 
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
@@ -106,7 +106,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->dompdfFactory
             ->method('create')
-            ->will($this->returnValue($this->dompdf));
+            ->willReturn($this->dompdf);
 
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
