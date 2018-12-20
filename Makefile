@@ -9,7 +9,7 @@ lint:
 	find . \( -name '*.xml' -or -name '*.xlf' \) \
 		-not -path './vendor/*' -not -path './vendor-bin/*' -not -path './src/Resources/public/vendor/*' \
         | xargs -I'{}' xmllint --encode UTF-8 --output '{}' --format '{}'
-	vendor/bin/php-cs-fixer fix --verbose
+	export PHP_CS_FIXER_IGNORE_ENV=1 && php	vendor/bin/php-cs-fixer fix --verbose
 	git diff --exit-code
 
 checkdeps:
