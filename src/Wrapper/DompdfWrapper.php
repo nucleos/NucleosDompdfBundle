@@ -14,6 +14,7 @@ namespace Core23\DompdfBundle\Wrapper;
 use Core23\DompdfBundle\DompdfEvents;
 use Core23\DompdfBundle\Event\OutputEvent;
 use Core23\DompdfBundle\Event\StreamEvent;
+use Core23\DompdfBundle\Exception\PdfException;
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -88,6 +89,12 @@ final class DompdfWrapper implements DompdfWrapperInterface
             $this->eventDispatcher->dispatch(DompdfEvents::OUTPUT, $event);
         }
 
-        return $pdf->output();
+        $out = $pdf->output();
+
+        if (null === $out) {
+            throw new PdfException('Error creating PDF document');
+        }
+
+        return $out;
     }
 }

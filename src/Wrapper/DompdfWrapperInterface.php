@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Core23\DompdfBundle\Wrapper;
 
+use Core23\DompdfBundle\Exception\PdfException;
+
 interface DompdfWrapperInterface
 {
     /**
@@ -19,8 +21,6 @@ interface DompdfWrapperInterface
      * @param string   $html     The html sourcecode to render
      * @param string   $filename The name of the docuemtn
      * @param string[] $options  The rendering options (see dompdf docs)
-     *
-     * @throws \Exception
      *
      * @deprecated use getStreamResponse instead
      */
@@ -32,7 +32,7 @@ interface DompdfWrapperInterface
      * @param string $html    The html sourcecode to render
      * @param array  $options The rendering options (see dompdf docs)
      *
-     * @throws \Exception
+     * @throws PdfException
      *
      * @return string
      */
