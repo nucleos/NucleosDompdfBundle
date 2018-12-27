@@ -23,13 +23,13 @@ final class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('core23_dompdf');
 
-        /* @var ArrayNodeDefinition $rootNode */
         // Keep compatibility with symfony/config < 4.2
         if (!\method_exists($treeBuilder, 'getRootNode')) {
             $rootNode = $treeBuilder->root('core23_dompdf');
         } else {
             $rootNode = $treeBuilder->getRootNode();
         }
+        \assert($rootNode instanceof ArrayNodeDefinition);
 
         $rootNode
             ->children()
