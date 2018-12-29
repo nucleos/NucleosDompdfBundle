@@ -8,7 +8,7 @@ prerequisites:
     - command:
           cmd: composer update
     - tests-check:
-          command: phpunit --stop-on-failure
+          command: vendor/bin/phpunit --stop-on-failure
     - command:
           cmd: vendor/bin/phpstan analyse -c phpstan.neon -l 7 src tests
     - command:
