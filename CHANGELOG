@@ -1,3 +1,21 @@
+30/12/2018 23:10  2.5.0  Removed symfony deprecations
+ab08359 Clean phpstan ignore list
+7cbe5dc Fixed phpunit config for release command
+ae6b492 Fixed missing import
+b78cbc8 Use asserts for type safe root config nodes
+05c35bd Removed deprecation warnings
+b35f1d9 Removed deprecation warnings
+44cc3f6 Throw exception when PDF cannot be generated
+425332d Added platform workaround for php-cs-fixer tool
+392c128 Require latest phpunit bridge
+5f38515 Require latest phpunit bridge
+2bce493 Improved unit tests
+c852991 Travis: Test against PHP 7.3
+2675c8f Dropped support for PHP 7.1
+8834ad0 Ignore some phpstorm inspections
+9b1989a Made constants public
+f3722f0 Fixed syntax error in editorconfig
+da1ae8e Moved test dependencies to vendor-bin
 31/10/2018 00:34  2.4.0  Event dispatcher
 fcc9ac6 Added missing composer entries
 4cada13 Add symfony/event-dispatcher to require-dev
