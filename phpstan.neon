@@ -16,4 +16,4 @@ parameters:
         - '#Parameter \#1 \$pdf of class Core23\\DompdfBundle\\Event\\StreamEvent constructor expects Dompdf\\Dompdf, PHPUnit\\Framework\\MockObject\\MockObject given.#'
 
         # Symfony DI
-        - '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children\(\).#'
+        - '#Cannot call method defaultValue\(\) on Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface\|null.#'
