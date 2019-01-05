@@ -31,7 +31,7 @@ final class Core23DompdfExtensionTest extends AbstractExtensionTestCase
         ]);
     }
 
-    protected function getContainerExtensions(): array
+    protected function getContainerExtensions()
     {
         return [
             new Core23DompdfExtension(),
