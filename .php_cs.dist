@@ -7,9 +7,6 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 EOF;
 
-$rules = [
-];
-
 $finder = PhpCsFixer\Finder::create()
     ->in([ __DIR__.'/src',  __DIR__.'/tests'])
 ;
@@ -19,8 +16,9 @@ $config = PhpCsFixer\Config::create()
     ->setRules([
         '@Symfony' => true,
         '@Symfony:risky' => true,
+        '@PhpCsFixer' => true,
+        '@PhpCsFixer:risky' => true,
         '@PHP70Migration' => true,
-        '@PHP71Migration:risky' => true,
         '@PHPUnit60Migration:risky' => true,
         'header_comment' => [
             'header' => $header,
@@ -31,6 +29,12 @@ $config = PhpCsFixer\Config::create()
         'binary_operator_spaces' => [
             'default' => 'align',
         ],
+        'method_chaining_indentation' => false,
+        'phpdoc_types_order' => [
+            'null_adjustment' => 'always_last',
+        ],
+        'php_unit_internal_class' => false,
+        'php_unit_test_class_requires_covers' => false,
     ])
     ->setFinder($finder)
 ;

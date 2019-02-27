@@ -50,20 +50,25 @@ final class DompdfWrapperTest extends TestCase
 
         $this->dompdfFactory
             ->method('create')
-            ->willReturn($this->dompdf);
+            ->willReturn($this->dompdf)
+        ;
 
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
-            ->with($this->equalTo($input));
+            ->with($this->equalTo($input))
+        ;
         $this->dompdf->expects($this->once())
-            ->method('render');
+            ->method('render')
+        ;
         $this->dompdf->expects($this->once())
             ->method('stream')
-            ->with($this->equalTo('file.pdf'));
+            ->with($this->equalTo('file.pdf'))
+        ;
 
         $this->eventDispatcher->expects($this->once())
             ->method('dispatch')
-            ->with($this->equalTo(DompdfEvents::STREAM));
+            ->with($this->equalTo(DompdfEvents::STREAM))
+        ;
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf');
     }
@@ -80,20 +85,25 @@ final class DompdfWrapperTest extends TestCase
         $this->dompdfFactory
             ->method('create')
             ->with($this->equalTo(['tempDir' => 'bar']))
-            ->willReturn($this->dompdf);
+            ->willReturn($this->dompdf)
+        ;
 
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
-            ->with($this->equalTo($output));
+            ->with($this->equalTo($output))
+        ;
         $this->dompdf->expects($this->once())
-            ->method('render');
+            ->method('render')
+        ;
         $this->dompdf->expects($this->once())
             ->method('stream')
-            ->with($this->equalTo('file.pdf'));
+            ->with($this->equalTo('file.pdf'))
+        ;
 
         $this->eventDispatcher->expects($this->once())
             ->method('dispatch')
-            ->with($this->equalTo(DompdfEvents::STREAM));
+            ->with($this->equalTo(DompdfEvents::STREAM))
+        ;
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf', ['tempDir' => 'bar']);
     }
@@ -106,20 +116,25 @@ final class DompdfWrapperTest extends TestCase
 
         $this->dompdfFactory
             ->method('create')
-            ->willReturn($this->dompdf);
+            ->willReturn($this->dompdf)
+        ;
 
         $this->dompdf->expects($this->once())
             ->method('loadHtml')
-            ->with($this->equalTo($input));
+            ->with($this->equalTo($input))
+        ;
         $this->dompdf->expects($this->once())
-            ->method('render');
+            ->method('render')
+        ;
         $this->dompdf->expects($this->once())
             ->method('output')
-            ->willReturn('BINARY_CONTENT');
+            ->willReturn('BINARY_CONTENT')
+        ;
 
         $this->eventDispatcher->expects($this->once())
             ->method('dispatch')
-            ->with($this->equalTo(DompdfEvents::OUTPUT));
+            ->with($this->equalTo(DompdfEvents::OUTPUT))
+        ;
 
         $this->dompdfWrapper->getPdf($input, ['tempDir' => 'bar']);
     }
