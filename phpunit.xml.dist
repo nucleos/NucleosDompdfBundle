@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" bootstrap="tests/bootstrap.php">
+  <php>
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak_vendors"/>
+  </php>
   <testsuites>
     <testsuite name="DompdfBundle Test Suite">
       <directory>./tests/</directory>
