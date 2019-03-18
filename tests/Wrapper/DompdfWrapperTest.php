@@ -165,10 +165,10 @@ final class DompdfWrapperTest extends TestCase
     }
 
     /**
-     * @param string $input
-     * @param null   $response
+     * @param string      $input
+     * @param string|null $response
      */
-    private function prepareOutput(string $input, $response = null): void
+    private function prepareOutput(string $input, string $response = null): void
     {
         $this->dompdfFactory
             ->method('create')
