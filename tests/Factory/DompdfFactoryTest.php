@@ -39,7 +39,7 @@ final class DompdfFactoryTest extends TestCase
         $options = $dompdf->getOptions();
 
         $this->assertInstanceOf(Options::class, $options);
-        $this->assertSame('100', $options->getDpi());
+        $this->assertSame(100, $options->getDpi());
     }
 
     public function testCreateWithOptions(): void
@@ -53,6 +53,6 @@ final class DompdfFactoryTest extends TestCase
 
         $this->assertInstanceOf(Options::class, $options);
         $this->assertSame('foo', $options->getTempDir());
-        $this->assertSame('200', $options->getDpi());
+        $this->assertSame(200, $options->getDpi());
     }
 }
