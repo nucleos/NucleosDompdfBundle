@@ -28,7 +28,7 @@ final class DompdfFactoryTest extends TestCase
     protected function setUp(): void
     {
         $this->dompdfFactory = new DompdfFactory([
-            'dpi' => '100',
+            'dpi' => 100,
         ]);
     }
 
@@ -45,7 +45,7 @@ final class DompdfFactoryTest extends TestCase
     public function testCreateWithOptions(): void
     {
         $dompdf = $this->dompdfFactory->create([
-            'dpi'     => '200',
+            'dpi'     => 200,
             'tempDir' => 'foo',
         ]);
 
