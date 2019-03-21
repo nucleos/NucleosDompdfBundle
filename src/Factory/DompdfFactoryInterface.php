@@ -18,7 +18,7 @@ interface DompdfFactoryInterface
     /**
      * Creates a new dompdf instance.
      *
-     * @param array $options
+     * @param array<string, mixed> $options
      *
      * @return Dompdf
      */

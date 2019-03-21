@@ -17,12 +17,12 @@ use Dompdf\Options;
 final class DompdfFactory implements DompdfFactoryInterface
 {
     /**
-     * @var string[]
+     * @var array<string, mixed>
      */
     private $options;
 
     /**
-     * @param string[] $options
+     * @param array<string, mixed> $options
      */
     public function __construct(array $options = [])
     {
