@@ -1,19 +1,12 @@
+includes:
+    - vendor-bin/phpstan/vendor/jangregor/phpstan-prophecy/src/extension.neon
+    - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/rules.neon
+
 parameters:
     autoload_files:
         - vendor-bin/test/vendor/autoload.php
 
-    includes:
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-deprecation-rules/rules.neon
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/extension.neon
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/rules.neon
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-strict-rules/rules.neon
-
     ignoreErrors:
-        # PHPUnit
-        - '#Parameter \#1 \$dompdfFactory of class Core23\\DompdfBundle\\Wrapper\\DompdfWrapper constructor expects Core23\\DompdfBundle\\Factory\\DompdfFactoryInterface, PHPUnit\\Framework\\MockObject\\MockObject given.#'
-        - '#Parameter \#2 \$eventDispatcher of class Core23\\DompdfBundle\\Wrapper\\DompdfWrapper constructor expects Symfony\\Component\\EventDispatcher\\EventDispatcherInterface|null, PHPUnit\\Framework\\MockObject\\MockObject given.#'
-        - '#Parameter \#1 \$pdf of class Core23\\DompdfBundle\\Event\\OutputEvent constructor expects Dompdf\\Dompdf, PHPUnit\\Framework\\MockObject\\MockObject given.#'
-        - '#Parameter \#1 \$pdf of class Core23\\DompdfBundle\\Event\\StreamEvent constructor expects Dompdf\\Dompdf, PHPUnit\\Framework\\MockObject\\MockObject given.#'
-
         # Symfony DI
         - '#Cannot call method defaultValue\(\) on Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface\|null.#'
