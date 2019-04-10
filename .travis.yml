@@ -24,7 +24,6 @@ env:
 
 stages:
     - lint
-    - dependencies
     - test
 
 matrix:
@@ -36,7 +35,7 @@ matrix:
     - stage: lint
       php: 7.3
       env: TARGET=phpstan
-    - stage: dependencies
+    - stage: lint
       php: 7.3
       env: TARGET=checkdeps
     - stage: test
