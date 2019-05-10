@@ -26,7 +26,7 @@ final class OutputEventTest extends TestCase
 
         $event = new OutputEvent($dompdf, $html);
 
-        $this->assertSame($dompdf, $event->getPdf());
-        $this->assertSame($html, $event->getHtml());
+        static::assertSame($dompdf, $event->getPdf());
+        static::assertSame($html, $event->getHtml());
     }
 }

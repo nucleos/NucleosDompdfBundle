@@ -27,8 +27,8 @@ final class StreamEventTest extends TestCase
 
         $event = new StreamEvent($dompdf, $filename, $html);
 
-        $this->assertSame($dompdf, $event->getPdf());
-        $this->assertSame($filename, $event->getFilename());
-        $this->assertSame($html, $event->getHtml());
+        static::assertSame($dompdf, $event->getPdf());
+        static::assertSame($filename, $event->getFilename());
+        static::assertSame($html, $event->getHtml());
     }
 }
