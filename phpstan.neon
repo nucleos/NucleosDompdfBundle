@@ -10,3 +10,6 @@ parameters:
     ignoreErrors:
         # Symfony DI
         - '#Cannot call method defaultValue\(\) on Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface\|null.#'
+
+        # Symfony Contracts
+        - '#Method Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface::dispatch\(\) invoked with 2 parameters, 1 required.#'
