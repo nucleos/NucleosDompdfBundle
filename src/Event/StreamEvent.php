@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Core23\DompdfBundle\Event;
 
 use Dompdf\Dompdf;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 final class StreamEvent extends Event
 {

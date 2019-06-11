@@ -17,7 +17,7 @@ use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class DompdfWrapperTest extends TestCase
 {
@@ -68,7 +68,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->eventDispatcher->expects(static::once())
             ->method('dispatch')
-            ->with(static::equalTo(DompdfEvents::STREAM))
+            ->with(static::anything(), static::equalTo(DompdfEvents::STREAM))
         ;
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf');
@@ -103,7 +103,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->eventDispatcher->expects(static::once())
             ->method('dispatch')
-            ->with(static::equalTo(DompdfEvents::STREAM))
+            ->with(static::anything(), static::equalTo(DompdfEvents::STREAM))
         ;
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf', ['tempDir' => 'bar']);
@@ -119,7 +119,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->eventDispatcher->expects(static::once())
             ->method('dispatch')
-            ->with(static::equalTo(DompdfEvents::OUTPUT))
+            ->with(static::anything(), static::equalTo(DompdfEvents::OUTPUT))
         ;
 
         $this->dompdfWrapper->getPdf($input, ['tempDir' => 'bar']);
@@ -135,7 +135,7 @@ final class DompdfWrapperTest extends TestCase
 
         $this->eventDispatcher->expects(static::once())
             ->method('dispatch')
-            ->with(static::equalTo(DompdfEvents::OUTPUT))
+            ->with(static::anything(), static::equalTo(DompdfEvents::OUTPUT))
         ;
 
         $this->dompdfWrapper->getPdf($input);
