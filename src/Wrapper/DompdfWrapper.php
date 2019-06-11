@@ -16,8 +16,8 @@ use Core23\DompdfBundle\Event\OutputEvent;
 use Core23\DompdfBundle\Event\StreamEvent;
 use Core23\DompdfBundle\Exception\PdfException;
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class DompdfWrapper implements DompdfWrapperInterface
 {
@@ -52,7 +52,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
 
         if ($this->eventDispatcher instanceof EventDispatcherInterface) {
             $event = new StreamEvent($pdf, $filename, $html);
-            $this->eventDispatcher->dispatch(DompdfEvents::STREAM, $event);
+            $this->eventDispatcher->dispatch($event, DompdfEvents::STREAM);
         }
 
         $pdf->stream($filename, $options);
@@ -86,7 +86,7 @@ final class DompdfWrapper implements DompdfWrapperInterface
 
         if ($this->eventDispatcher instanceof EventDispatcherInterface) {
             $event = new OutputEvent($pdf, $html);
-            $this->eventDispatcher->dispatch(DompdfEvents::OUTPUT, $event);
+            $this->eventDispatcher->dispatch($event, DompdfEvents::OUTPUT);
         }
 
         $out = $pdf->output();
