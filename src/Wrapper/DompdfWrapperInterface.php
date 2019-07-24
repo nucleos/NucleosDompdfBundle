@@ -33,8 +33,6 @@ interface DompdfWrapperInterface
      * @param array  $options The rendering options (see dompdf docs)
      *
      * @throws PdfException
-     *
-     * @return string
      */
     public function getPdf(string $html, array $options = []): string;
 }

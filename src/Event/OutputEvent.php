@@ -26,10 +26,6 @@ final class OutputEvent extends Event
      */
     private $html;
 
-    /**
-     * @param Dompdf $pdf
-     * @param string $html
-     */
     public function __construct(Dompdf $pdf, string $html)
     {
         $this->pdf      = $pdf;
@@ -38,8 +34,6 @@ final class OutputEvent extends Event
 
     /**
      * Returns the dompdf instance.
-     *
-     * @return Dompdf
      */
     public function getPdf(): Dompdf
     {
@@ -48,8 +42,6 @@ final class OutputEvent extends Event
 
     /**
      * Returns the html.
-     *
-     * @return string
      */
     public function getHtml(): string
     {

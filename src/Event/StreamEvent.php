@@ -31,11 +31,6 @@ final class StreamEvent extends Event
      */
     private $html;
 
-    /**
-     * @param Dompdf $pdf
-     * @param string $filename
-     * @param string $html
-     */
     public function __construct(Dompdf $pdf, string $filename, string $html)
     {
         $this->pdf      = $pdf;
@@ -45,8 +40,6 @@ final class StreamEvent extends Event
 
     /**
      * Returns the dompdf instance.
-     *
-     * @return Dompdf
      */
     public function getPdf(): Dompdf
     {
@@ -55,8 +48,6 @@ final class StreamEvent extends Event
 
     /**
      * Returns the filename.
-     *
-     * @return string
      */
     public function getFilename(): string
     {
@@ -65,8 +56,6 @@ final class StreamEvent extends Event
 
     /**
      * Returns the html.
-     *
-     * @return string
      */
     public function getHtml(): string
     {
