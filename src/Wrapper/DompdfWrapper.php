@@ -31,10 +31,6 @@ final class DompdfWrapper implements DompdfWrapperInterface
      */
     private $eventDispatcher;
 
-    /**
-     * @param DompdfFactoryInterface        $dompdfFactory
-     * @param EventDispatcherInterface|null $eventDispatcher
-     */
     public function __construct(DompdfFactoryInterface $dompdfFactory, EventDispatcherInterface $eventDispatcher = null)
     {
         $this->dompdfFactory   = $dompdfFactory;
@@ -58,13 +54,6 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf->stream($filename, $options);
     }
 
-    /**
-     * @param string $html
-     * @param string $filename
-     * @param array  $options
-     *
-     * @return StreamedResponse
-     */
     public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse
     {
         $response = new StreamedResponse();

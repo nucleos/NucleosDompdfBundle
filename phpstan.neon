@@ -1,7 +1,5 @@
 includes:
     - vendor-bin/phpstan/vendor/jangregor/phpstan-prophecy/src/extension.neon
-    - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/extension.neon
-    - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/rules.neon
 
 parameters:
     autoload_files:
