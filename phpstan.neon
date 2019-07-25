@@ -1,3 +1,6 @@
+includes:
+    - vendor-bin/phpstan/vendor/jangregor/phpstan-prophecy/src/extension.neon
+
 parameters:
     autoload_files:
         - vendor-bin/test/vendor/autoload.php
