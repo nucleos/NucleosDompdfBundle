@@ -32,9 +32,6 @@ final class DompdfWrapperTest extends TestCase
 
     private $dompdf;
 
-    /**
-     * {@inheritdoc}
-     */
     protected function setUp(): void
     {
         $this->dompdf          = $this->createMock(Dompdf::class);
