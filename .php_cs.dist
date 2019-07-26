@@ -35,6 +35,8 @@ $config = PhpCsFixer\Config::create()
         ],
         'php_unit_internal_class' => false,
         'php_unit_test_class_requires_covers' => false,
+        'no_superfluous_phpdoc_tags' => true,
+        'static_lambda' => true,
     ])
     ->setFinder($finder)
 ;
