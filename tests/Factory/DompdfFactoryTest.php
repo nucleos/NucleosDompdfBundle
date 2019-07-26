@@ -22,9 +22,6 @@ final class DompdfFactoryTest extends TestCase
      */
     private $dompdfFactory;
 
-    /**
-     * {@inheritdoc}
-     */
     protected function setUp(): void
     {
         $this->dompdfFactory = new DompdfFactory([

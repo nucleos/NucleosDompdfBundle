@@ -29,17 +29,11 @@ final class DompdfFactory implements DompdfFactoryInterface
         $this->options = $options;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function create(array $options = []): Dompdf
     {
         return new Dompdf($this->createOptions($options));
     }
 
-    /**
-     * {@inheritdoc}
-     */
     private function createOptions(array $options = []): Options
     {
         return new Options(array_merge($this->options, $options));

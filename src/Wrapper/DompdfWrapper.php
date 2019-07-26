@@ -37,9 +37,6 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $this->eventDispatcher = $eventDispatcher;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function streamHtml(string $html, string $filename, array $options = []): void
     {
         $pdf = $this->dompdfFactory->create($options);
@@ -64,9 +61,6 @@ final class DompdfWrapper implements DompdfWrapperInterface
         return $response;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getPdf(string $html, array $options = []): string
     {
         $pdf = $this->dompdfFactory->create($options);
