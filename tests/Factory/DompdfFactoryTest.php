@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Core23\DompdfBundle\Tests\Factory;
 
 use Core23\DompdfBundle\Factory\DompdfFactory;
-use Dompdf\Options;
 use PHPUnit\Framework\TestCase;
 
 final class DompdfFactoryTest extends TestCase
@@ -35,7 +34,6 @@ final class DompdfFactoryTest extends TestCase
 
         $options = $dompdf->getOptions();
 
-        static::assertInstanceOf(Options::class, $options);
         static::assertSame(100, $options->getDpi());
     }
 
@@ -48,7 +46,6 @@ final class DompdfFactoryTest extends TestCase
 
         $options = $dompdf->getOptions();
 
-        static::assertInstanceOf(Options::class, $options);
         static::assertSame('foo', $options->getTempDir());
         static::assertSame(200, $options->getDpi());
     }
