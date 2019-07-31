@@ -5,11 +5,11 @@
     <service alias="Core23\DompdfBundle\Factory\DompdfFactory" id="dompdf.factory" public="true"/>
     <service alias="Core23\DompdfBundle\Wrapper\DompdfWrapper" id="Core23\DompdfBundle\Wrapper\DompdfWrapperInterface" public="true"/>
     <service alias="Core23\DompdfBundle\Factory\DompdfFactory" id="Core23\DompdfBundle\Factory\DompdfFactoryInterface" public="true"/>
-    <service id="Core23\DompdfBundle\Wrapper\DompdfWrapper" public="false">
+    <service id="Core23\DompdfBundle\Wrapper\DompdfWrapper">
       <argument type="service" id="dompdf.factory"/>
       <argument type="service" id="event_dispatcher" on-invalid="null"/>
     </service>
-    <service id="Core23\DompdfBundle\Factory\DompdfFactory" public="false">
+    <service id="Core23\DompdfBundle\Factory\DompdfFactory">
       <argument>%core23_dompdf.options%</argument>
     </service>
   </services>
