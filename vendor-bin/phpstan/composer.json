@@ -7,8 +7,5 @@
         "phpstan/phpstan-phpunit": "^0.11",
         "phpstan/phpstan-strict-rules": "^0.11",
         "phpstan/phpstan-symfony": "^0.11"
-    },
-    "conflict": {
-        "phpunit/phpunit": ">=8.0"
     }
 }
