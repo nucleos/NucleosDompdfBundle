@@ -3,7 +3,6 @@ language: php
 php:
   - 7.2
   - 7.3
-  - nightly
 
 sudo: false
 
@@ -48,7 +47,6 @@ matrix:
       php: 7.3
       env: SYMFONY_VERSION=4.2.*
   allow_failures:
-    - php: nightly
     - php: 7.3
       env: TARGET=checkdeps
 
