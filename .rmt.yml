@@ -4,30 +4,16 @@ prerequisites:
     - working-copy-check
     - display-last-changes
     - composer-json-check:
-          composer: composer
-    - command:
-          cmd: composer update
-    - tests-check:
-          command: vendor/bin/phpunit --stop-on-failure
-    - command:
-          cmd: vendor/bin/phpstan analyse
-    - command:
-          cmd: vendor/bin/php-cs-fixer fix --verbose
-    - composer-security-check
+        composer: composer
     - composer-stability-check
     - command:
-          cmd: vendor/bin/composer-require-checker check composer.json
-          stop_on_error: false
-    - command:
-          cmd: git remote -v
+        cmd: composer outdated
 
 pre-release-actions:
-    composer-update: ~
     changelog-update:
         format: simple
         dump-commits: true
         exclude-merge-commits: true
-    vcs-commit: ~
 
 version-generator: semantic
 version-persister: vcs-tag
