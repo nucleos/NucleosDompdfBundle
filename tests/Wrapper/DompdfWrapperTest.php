@@ -161,7 +161,7 @@ final class DompdfWrapperTest extends TestCase
         $response->sendContent();
     }
 
-    private function prepareOutput(string $input, string $response = null): void
+    private function prepareOutput(string $input, ?string $response = null): void
     {
         $this->dompdfFactory
             ->method('create')
