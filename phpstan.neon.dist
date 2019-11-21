@@ -13,9 +13,6 @@ parameters:
         - '#Cannot call method defaultValue\(\) on Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface\|null.#'
         - "/Call to function method_exists.. with 'Symfony.+' and 'getRootNode' will always evaluate to false./"
 
-        # Symfony Contracts
-        - '#Method Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface::dispatch\(\) invoked with 2 parameters, 1 required.#'
-
         # PHPUnit
         -
             message: '#Property .*::\$.* has no typehint specified.#'
