@@ -42,9 +42,6 @@ matrix:
       env: COMPOSER_FLAGS="--prefer-lowest"
     - stage: test
       php: 7.3
-      env: SYMFONY_VERSION=3.4.*
-    - stage: test
-      php: 7.3
       env: SYMFONY_VERSION=4.2.*
     - stage: test
       php: 7.3
