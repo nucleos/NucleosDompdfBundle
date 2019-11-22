@@ -11,14 +11,8 @@ parameters:
     ignoreErrors:
         # Symfony DI
         - '#Cannot call method defaultValue\(\) on Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface\|null.#'
-        - "/Call to function method_exists.. with 'Symfony.+' and 'getRootNode' will always evaluate to false./"
 
         # PHPUnit
         -
             message: '#Property .*::\$.* has no typehint specified.#'
             path: tests/
-
-        -
-            message: "#^Call to an undefined method Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\TreeBuilder::root\\(\\)\\.$#"
-            count: 1
-            path: src/DependencyInjection/Configuration.php
