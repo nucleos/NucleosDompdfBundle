@@ -17,3 +17,8 @@ parameters:
         -
             message: '#Property .*::\$.* has no typehint specified.#'
             path: tests/
+
+        -
+            message: "#^Call to an undefined method Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\TreeBuilder::root\\(\\)\\.$#"
+            count: 1
+            path: src/DependencyInjection/Configuration.php
