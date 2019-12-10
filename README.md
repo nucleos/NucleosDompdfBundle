@@ -8,10 +8,8 @@ DompdfBundle
 [![Monthly Downloads](https://poser.pugx.org/core23/dompdf-bundle/d/monthly)](https://packagist.org/packages/core23/dompdf-bundle)
 [![Daily Downloads](https://poser.pugx.org/core23/dompdf-bundle/d/daily)](https://packagist.org/packages/core23/dompdf-bundle)
 
-[![Build Status](https://travis-ci.org/core23/DompdfBundle.svg)](https://travis-ci.org/core23/DompdfBundle)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/DompdfBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/core23/DompdfBundle)
-[![Code Climate](https://codeclimate.com/github/core23/DompdfBundle/badges/gpa.svg)](https://codeclimate.com/github/core23/DompdfBundle)
-[![Coverage Status](https://coveralls.io/repos/core23/DompdfBundle/badge.svg)](https://coveralls.io/r/core23/DompdfBundle)
+[![Continuous Integration](https://github.com/core23/DompdfBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/DompdfBundle/actions)
+[![Code Coverage](https://codecov.io/gh/core23/DompdfBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/DompdfBundle)
 
 This bundle provides a wrapper for using [dompdf] inside symfony.
 
