@@ -114,6 +114,10 @@ jobs:
           - lowest
           - highest
 
+        symfony:
+          - ~4.2
+          - ~5.0
+
     steps:
       - name: "Checkout"
         uses: actions/checkout@v1
@@ -132,6 +136,9 @@ jobs:
           key: php${{ matrix.php-version }}-composer-
           restore-keys: |
             php${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-
+
+      - name: "Lock symfony version"
+        run: composer require "symfony/symfony:${{ matrix.symfony }}" --no-update
 
       - name: "Install lowest dependencies with composer"
         if: matrix.dependencies == 'lowest'
