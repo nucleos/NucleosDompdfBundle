@@ -1,46 +1,12 @@
 # These settings are synced to GitHub by https://probot.github.io/apps/settings/
 
+_extends: .github
+
 repository:
-  default_branch: master
-  private: false
-  allow_squash_merge: true
-  allow_merge_commit: true
-  allow_rebase_merge: true
-  has_issues: true
-  has_pages: false
-  has_projects: false
-  has_wiki: false
-
-labels:
-  - name: 'automerge'
-    color: '#ededed'
-
-  - name: 'bc break'
-    color: '#ff0000'
-
-  - name: 'bugfix'
-    color: '#fc2929'
-
-  - name: 'docs'
-    color: '#fbca04'
-
-  - name: 'feature'
-    color: '#0e8a16'
-
-  - name: 'dependency'
-    color: '#5fb2d8'
-
-  - name: 'help wanted'
-    color: '#159818'
-
-  - name: 'invalid'
-    color: '#e6e6e6'
-
-  - name: 'pedantic'
-    color: '#DDDDDD'
-
-  - name: 'question'
-    color: '#cc317c'
+  name: DompdfBundle
+  description: This bundle provides a wrapper for using dompdf inside symfony.
+  homepage: https://core23.de
+  topics: symfony, symfony-bundle, bundle, php, dompdf, pdf, wrapper
 
 branches:
   - name: master
