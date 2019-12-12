@@ -4,9 +4,10 @@
   "description": "This bundle provides a wrapper for using dompdf inside symfony.",
   "keywords": [
     "symfony",
-    "pdf",
+    "bundle",
     "dompdf",
-    "bundle"
+    "pdf",
+    "wrapper"
   ],
   "homepage": "https://core23.de",
   "license": "MIT",
