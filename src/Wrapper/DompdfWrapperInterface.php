@@ -18,9 +18,9 @@ interface DompdfWrapperInterface
     /**
      * Renders a pdf document and streams it to the browser.
      *
-     * @param string   $html     The html sourcecode to render
-     * @param string   $filename The name of the docuemtn
-     * @param string[] $options  The rendering options (see dompdf docs)
+     * @param string               $html     The html sourcecode to render
+     * @param string               $filename The name of the docuemtn
+     * @param array<string, mixed> $options  The rendering options (see dompdf docs)
      *
      * @deprecated use getStreamResponse instead
      */
@@ -29,8 +29,8 @@ interface DompdfWrapperInterface
     /**
      * Renders a pdf document and return the binary content.
      *
-     * @param string $html    The html sourcecode to render
-     * @param array  $options The rendering options (see dompdf docs)
+     * @param string               $html    The html sourcecode to render
+     * @param array<string, mixed> $options The rendering options (see dompdf docs)
      *
      * @throws PdfException
      */

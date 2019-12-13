@@ -34,6 +34,9 @@ final class DompdfFactory implements DompdfFactoryInterface
         return new Dompdf($this->createOptions($options));
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     private function createOptions(array $options = []): Options
     {
         return new Options(array_merge($this->options, $options));
