@@ -51,6 +51,9 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $pdf->stream($filename, $options);
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse
     {
         $response = new StreamedResponse();
