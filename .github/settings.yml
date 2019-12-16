@@ -29,6 +29,7 @@ branches:
           - "Tests (7.4, highest, ~4.2)"
           - "Tests (7.4, highest, ~5.0)"
           - "Code Coverage (7.4)"
+          - "Mutation Tests (7.4)"
         strict: true
 
       required_pull_request_reviews: null
