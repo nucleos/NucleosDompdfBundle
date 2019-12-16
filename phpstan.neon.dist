@@ -16,3 +16,18 @@ parameters:
         -
             message: '#Property .*::\$.* has no typehint specified.#'
             path: tests/
+
+        -
+            message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+            count: 1
+            path: tests/BundleIntegrationTest.php
+
+        -
+            message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+            count: 1
+            path: tests/BundleIntegrationTest.php
+
+        -
+            message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+            count: 1
+            path: tests/BundleIntegrationTest.php
