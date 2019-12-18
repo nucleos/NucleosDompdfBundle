@@ -36,19 +36,48 @@ return [
 
 ## Usage
 
-Whenever you need to turn a html page into a PDF just use this anywhere in your controller:
+Whenever you need to turn a html page into a PDF use dependency injection for your service:
 
 ```php
-// Set some html and get the service
-$html = '<h1>Sample Title</h1><p>Lorem Ipsum</p>';
-$dompdf = $this->get('dompdf');
+final class MyService 
+{
+    public function __construct(DompdfFactoryInterface $factory) 
+    {
+        $this->factory = $factory;
+    }
+    
+    public function render()
+    {
+        // ...
+        $this->factory->create();
+        // ...
+    }
+}
 
-// Get a StreamResponse for your controller to return the pdf to the browser
-$response = $dompdf->getStreamResponse($html, "document.pdf");
-$response->send();
+final class MyOtherService 
+{
+    public function __construct(DompdfWrapperInterface $wrapper) 
+    {
+        $this->wrapper = $wrapper;
+    }
+    
+    public function stream()
+    {
+        // ...
+        $html = '<h1>Sample Title</h1><p>Lorem Ipsum</p>';
 
-// Get binary content of the pdf document
-$dompdf->getPdf($html);
+        $response = $this->wrapper->getStreamResponse($html, "document.pdf");
+        $response->send();
+        // ...
+    }
+    
+    public function binaryContent()
+    {
+        // ...
+        return $this->wrapper->getPdf($html);
+        // ...
+    }
+}
 ```
 
 If you use Twig to create the content, make sure to use `renderView()` instead of `render()`.
@@ -59,7 +88,7 @@ Otherwise you might get the following HTTP header printed inside your PDF:
 $html = $this->renderView('my_pdf.html.twig', array(
     // ...
 ));
-$dompdf->getStreamResponse($html, 'document.pdf');
+$this->wrapper->getStreamResponse($html, 'document.pdf');
 ```
 
 ### Configure the Bundle
