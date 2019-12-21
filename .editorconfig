@@ -7,19 +7,22 @@ charset = utf-8
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{yaml,yml,twig,php}]
+[*.php]
+indent_size = 4
+
+[*.twig]
+indent_size = 4
+
+[*.{yaml,yml}]
 indent_size = 4
 
 [*.{js,scss,css}]
 indent_size = 2
 
-[.travis.yml]
-indent_size = 2
-
 [Jenkinsfile]
 indent_size = 2
 
-[*.{json}]
+[*.json]
 indent_size = 4
 
 [Makefile]
