@@ -1,6 +1,9 @@
-build
-phpunit.xml
+.php_cs.cache
+.phpunit.result.cache
 coverage
 composer.lock
-vendor
-.php_cs.cache
+phpunit.xml
+/build
+/vendor
+/vendor-bin
+!/vendor-bin/*/composer.json
