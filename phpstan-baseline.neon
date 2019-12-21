@@ -1,0 +1,37 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot call method defaultValue\\(\\) on Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeParentInterface\\|null\\.$#"
+			count: 1
+			path: src/DependencyInjection/Configuration.php
+
+		-
+			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+			count: 1
+			path: tests/BundleIntegrationTest.php
+
+		-
+			message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			count: 1
+			path: tests/BundleIntegrationTest.php
+
+		-
+			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			count: 1
+			path: tests/BundleIntegrationTest.php
+
+		-
+			message: "#^Property Core23\\\\DompdfBundle\\\\Tests\\\\Wrapper\\\\DompdfWrapperTest\\:\\:\\$dompdfFactory has no typehint specified\\.$#"
+			count: 1
+			path: tests/Wrapper/DompdfWrapperTest.php
+
+		-
+			message: "#^Property Core23\\\\DompdfBundle\\\\Tests\\\\Wrapper\\\\DompdfWrapperTest\\:\\:\\$eventDispatcher has no typehint specified\\.$#"
+			count: 1
+			path: tests/Wrapper/DompdfWrapperTest.php
+
+		-
+			message: "#^Property Core23\\\\DompdfBundle\\\\Tests\\\\Wrapper\\\\DompdfWrapperTest\\:\\:\\$dompdf has no typehint specified\\.$#"
+			count: 1
+			path: tests/Wrapper/DompdfWrapperTest.php
+

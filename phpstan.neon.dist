@@ -1,3 +1,6 @@
+includes:
+    - phpstan-baseline.neon
+
 parameters:
     level: max
 
@@ -8,26 +11,5 @@ parameters:
     autoload_files:
         - vendor-bin/test/vendor/autoload.php
 
-    ignoreErrors:
-        # Symfony DI
-        - '#Cannot call method defaultValue\(\) on Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface\|null.#'
-
-        # PHPUnit
-        -
-            message: '#Property .*::\$.* has no typehint specified.#'
-            path: tests/
-
-        -
-            message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
-            count: 1
-            path: tests/BundleIntegrationTest.php
-
-        -
-            message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
-            count: 1
-            path: tests/BundleIntegrationTest.php
-
-        -
-            message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
-            count: 1
-            path: tests/BundleIntegrationTest.php
+    excludes_analyse:
+        - tests/bootstrap.php
