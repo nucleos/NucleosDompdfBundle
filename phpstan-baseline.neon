@@ -20,18 +20,3 @@ parameters:
 			count: 1
 			path: tests/BundleIntegrationTest.php
 
-		-
-			message: "#^Property Core23\\\\DompdfBundle\\\\Tests\\\\Wrapper\\\\DompdfWrapperTest\\:\\:\\$dompdfFactory has no typehint specified\\.$#"
-			count: 1
-			path: tests/Wrapper/DompdfWrapperTest.php
-
-		-
-			message: "#^Property Core23\\\\DompdfBundle\\\\Tests\\\\Wrapper\\\\DompdfWrapperTest\\:\\:\\$eventDispatcher has no typehint specified\\.$#"
-			count: 1
-			path: tests/Wrapper/DompdfWrapperTest.php
-
-		-
-			message: "#^Property Core23\\\\DompdfBundle\\\\Tests\\\\Wrapper\\\\DompdfWrapperTest\\:\\:\\$dompdf has no typehint specified\\.$#"
-			count: 1
-			path: tests/Wrapper/DompdfWrapperTest.php
-
