@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Core23\DompdfBundle\Exception;
 
-final class PdfException extends \Exception
+use Exception;
+
+final class PdfException extends Exception
 {
 }
