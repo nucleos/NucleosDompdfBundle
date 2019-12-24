@@ -16,13 +16,20 @@ use Core23\DompdfBundle\Exception\PdfException;
 use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
 use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class DompdfWrapperTest extends TestCase
 {
+    /**
+     * @var DompdfFactoryInterface&MockObject
+     */
     private $dompdfFactory;
 
+    /**
+     * @var MockObject&EventDispatcherInterface
+     */
     private $eventDispatcher;
 
     /**
@@ -30,6 +37,9 @@ final class DompdfWrapperTest extends TestCase
      */
     private $dompdfWrapper;
 
+    /**
+     * @var Dompdf&MockObject
+     */
     private $dompdf;
 
     protected function setUp(): void
