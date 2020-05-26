@@ -19,4 +19,3 @@ update_configs:
       - "core23"     
     package_manager: "php:composer"
     update_schedule: "live"
-    version_requirement_updates: "increase_versions_if_necessary"
