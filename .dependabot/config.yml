@@ -3,8 +3,11 @@
 version: 1
 
 update_configs:
-  - package_manager: "php:composer"
-    directory: "/"    
+  - commit_message:
+      prefix: "[DEP]"
+    default_labels:
+      - "dependency"
+    directory: "/"
     automerged_updates:
       - match:
           dependency_type: "development"
@@ -14,4 +17,6 @@ update_configs:
       - "dependency"
     default_reviewers:
       - "core23"     
-    update_schedule: "daily"
+    package_manager: "php:composer"
+    update_schedule: "live"
+    version_requirement_updates: "widen_ranges"
