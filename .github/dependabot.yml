@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  versioning-strategy: increase-if-necessary
+  schedule:
+    interval: daily
+    time: '04:00'
+  open-pull-requests-limit: 99
+  reviewers:
+  - core23
+  assignees:
+  - core23
+  labels:
+  - dependency
