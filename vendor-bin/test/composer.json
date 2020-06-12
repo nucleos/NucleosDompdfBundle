@@ -1,8 +1,8 @@
 {
-    "require": {
-        "infection/infection": "^0.15",
-        "matthiasnoback/symfony-dependency-injection-test": "^4.0",
-        "phpunit/phpunit": "^8.2",
-        "symfony/phpunit-bridge": "^4.1"
-    }
+  "require": {
+    "infection/infection": "^0.15",
+    "matthiasnoback/symfony-dependency-injection-test": "^4.0",
+    "phpunit/phpunit": "^8.5 || ^9.0",
+    "symfony/phpunit-bridge": "^5.1"
+  }
 }
