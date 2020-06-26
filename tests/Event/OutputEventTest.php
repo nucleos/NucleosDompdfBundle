@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests\Event;
+namespace Nucleos\DompdfBundle\Tests\Event;
 
-use Core23\DompdfBundle\Event\OutputEvent;
 use Dompdf\Dompdf;
+use Nucleos\DompdfBundle\Event\OutputEvent;
 use PHPUnit\Framework\TestCase;
 
 final class OutputEventTest extends TestCase

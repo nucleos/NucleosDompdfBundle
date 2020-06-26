@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle;
+namespace Nucleos\DompdfBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class Core23DompdfBundle extends Bundle
+final class NucleosDompdfBundle extends Bundle
 {
 }

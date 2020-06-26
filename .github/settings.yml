@@ -3,9 +3,9 @@
 _extends: .github
 
 repository:
-  name: DompdfBundle
+  name: NucleosDompdfBundle
   description: This bundle provides a wrapper for using dompdf inside symfony.
-  homepage: https://core23.de
+  homepage: https://nucleos.rocks
   topics: symfony, symfony-bundle, bundle, php, dompdf, pdf, wrapper
 
 branches:

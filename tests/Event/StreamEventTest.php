@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests\Event;
+namespace Nucleos\DompdfBundle\Tests\Event;
 
-use Core23\DompdfBundle\Event\StreamEvent;
 use Dompdf\Dompdf;
+use Nucleos\DompdfBundle\Event\StreamEvent;
 use PHPUnit\Framework\TestCase;
 
 final class StreamEventTest extends TestCase

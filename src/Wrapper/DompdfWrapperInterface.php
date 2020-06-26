@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Wrapper;
+namespace Nucleos\DompdfBundle\Wrapper;
 
-use Core23\DompdfBundle\Exception\PdfException;
+use Nucleos\DompdfBundle\Exception\PdfException;
 
 interface DompdfWrapperInterface
 {

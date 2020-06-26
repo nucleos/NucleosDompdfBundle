@@ -9,13 +9,13 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Wrapper;
+namespace Nucleos\DompdfBundle\Wrapper;
 
-use Core23\DompdfBundle\DompdfEvents;
-use Core23\DompdfBundle\Event\OutputEvent;
-use Core23\DompdfBundle\Event\StreamEvent;
-use Core23\DompdfBundle\Exception\PdfException;
-use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
+use Nucleos\DompdfBundle\DompdfEvents;
+use Nucleos\DompdfBundle\Event\OutputEvent;
+use Nucleos\DompdfBundle\Event\StreamEvent;
+use Nucleos\DompdfBundle\Exception\PdfException;
+use Nucleos\DompdfBundle\Factory\DompdfFactoryInterface;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
