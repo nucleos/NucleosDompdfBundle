@@ -9,7 +9,7 @@ repository:
   topics: symfony, symfony-bundle, bundle, php, dompdf, pdf, wrapper
 
 branches:
-  - name: master
+  - name: main
     protection:
       enforce_admins: false
       required_status_checks:
