@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests\DependencyInjection;
+namespace Nucleos\DompdfBundle\Tests\DependencyInjection;
 
-use Core23\DompdfBundle\DependencyInjection\Core23DompdfExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
+use Nucleos\DompdfBundle\DependencyInjection\NucleosDompdfExtension;
 
-final class Core23DompdfExtensionTest extends AbstractExtensionTestCase
+final class NucleosDompdfExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {
@@ -25,7 +25,7 @@ final class Core23DompdfExtensionTest extends AbstractExtensionTestCase
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('core23_dompdf.options', [
+        $this->assertContainerBuilderHasParameter('nucleos_dompdf.options', [
             'foo' => 'bar',
             'bar' => 'baz',
         ]);
@@ -34,7 +34,7 @@ final class Core23DompdfExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions(): array
     {
         return [
-            new Core23DompdfExtension(),
+            new NucleosDompdfExtension(),
         ];
     }
 }

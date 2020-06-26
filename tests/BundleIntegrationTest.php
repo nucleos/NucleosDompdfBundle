@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests;
+namespace Nucleos\DompdfBundle\Tests;
 
-use Core23\DompdfBundle\Tests\App\AppKernel;
+use Nucleos\DompdfBundle\Tests\App\AppKernel;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpKernel\Client;

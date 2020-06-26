@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests\App;
+namespace Nucleos\DompdfBundle\Tests\App;
 
-use Core23\DompdfBundle\Core23DompdfBundle;
-use Core23\DompdfBundle\Tests\App\Controller\SampleTestController;
+use Nucleos\DompdfBundle\NucleosDompdfBundle;
+use Nucleos\DompdfBundle\Tests\App\Controller\SampleTestController;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -32,7 +32,7 @@ final class AppKernel extends Kernel
     public function registerBundles()
     {
         yield new FrameworkBundle();
-        yield new Core23DompdfBundle();
+        yield new NucleosDompdfBundle();
     }
 
     public function getCacheDir(): string

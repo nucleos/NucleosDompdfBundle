@@ -1,15 +1,15 @@
 DompdfBundle
 ============
-[![Latest Stable Version](https://poser.pugx.org/core23/dompdf-bundle/v/stable)](https://packagist.org/packages/core23/dompdf-bundle)
-[![Latest Unstable Version](https://poser.pugx.org/core23/dompdf-bundle/v/unstable)](https://packagist.org/packages/core23/dompdf-bundle)
-[![License](https://poser.pugx.org/core23/dompdf-bundle/license)](LICENSE.md)
+[![Latest Stable Version](https://poser.pugx.org/nucleos/dompdf-bundle/v/stable)](https://packagist.org/packages/nucleos/dompdf-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/nucleos/dompdf-bundle/v/unstable)](https://packagist.org/packages/nucleos/dompdf-bundle)
+[![License](https://poser.pugx.org/nucleos/dompdf-bundle/license)](LICENSE.md)
 
-[![Total Downloads](https://poser.pugx.org/core23/dompdf-bundle/downloads)](https://packagist.org/packages/core23/dompdf-bundle)
-[![Monthly Downloads](https://poser.pugx.org/core23/dompdf-bundle/d/monthly)](https://packagist.org/packages/core23/dompdf-bundle)
-[![Daily Downloads](https://poser.pugx.org/core23/dompdf-bundle/d/daily)](https://packagist.org/packages/core23/dompdf-bundle)
+[![Total Downloads](https://poser.pugx.org/nucleos/dompdf-bundle/downloads)](https://packagist.org/packages/nucleos/dompdf-bundle)
+[![Monthly Downloads](https://poser.pugx.org/nucleos/dompdf-bundle/d/monthly)](https://packagist.org/packages/nucleos/dompdf-bundle)
+[![Daily Downloads](https://poser.pugx.org/nucleos/dompdf-bundle/d/daily)](https://packagist.org/packages/nucleos/dompdf-bundle)
 
-[![Continuous Integration](https://github.com/core23/DompdfBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/DompdfBundle/actions)
-[![Code Coverage](https://codecov.io/gh/core23/DompdfBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/DompdfBundle)
+[![Continuous Integration](https://github.com/nucleos/NucleosDompdfBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/NucleosDompdfBundle/actions)
+[![Code Coverage](https://codecov.io/gh/nucleos/NucleosDompdfBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosDompdfBundle)
 
 This bundle provides a wrapper for using [dompdf] inside symfony.
 
@@ -18,7 +18,7 @@ This bundle provides a wrapper for using [dompdf] inside symfony.
 Open a command console, enter your project directory and execute the following command to download the latest stable version of this bundle:
 
 ```
-composer require core23/dompdf-bundle
+composer require nucleos/dompdf-bundle
 ```
 
 ### Enable the Bundle
@@ -30,7 +30,7 @@ Then, enable the bundle by adding it to the list of registered bundles in `confi
 
 return [
     // ...
-    Core23\DompdfBundle\Core23DompdfBundle => ['all' => true],
+    Nucleos\DompdfBundle\NucleosDompdfBundle => ['all' => true],
 ];
 ```
 
@@ -39,13 +39,13 @@ return [
 Whenever you need to turn a html page into a PDF use dependency injection for your service:
 
 ```php
-final class MyService 
+final class MyService
 {
-    public function __construct(DompdfFactoryInterface $factory) 
+    public function __construct(DompdfFactoryInterface $factory)
     {
         $this->factory = $factory;
     }
-    
+
     public function render()
     {
         // ...
@@ -54,13 +54,13 @@ final class MyService
     }
 }
 
-final class MyOtherService 
+final class MyOtherService
 {
-    public function __construct(DompdfWrapperInterface $wrapper) 
+    public function __construct(DompdfWrapperInterface $wrapper)
     {
         $this->wrapper = $wrapper;
     }
-    
+
     public function stream()
     {
         // ...
@@ -70,7 +70,7 @@ final class MyOtherService
         $response->send();
         // ...
     }
-    
+
     public function binaryContent()
     {
         // ...
@@ -94,9 +94,9 @@ $this->wrapper->getStreamResponse($html, 'document.pdf');
 ### Configure the Bundle
 
 ```yaml
-# config/packages/core23_dompdf.yml
+# config/packages/nucleos_dompdf.yml
 
-core23_dompdf:
+nucleos_dompdf:
     defaults:
         dpi: 150
         defaultPaperSize: A4

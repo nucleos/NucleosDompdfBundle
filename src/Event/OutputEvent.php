@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Event;
+namespace Nucleos\DompdfBundle\Event;
 
 use Dompdf\Dompdf;
 use Symfony\Contracts\EventDispatcher\Event;

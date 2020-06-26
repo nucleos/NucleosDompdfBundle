@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests\DependencyInjection;
+namespace Nucleos\DompdfBundle\Tests\DependencyInjection;
 
-use Core23\DompdfBundle\DependencyInjection\Configuration;
+use Nucleos\DompdfBundle\DependencyInjection\Configuration;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Definition\Processor;
 

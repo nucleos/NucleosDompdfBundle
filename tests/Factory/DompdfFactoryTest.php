@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests\Factory;
+namespace Nucleos\DompdfBundle\Tests\Factory;
 
-use Core23\DompdfBundle\Factory\DompdfFactory;
+use Nucleos\DompdfBundle\Factory\DompdfFactory;
 use PHPUnit\Framework\TestCase;
 
 final class DompdfFactoryTest extends TestCase

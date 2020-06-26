@@ -6,6 +6,6 @@ services:
         autowire: true
         autoconfigure: true
 
-    Core23\DompdfBundle\Tests\App\Controller\SampleTestController:
+    Nucleos\DompdfBundle\Tests\App\Controller\SampleTestController:
         tags:
             - controller.service_arguments

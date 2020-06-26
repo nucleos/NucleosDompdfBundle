@@ -1,5 +1,5 @@
 {
-    "name": "core23/dompdf-bundle",
+    "name": "nucleos/dompdf-bundle",
     "type": "symfony-bundle",
     "description": "This bundle provides a wrapper for using dompdf inside symfony.",
     "keywords": [
@@ -9,7 +9,7 @@
         "pdf",
         "wrapper"
     ],
-    "homepage": "https://core23.de",
+    "homepage": "https://nucleos.rocks",
     "license": "MIT",
     "authors": [
         {
@@ -41,17 +41,17 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.x-dev"
+            "dev-master": "3.x-dev"
         }
     },
     "autoload": {
         "psr-4": {
-            "Core23\\DompdfBundle\\": "src/"
+            "Nucleos\\DompdfBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Core23\\DompdfBundle\\Tests\\": "tests/"
+            "Nucleos\\DompdfBundle\\Tests\\": "tests/"
         }
     },
     "scripts": {

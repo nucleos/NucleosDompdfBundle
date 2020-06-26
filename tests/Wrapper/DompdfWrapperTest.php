@@ -9,13 +9,13 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\Tests\Wrapper;
+namespace Nucleos\DompdfBundle\Tests\Wrapper;
 
-use Core23\DompdfBundle\DompdfEvents;
-use Core23\DompdfBundle\Exception\PdfException;
-use Core23\DompdfBundle\Factory\DompdfFactoryInterface;
-use Core23\DompdfBundle\Wrapper\DompdfWrapper;
 use Dompdf\Dompdf;
+use Nucleos\DompdfBundle\DompdfEvents;
+use Nucleos\DompdfBundle\Exception\PdfException;
+use Nucleos\DompdfBundle\Factory\DompdfFactoryInterface;
+use Nucleos\DompdfBundle\Wrapper\DompdfWrapper;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;

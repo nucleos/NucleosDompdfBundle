@@ -9,14 +9,14 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\DompdfBundle\DependencyInjection;
+namespace Nucleos\DompdfBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class Core23DompdfExtension extends Extension
+final class NucleosDompdfExtension extends Extension
 {
     /**
      * @param array<mixed> $configs
@@ -29,6 +29,6 @@ final class Core23DompdfExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        $container->setParameter('core23_dompdf.options', $config['defaults']);
+        $container->setParameter('nucleos_dompdf.options', $config['defaults']);
     }
 }
