@@ -1,5 +1,5 @@
-DompdfBundle
-============
+NucleosDompdfBundle
+===================
 [![Latest Stable Version](https://poser.pugx.org/nucleos/dompdf-bundle/v/stable)](https://packagist.org/packages/nucleos/dompdf-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/nucleos/dompdf-bundle/v/unstable)](https://packagist.org/packages/nucleos/dompdf-bundle)
 [![License](https://poser.pugx.org/nucleos/dompdf-bundle/license)](LICENSE.md)
