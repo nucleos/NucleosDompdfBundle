@@ -9,7 +9,7 @@ DompdfBundle
 [![Daily Downloads](https://poser.pugx.org/nucleos/dompdf-bundle/d/daily)](https://packagist.org/packages/nucleos/dompdf-bundle)
 
 [![Continuous Integration](https://github.com/nucleos/NucleosDompdfBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/NucleosDompdfBundle/actions)
-[![Code Coverage](https://codecov.io/gh/nucleos/NucleosDompdfBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosDompdfBundle)
+[![Code Coverage](https://codecov.io/gh/nucleos/NucleosDompdfBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosDompdfBundle)
 
 This bundle provides a wrapper for using [dompdf] inside symfony.
 
