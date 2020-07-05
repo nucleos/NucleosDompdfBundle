@@ -1,7 +1,8 @@
-.*               export-ignore
-Makefile         export-ignore
-Jenkinsfile      export-ignore
-phpstan.neon     export-ignore
-phpunit.xml.dist export-ignore
-/tests           export-ignore
-/vendor-bin      export-ignore
+.*                      export-ignore
+infection.json          export-ignore
+Makefile                export-ignore
+phpstan.neon.dist       export-ignore
+phpstan-baseline.neon   export-ignore
+phpunit.xml.dist        export-ignore
+/tests                  export-ignore
+/vendor-bin             export-ignore
