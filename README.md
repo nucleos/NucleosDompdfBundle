@@ -10,6 +10,7 @@ NucleosDompdfBundle
 
 [![Continuous Integration](https://github.com/nucleos/NucleosDompdfBundle/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/NucleosDompdfBundle/actions)
 [![Code Coverage](https://codecov.io/gh/nucleos/NucleosDompdfBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosDompdfBundle)
+[![Type Coverage](https://shepherd.dev/github/nucleos/NucleosDompdfBundle/coverage.svg)](https://shepherd.dev/github/nucleos/NucleosDompdfBundle)
 
 This bundle provides a wrapper for using [dompdf] inside symfony.
 
