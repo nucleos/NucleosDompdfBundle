@@ -6,7 +6,7 @@ repository:
   name: NucleosDompdfBundle
   description: 📜 This bundle provides a wrapper for using dompdf inside symfony.
   homepage: https://nucleos.rocks
-  topics: symfony, symfony-bundle, bundle, php, dompdf, pdf, wrapper
+  topics: hacktoberfest, symfony, symfony-bundle, bundle, php, dompdf, pdf, wrapper
 
 branches:
   - name: main
