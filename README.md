@@ -31,7 +31,7 @@ Then, enable the bundle by adding it to the list of registered bundles in `confi
 
 return [
     // ...
-    Nucleos\DompdfBundle\NucleosDompdfBundle => ['all' => true],
+    Nucleos\DompdfBundle\NucleosDompdfBundle::class => ['all' => true],
 ];
 ```
 
