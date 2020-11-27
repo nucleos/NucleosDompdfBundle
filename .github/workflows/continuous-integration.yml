@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened, labeled, unlabeled]
   push:
     branches:
-      - master
+      - main
     tags:
       - "**"
 
