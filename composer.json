@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php": "^7.3",
+        "php": "^7.3 || ^8.0",
         "dompdf/dompdf": "^0.7 || ^0.8",
         "symfony/config": "^4.2 || ^5.0",
         "symfony/dependency-injection": "^4.2 || ^5.0",
