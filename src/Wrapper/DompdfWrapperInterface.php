@@ -31,10 +31,8 @@ interface DompdfWrapperInterface
      * @param string               $html     The html sourcecode to render
      * @param string               $filename The name of the document
      * @param array<string, mixed> $options  The rendering options (see dompdf docs)
-     * @return StreamedResponse
      */
     public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse;
-
 
     /**
      * Renders a pdf document and return the binary content.
