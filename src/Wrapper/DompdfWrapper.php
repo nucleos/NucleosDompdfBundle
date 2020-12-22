@@ -37,6 +37,11 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $this->eventDispatcher = $eventDispatcher;
     }
 
+    /**
+     * @param string $html
+     * @param string $filename
+     * @param array<string, mixed> $options  The rendering options (see dompdf docs)
+     */
     public function streamHtml(string $html, string $filename, array $options = []): void
     {
         $pdf = $this->dompdfFactory->create($options);
