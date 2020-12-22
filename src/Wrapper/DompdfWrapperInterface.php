@@ -20,7 +20,7 @@ interface DompdfWrapperInterface
      * Renders a pdf document and streams it to the browser.
      *
      * @param string               $html     The html sourcecode to render
-     * @param string               $filename The name of the docuemtn
+     * @param string               $filename The name of the document
      * @param array<string, mixed> $options  The rendering options (see dompdf docs)
      *
      * @deprecated use getStreamResponse instead
@@ -29,7 +29,7 @@ interface DompdfWrapperInterface
 
     /**
      * @param string               $html     The html sourcecode to render
-     * @param string               $filename The name of the docuement
+     * @param string               $filename The name of the document
      * @param array<string, mixed> $options  The rendering options (see dompdf docs)
      * @return StreamedResponse
      */
