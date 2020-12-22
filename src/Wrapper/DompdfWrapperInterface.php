@@ -28,7 +28,9 @@ interface DompdfWrapperInterface
     public function streamHtml(string $html, string $filename, array $options = []): void;
 
     /**
-     * @param array<string, mixed> $options
+     * @param string               $html     The html sourcecode to render
+     * @param string               $filename The name of the docuement
+     * @param array<string, mixed> $options  The rendering options (see dompdf docs)
      * @return StreamedResponse
      */
     public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse;
