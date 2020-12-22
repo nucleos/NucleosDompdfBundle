@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Nucleos\DompdfBundle\Wrapper;
 
 use Nucleos\DompdfBundle\Exception\PdfException;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 interface DompdfWrapperInterface
 {
@@ -25,6 +26,13 @@ interface DompdfWrapperInterface
      * @deprecated use getStreamResponse instead
      */
     public function streamHtml(string $html, string $filename, array $options = []): void;
+
+    /**
+     * @param array<string, mixed> $options
+     * @return StreamedResponse
+     */
+    public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse;
+
 
     /**
      * Renders a pdf document and return the binary content.
