@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^7.3 || ^8.0",
-        "dompdf/dompdf": "^0.7 || ^0.8",
+        "dompdf/dompdf": "^1.0.0",
         "symfony/config": "^4.2 || ^5.0",
         "symfony/dependency-injection": "^4.2 || ^5.0",
         "symfony/event-dispatcher-contracts": "^1.1 || ^2.0",
