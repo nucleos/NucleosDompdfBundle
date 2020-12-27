@@ -38,11 +38,19 @@
 
 ## Changes
 
-- Add missing strict file header @core23 (#48)
-- Remove old symfony <4.2 code @core23 (#46)
-- Removed explicit private visibility of services @core23 (#33)
+- Add missing strict file header [@core23] ([#48])
+- Remove old symfony <4.2 code [@core23] ([#46])
+- Removed explicit private visibility of services [@core23] ([#33])
 
 ## 🚀 Features
 
-- Add support for symfony 5 @core23 (#40)
-- Use symfony contracts @core23 (#27)
+- Add support for symfony 5 [@core23] ([#40])
+- Use symfony contracts [@core23] ([#27])
+
+[#48]: https://github.com/nucleos/NucleosDompdfBundle/pull/48
+[#46]: https://github.com/nucleos/NucleosDompdfBundle/pull/46
+[#40]: https://github.com/nucleos/NucleosDompdfBundle/pull/40
+[#33]: https://github.com/nucleos/NucleosDompdfBundle/pull/33
+[#27]: https://github.com/nucleos/NucleosDompdfBundle/pull/27
+[@nucleos]: https://github.com/nucleos
+[@core23]: https://github.com/core23
