@@ -1,3 +1,17 @@
+# 3.1.0
+
+## Changes
+
+## 🚀 Features
+
+- Move configuration to PHP @core23 (#70)
+
+## 📦 Dependencies
+
+- Update `dompdf/dompdf` requirement from `^0.7 || ^0.8` to `^0.7 || ^0.8 || ^1.0.0` @dependabot (#174)
+- Add support for PHP 8 @core23 (#152)
+- Drop support for PHP7.2 @core23 (#80)
+
 # 3.0.0
 
 ## Changes
