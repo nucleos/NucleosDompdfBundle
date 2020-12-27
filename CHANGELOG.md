@@ -4,13 +4,13 @@
 
 ## 🚀 Features
 
-- Move configuration to PHP @core23 (#70)
+- Move configuration to PHP [@core23] ([#70])
 
 ## 📦 Dependencies
 
-- Update `dompdf/dompdf` requirement from `^0.7 || ^0.8` to `^0.7 || ^0.8 || ^1.0.0` @dependabot (#174)
-- Add support for PHP 8 @core23 (#152)
-- Drop support for PHP7.2 @core23 (#80)
+- Update `dompdf/dompdf` requirement from `^0.7 || ^0.8` to `^0.7 || ^0.8 || ^1.0.0` [@dependabot] ([#174])
+- Add support for PHP 8 [@core23] ([#152])
+- Drop support for PHP7.2 [@core23] ([#80])
 
 # 3.0.0
 
@@ -68,3 +68,8 @@
 [#27]: https://github.com/nucleos/NucleosDompdfBundle/pull/27
 [@nucleos]: https://github.com/nucleos
 [@core23]: https://github.com/core23
+[#174]: https://github.com/nucleos/NucleosDompdfBundle/pull/174
+[#152]: https://github.com/nucleos/NucleosDompdfBundle/pull/152
+[#80]: https://github.com/nucleos/NucleosDompdfBundle/pull/80
+[#70]: https://github.com/nucleos/NucleosDompdfBundle/pull/70
+[@dependabot]: https://github.com/dependabot
