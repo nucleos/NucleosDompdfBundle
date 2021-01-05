@@ -1,3 +1,17 @@
+# 3.1.0
+
+## Changes
+
+## 🚀 Features
+
+- Move configuration to PHP [@core23] ([#70])
+
+## 📦 Dependencies
+
+- Update `dompdf/dompdf` requirement from `^0.7 || ^0.8` to `^0.7 || ^0.8 || ^1.0.0` [@dependabot] ([#174])
+- Add support for PHP 8 [@core23] ([#152])
+- Drop support for PHP7.2 [@core23] ([#80])
+
 # 3.0.0
 
 ## Changes
@@ -38,11 +52,24 @@
 
 ## Changes
 
-- Add missing strict file header @core23 (#48)
-- Remove old symfony <4.2 code @core23 (#46)
-- Removed explicit private visibility of services @core23 (#33)
+- Add missing strict file header [@core23] ([#48])
+- Remove old symfony <4.2 code [@core23] ([#46])
+- Removed explicit private visibility of services [@core23] ([#33])
 
 ## 🚀 Features
 
-- Add support for symfony 5 @core23 (#40)
-- Use symfony contracts @core23 (#27)
+- Add support for symfony 5 [@core23] ([#40])
+- Use symfony contracts [@core23] ([#27])
+
+[#48]: https://github.com/nucleos/NucleosDompdfBundle/pull/48
+[#46]: https://github.com/nucleos/NucleosDompdfBundle/pull/46
+[#40]: https://github.com/nucleos/NucleosDompdfBundle/pull/40
+[#33]: https://github.com/nucleos/NucleosDompdfBundle/pull/33
+[#27]: https://github.com/nucleos/NucleosDompdfBundle/pull/27
+[@nucleos]: https://github.com/nucleos
+[@core23]: https://github.com/core23
+[#174]: https://github.com/nucleos/NucleosDompdfBundle/pull/174
+[#152]: https://github.com/nucleos/NucleosDompdfBundle/pull/152
+[#80]: https://github.com/nucleos/NucleosDompdfBundle/pull/80
+[#70]: https://github.com/nucleos/NucleosDompdfBundle/pull/70
+[@dependabot]: https://github.com/dependabot
