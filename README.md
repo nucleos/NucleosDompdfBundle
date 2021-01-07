@@ -102,8 +102,7 @@ $this->wrapper->getStreamResponse($html, 'document.pdf');
 
 nucleos_dompdf:
     defaults:
-        dpi: 150
-        defaultPaperSize: A4
+        defaultFont: 'helvetica'
         # See https://github.com/dompdf/dompdf/wiki/Usage#options for available options
 ```
 
