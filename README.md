@@ -53,7 +53,7 @@ final class MyService
     public function render()
     {
         // ...
-        $this->factory->create();
+        $dompdf = $this->factory->create(); // Returns a `Dompdf\Dompdf` object
         // ...
     }
 }
