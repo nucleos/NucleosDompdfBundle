@@ -110,9 +110,9 @@ nucleos_dompdf:
 
 ### Events
 
-The dompdf wrapper dispatches events to convenient get the inner dompdf instance when creating the pdf.
-- `dompdf.output` is dispatched in getPdf
-- `dompdf.stream` is dispatched in streamHtml
+The dompdf wrapper dispatches events to conveniently get the inner dompdf instance when creating the PDF.
+- `dompdf.output` is dispatched in `getPdf()`
+- `dompdf.stream` is dispatched in `streamHtml()`
 
 See [Symfony event dispatcher documentation](https://symfony.com/doc/current/event_dispatcher.html) for more info.
 
