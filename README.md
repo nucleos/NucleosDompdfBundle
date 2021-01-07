@@ -54,6 +54,8 @@ final class MyService
     {
         // ...
         $dompdf = $this->factory->create(); // Returns a `Dompdf\Dompdf` object
+        // Or pass an array of options:
+        $dompdf = $this->factory->create(['chroot' => '/home']);
         // ...
     }
 }
