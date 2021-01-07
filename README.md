@@ -12,7 +12,7 @@ NucleosDompdfBundle
 [![Code Coverage](https://codecov.io/gh/nucleos/NucleosDompdfBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosDompdfBundle)
 [![Type Coverage](https://shepherd.dev/github/nucleos/NucleosDompdfBundle/coverage.svg)](https://shepherd.dev/github/nucleos/NucleosDompdfBundle)
 
-This bundle provides a wrapper for using [dompdf] inside symfony.
+This bundle provides a wrapper for using [dompdf] inside Symfony.
 
 ## Installation
 
@@ -115,7 +115,7 @@ The dompdf wrapper dispatches events to conveniently get the inner dompdf instan
 - `dompdf.output` is dispatched in `getPdf()`
 - `dompdf.stream` is dispatched in `streamHtml()`
 
-See [Symfony event dispatcher documentation](https://symfony.com/doc/current/event_dispatcher.html) for more info.
+See [Symfony Events and Event Listeners](https://symfony.com/doc/current/event_dispatcher.html) for more info.
 
 ## License
 
