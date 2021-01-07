@@ -40,6 +40,9 @@ return [
 Whenever you need to turn a html page into a PDF use dependency injection for your service:
 
 ```php
+use Nucleos\DompdfBundle\Factory\DompdfFactoryInterface;
+use Nucleos\DompdfBundle\Wrapper\DompdfWrapperInterface;
+
 final class MyService
 {
     public function __construct(DompdfFactoryInterface $factory)
