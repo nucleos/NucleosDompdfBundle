@@ -98,7 +98,7 @@ $this->wrapper->getStreamResponse($html, 'document.pdf');
 ### Configure the Bundle
 
 ```yaml
-# config/packages/nucleos_dompdf.yml
+# config/packages/nucleos_dompdf.yaml
 
 nucleos_dompdf:
     defaults:
