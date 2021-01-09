@@ -53,7 +53,8 @@ final class MyService
     public function render()
     {
         // ...
-        $dompdf = $this->factory->create(); // Returns a `Dompdf\Dompdf` object
+        /** @var Dompdf\Dompdf $dompdf */
+        $dompdf = $this->factory->create();
         // Or pass an array of options:
         $dompdf = $this->factory->create(['chroot' => '/home']);
         // ...
@@ -72,7 +73,7 @@ final class MyOtherService
         // ...
         $html = '<h1>Sample Title</h1><p>Lorem Ipsum</p>';
 
-        /** @var Symfony\Component\HttpFoundation\StreamedResponse */
+        /** @var Symfony\Component\HttpFoundation\StreamedResponse $response */
         $response = $this->wrapper->getStreamResponse($html, "document.pdf");
         $response->send();
         // ...
