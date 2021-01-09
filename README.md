@@ -72,8 +72,8 @@ final class MyOtherService
         // ...
         $html = '<h1>Sample Title</h1><p>Lorem Ipsum</p>';
 
+        /** @var Symfony\Component\HttpFoundation\StreamedResponse */
         $response = $this->wrapper->getStreamResponse($html, "document.pdf");
-        // `$response` is a `Symfony\Component\HttpFoundation\StreamedResponse`
         $response->send();
         // ...
     }
