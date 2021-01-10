@@ -12,7 +12,7 @@ NucleosDompdfBundle
 [![Code Coverage](https://codecov.io/gh/nucleos/NucleosDompdfBundle/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/NucleosDompdfBundle)
 [![Type Coverage](https://shepherd.dev/github/nucleos/NucleosDompdfBundle/coverage.svg)](https://shepherd.dev/github/nucleos/NucleosDompdfBundle)
 
-This bundle provides a wrapper for using [dompdf] inside symfony.
+This bundle provides a wrapper for using [dompdf] inside Symfony.
 
 ## Installation
 
@@ -53,7 +53,10 @@ final class MyService
     public function render()
     {
         // ...
-        $this->factory->create();
+        /** @var Dompdf\Dompdf $dompdf */
+        $dompdf = $this->factory->create();
+        // Or pass an array of options:
+        $dompdf = $this->factory->create(['chroot' => '/home']);
         // ...
     }
 }
@@ -70,6 +73,7 @@ final class MyOtherService
         // ...
         $html = '<h1>Sample Title</h1><p>Lorem Ipsum</p>';
 
+        /** @var Symfony\Component\HttpFoundation\StreamedResponse $response */
         $response = $this->wrapper->getStreamResponse($html, "document.pdf");
         $response->send();
         // ...
@@ -98,22 +102,21 @@ $this->wrapper->getStreamResponse($html, 'document.pdf');
 ### Configure the Bundle
 
 ```yaml
-# config/packages/nucleos_dompdf.yml
+# config/packages/nucleos_dompdf.yaml
 
 nucleos_dompdf:
     defaults:
-        dpi: 150
-        defaultPaperSize: A4
-        ...
+        defaultFont: 'helvetica'
+        # See https://github.com/dompdf/dompdf/wiki/Usage#options for available options
 ```
 
 ### Events
 
-The dompdf wrapper dispatches events to convenient get the inner dompdf instance when creating the pdf.
-- `dompdf.output` is dispatched in getPdf
-- `dompdf.stream` is dispatched in streamHtml
+The dompdf wrapper dispatches events to conveniently get the inner dompdf instance when creating the PDF.
+- `dompdf.output` is dispatched in `getPdf()`
+- `dompdf.stream` is dispatched in `streamHtml()`
 
-See [Symfony event dispatcher documentation](https://symfony.com/doc/current/event_dispatcher.html) for more info.
+See [Symfony Events and Event Listeners](https://symfony.com/doc/current/event_dispatcher.html) for more info.
 
 ## License
 
