@@ -24,8 +24,6 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
------
-
 ## 3.1.0
 
 ### Changes
