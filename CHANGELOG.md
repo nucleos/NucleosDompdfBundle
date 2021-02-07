@@ -2,27 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 3.1.2 - TBD
+## 3.1.2 - 2021-02-07
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [3.1.1](https://github.com/nucleos/NucleosDompdfBundle/milestone/1)
 
-- Nothing.
 
-### Deprecated
 
-- Nothing.
+### 3.1.1
 
-### Removed
+- Total issues resolved: **0**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
 
-- Nothing.
+#### Documentation
 
-### Fixed
-
-- Nothing.
+ - [184: Improve docs](https://github.com/nucleos/NucleosDompdfBundle/pull/184) thanks to @ThomasLandauer
 
 -----
 
