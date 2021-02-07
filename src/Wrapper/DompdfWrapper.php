@@ -37,6 +37,11 @@ final class DompdfWrapper implements DompdfWrapperInterface
         $this->eventDispatcher = $eventDispatcher;
     }
 
+    /**
+     * @param string               $html     The html sourcecode to render
+     * @param string               $filename The name of the document
+     * @param array<string, mixed> $options  The rendering options (see dompdf docs)
+     */
     public function streamHtml(string $html, string $filename, array $options = []): void
     {
         $pdf = $this->dompdfFactory->create($options);
@@ -49,19 +54,6 @@ final class DompdfWrapper implements DompdfWrapperInterface
         }
 
         $pdf->stream($filename, $options);
-    }
-
-    /**
-     * @param array<string, mixed> $options
-     */
-    public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse
-    {
-        $response = new StreamedResponse();
-        $response->setCallback(function () use ($html, $filename, $options): void {
-            $this->streamHtml($html, $filename, $options);
-        });
-
-        return $response;
     }
 
     public function getPdf(string $html, array $options = []): string
@@ -82,5 +74,18 @@ final class DompdfWrapper implements DompdfWrapperInterface
         }
 
         return $out;
+    }
+
+    /**
+     * @param array<string, mixed> $options
+     */
+    public function getStreamResponse(string $html, string $filename, array $options = []): StreamedResponse
+    {
+        $response = new StreamedResponse();
+        $response->setCallback(function () use ($html, $filename, $options): void {
+            $this->streamHtml($html, $filename, $options);
+        });
+
+        return $response;
     }
 }
