@@ -1,20 +1,43 @@
-# 3.1.0
+# Changelog
 
-## Changes
+All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 🚀 Features
+## 3.1.1 - 2021-02-07
+
+
+-----
+
+### Release Notes for [3.1.1](https://github.com/nucleos/NucleosDompdfBundle/milestone/1)
+
+
+
+### 3.1.1
+
+- Total issues resolved: **0**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
+
+#### Documentation
+
+ - [184: Improve docs](https://github.com/nucleos/NucleosDompdfBundle/pull/184) thanks to @ThomasLandauer
+
+## 3.1.0
+
+### Changes
+
+### 🚀 Features
 
 - Move configuration to PHP [@core23] ([#70])
 
-## 📦 Dependencies
+### 📦 Dependencies
 
 - Update `dompdf/dompdf` requirement from `^0.7 || ^0.8` to `^0.7 || ^0.8 || ^1.0.0` [@dependabot] ([#174])
 - Add support for PHP 8 [@core23] ([#152])
 - Drop support for PHP7.2 [@core23] ([#80])
 
-# 3.0.0
+## 3.0.0
 
-## Changes
+### Changes
 
 * Renamed namespace `Core23\DompdfBundle` to `Nucleos\DompdfBundle` after move to [@nucleos]
 
@@ -48,15 +71,15 @@
 
   to delete backup files created in the previous step.
 
-# 2.6.0
+## 2.6.0
 
-## Changes
+### Changes
 
 - Add missing strict file header [@core23] ([#48])
 - Remove old symfony <4.2 code [@core23] ([#46])
 - Removed explicit private visibility of services [@core23] ([#33])
 
-## 🚀 Features
+### 🚀 Features
 
 - Add support for symfony 5 [@core23] ([#40])
 - Use symfony contracts [@core23] ([#27])
