@@ -1,11 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Cannot call method defaultValue\\(\\) on Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeParentInterface\\|null\\.$#"
-			count: 1
-			path: src/DependencyInjection/Configuration.php
-
-		-
 			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
 			count: 1
 			path: tests/BundleIntegrationTest.php
