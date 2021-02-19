@@ -109,7 +109,7 @@ $html = $this->renderView('my_pdf.html.twig', array(
 ));
 $this->wrapper->getStreamResponse($html, 'document.pdf');
 ```
-#### Using assert() to link assets
+### Using assert() to link assets
 
 First, make sure your `chroot` is correctly set and `isRemoteEnabled` is true.
 
