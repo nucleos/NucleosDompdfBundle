@@ -35,6 +35,17 @@ return [
 ];
 ```
 
+## Configure the Bundle
+
+```yaml
+# config/packages/nucleos_dompdf.yaml
+
+nucleos_dompdf:
+    defaults:
+        defaultFont: 'helvetica'
+        # See https://github.com/dompdf/dompdf/wiki/Usage#options for available options
+```
+
 ## Usage
 
 Whenever you need to turn a html page into a PDF use dependency injection for your service:
@@ -87,6 +98,7 @@ final class MyOtherService
     }
 }
 ```
+### Render pdf using Twig
 
 If you use Twig to create the content, make sure to use `renderView()` instead of `render()`.
 Otherwise you might get the following HTTP header printed inside your PDF:
@@ -99,15 +111,24 @@ $html = $this->renderView('my_pdf.html.twig', array(
 $this->wrapper->getStreamResponse($html, 'document.pdf');
 ```
 
-### Configure the Bundle
+### Using asset() to link assets
+
+
+First, make sure your `chroot` is correctly set and `isRemoteEnabled` is true.
 
 ```yaml
 # config/packages/nucleos_dompdf.yaml
 
 nucleos_dompdf:
     defaults:
-        defaultFont: 'helvetica'
-        # See https://github.com/dompdf/dompdf/wiki/Usage#options for available options
+        chroot: '%kernel.project_dir%/public/assets'
+        isRemoteEnabled: true
+```
+
+Second, use `{{ absolute_url( asset() ) }}`
+
+```html
+<img src={{ absolute_url( asset('assets/example.jpg') ) }}>
 ```
 
 ### Events
