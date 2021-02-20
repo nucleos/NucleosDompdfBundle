@@ -99,6 +99,7 @@ final class MyOtherService
 }
 ```
 ### Render pdf using Twig
+
 If you use Twig to create the content, make sure to use `renderView()` instead of `render()`.
 Otherwise you might get the following HTTP header printed inside your PDF:
 > HTTP/1.0 200 OK Cache-Control: no-cache
