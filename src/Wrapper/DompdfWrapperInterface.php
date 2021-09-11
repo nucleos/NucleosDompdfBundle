@@ -13,6 +13,9 @@ namespace Nucleos\DompdfBundle\Wrapper;
 
 use Nucleos\DompdfBundle\Exception\PdfException;
 
+/**
+ * @method StreamedResponse getStreamResponse(string $html, string $filename, array $options = [])
+ */
 interface DompdfWrapperInterface
 {
     /**
