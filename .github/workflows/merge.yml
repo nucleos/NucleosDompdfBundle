@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: "Request review from @nucleos-bot"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v5"
         with:
           github-token: ${{ secrets.ORGANIZATION_ADMIN_TOKEN }}
           script: |
@@ -35,7 +35,7 @@ jobs:
             })
 
       - name: "Assign @nucleos-bot"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v5"
         with:
           github-token: ${{ secrets.ORGANIZATION_ADMIN_TOKEN }}
           script: |
@@ -52,7 +52,7 @@ jobs:
             })
 
       - name: "Approve pull request"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v5"
         if: "github.actor != 'nucleos-bot'"
         with:
           github-token: ${{ secrets.ORGANIZATION_ADMIN_TOKEN }}
@@ -67,7 +67,7 @@ jobs:
             })
 
       - name: "Merge pull request"
-        uses: "actions/github-script@v3"
+        uses: "actions/github-script@v5"
         with:
           github-token: ${{ secrets.ORGANIZATION_ADMIN_TOKEN }}
           script: |
