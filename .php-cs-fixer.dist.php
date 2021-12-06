@@ -35,7 +35,10 @@ $config = (new PhpCsFixer\Config())
         ],
         'php_unit_internal_class' => false,
         'php_unit_test_class_requires_covers' => false,
-        'no_superfluous_phpdoc_tags' => true,
+        'no_superfluous_phpdoc_tags' => [
+            'allow_mixed' => true,
+            'remove_inheritdoc' => true,
+        ],
         'static_lambda' => true,
         'global_namespace_import' => [
            'import_classes' => true,
