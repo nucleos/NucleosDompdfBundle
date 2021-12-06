@@ -15,10 +15,9 @@ use Nucleos\DompdfBundle\NucleosDompdfBundle;
 use Nucleos\DompdfBundle\Tests\App\Controller\SampleTestController;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
-use Symfony\Component\Config\Loader\LoaderInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Routing\RouteCollectionBuilder;
+use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 final class AppKernel extends Kernel
 {
@@ -29,7 +28,7 @@ final class AppKernel extends Kernel
         parent::__construct('test', false);
     }
 
-    public function registerBundles()
+    public function registerBundles(): iterable
     {
         yield new FrameworkBundle();
         yield new NucleosDompdfBundle();
@@ -50,13 +49,28 @@ final class AppKernel extends Kernel
         return __DIR__;
     }
 
-    protected function configureRoutes(RouteCollectionBuilder $routes): void
+    protected function configureRoutes($routes): void
     {
+        if ($routes instanceof RoutingConfigurator) {
+            $routes
+                    ->add('test', '/test')
+                    ->controller(SampleTestController::class)
+                ;
+
+            return;
+        }
+
         $routes->add('/test', SampleTestController::class);
     }
 
-    protected function configureContainer(ContainerBuilder $containerBuilder, LoaderInterface $loader): void
+    protected function configureContainer($container, $loader): void
     {
+        if ($container instanceof ContainerConfigurator) {
+            $container->import(__DIR__.'/config/config.yaml');
+
+            return;
+        }
+
         $loader->load(__DIR__.'/config/config.yaml');
     }
 
