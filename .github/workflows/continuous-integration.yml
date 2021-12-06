@@ -118,8 +118,7 @@ jobs:
           - highest
 
         symfony:
-          - 4.4
-          - 5.1
+          - 5.4
 
     steps:
       - name: "Checkout"
