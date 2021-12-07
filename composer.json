@@ -1,7 +1,8 @@
 {
     "name": "nucleos/dompdf-bundle",
-    "type": "symfony-bundle",
     "description": "This bundle provides a wrapper for using dompdf inside symfony.",
+    "license": "MIT",
+    "type": "symfony-bundle",
     "keywords": [
         "symfony",
         "bundle",
@@ -9,12 +10,29 @@
         "pdf",
         "wrapper"
     ],
-    "homepage": "https://nucleos.rocks",
-    "license": "MIT",
     "authors": [
         {
             "name": "Christian Gripp",
             "email": "mail@core23.de"
+        }
+    ],
+    "homepage": "https://nucleos.rocks",
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/core23"
+        },
+        {
+            "type": "opencollective",
+            "url": "https://opencollective.com/core23"
+        },
+        {
+            "type": "ko-fi",
+            "url": "https://ko-fi.com/core23"
+        },
+        {
+            "type": "other",
+            "url": "https://donate.core23.de"
         }
     ],
     "require": {
@@ -36,14 +54,6 @@
     "suggest": {
         "symfony/event-dispatcher": "If you need to modify the PDF rendering"
     },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-main": "3.x-dev"
-        }
-    },
     "autoload": {
         "psr-4": {
             "Nucleos\\DompdfBundle\\": "src/"
@@ -53,6 +63,9 @@
         "psr-4": {
             "Nucleos\\DompdfBundle\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "scripts": {
         "post-install-cmd": [
@@ -73,23 +86,5 @@
         "phpmd": "vendor/bin/phpmd src,tests ansi phpmd.xml",
         "phpstan": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/phpunit --colors=always"
-    },
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/core23"
-        },
-        {
-            "type": "opencollective",
-            "url": "https://opencollective.com/core23"
-        },
-        {
-            "type": "ko-fi",
-            "url": "https://ko-fi.com/core23"
-        },
-        {
-            "type": "other",
-            "url": "https://donate.core23.de"
-        }
-    ]
+    }
 }
