@@ -1,5 +1,3 @@
-# These settings are synced to GitHub by https://probot.github.io/apps/settings/
-
 _extends: .github
 
 repository:
@@ -7,26 +5,3 @@ repository:
   description: 📜 This bundle provides a wrapper for using dompdf inside symfony.
   homepage: https://nucleos.rocks
   topics: hacktoberfest, symfony, symfony-bundle, bundle, php, dompdf, pdf, wrapper
-
-branches:
-  - name: main
-    protection:
-      enforce_admins: false
-      required_status_checks:
-        contexts:
-          - "Coding Standards (8.1)"
-          - "Static Code Analysis (8.1)"
-          - "Test (PHP 8, symfony 5.4, lowest)"
-          - "Test (PHP 8, symfony 5.4, highest)"
-          - "Test (PHP 8, symfony 6, lowest)"
-          - "Test (PHP 8, symfony 6, highest)"
-          - "Test (PHP 8.1, symfony 5.4, lowest)"
-          - "Test (PHP 8.1, symfony 5.4, highest)"
-          - "Test (PHP 8.1, symfony 6, lowest)"
-          - "Test (PHP 8.1, symfony 6, highest)"
-          - "Code Coverage (8.1)"
-          - "Mutation Tests (8)"
-        strict: true
-
-      required_pull_request_reviews: null
-      restrictions: null
