@@ -28,7 +28,7 @@ final class DompdfWrapperTest extends TestCase
     private $dompdfFactory;
 
     /**
-     * @var MockObject&EventDispatcherInterface
+     * @var EventDispatcherInterface&MockObject
      */
     private $eventDispatcher;
 
