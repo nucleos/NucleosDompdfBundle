@@ -22,25 +22,13 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class DompdfWrapperTest extends TestCase
 {
-    /**
-     * @var DompdfFactoryInterface&MockObject
-     */
-    private $dompdfFactory;
+    private MockObject&DompdfFactoryInterface $dompdfFactory;
 
-    /**
-     * @var EventDispatcherInterface&MockObject
-     */
-    private $eventDispatcher;
+    private MockObject&EventDispatcherInterface $eventDispatcher;
 
-    /**
-     * @var DompdfWrapper
-     */
-    private $dompdfWrapper;
+    private DompdfWrapper $dompdfWrapper;
 
-    /**
-     * @var Dompdf&MockObject
-     */
-    private $dompdf;
+    private MockObject&Dompdf $dompdf;
 
     protected function setUp(): void
     {

@@ -16,10 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 final class DompdfFactoryTest extends TestCase
 {
-    /**
-     * @var DompdfFactory
-     */
-    private $dompdfFactory;
+    private DompdfFactory $dompdfFactory;
 
     protected function setUp(): void
     {

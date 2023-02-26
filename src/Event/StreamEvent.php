@@ -16,20 +16,11 @@ use Symfony\Contracts\EventDispatcher\Event;
 
 final class StreamEvent extends Event
 {
-    /**
-     * @var Dompdf
-     */
-    private $pdf;
+    private Dompdf $pdf;
 
-    /**
-     * @var string
-     */
-    private $filename;
+    private string $filename;
 
-    /**
-     * @var string
-     */
-    private $html;
+    private string $html;
 
     public function __construct(Dompdf $pdf, string $filename, string $html)
     {

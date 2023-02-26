@@ -21,15 +21,9 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class DompdfWrapper implements DompdfWrapperInterface
 {
-    /**
-     * @var DompdfFactoryInterface
-     */
-    private $dompdfFactory;
+    private DompdfFactoryInterface $dompdfFactory;
 
-    /**
-     * @var EventDispatcherInterface|null
-     */
-    private $eventDispatcher;
+    private ?EventDispatcherInterface $eventDispatcher;
 
     public function __construct(DompdfFactoryInterface $dompdfFactory, EventDispatcherInterface $eventDispatcher = null)
     {
