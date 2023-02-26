@@ -19,7 +19,7 @@ final class DompdfFactory implements DompdfFactoryInterface
     /**
      * @var array<string, mixed>
      */
-    private $options;
+    private array $options;
 
     /**
      * @param array<string, mixed> $options

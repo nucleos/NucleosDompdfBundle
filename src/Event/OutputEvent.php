@@ -16,15 +16,9 @@ use Symfony\Contracts\EventDispatcher\Event;
 
 final class OutputEvent extends Event
 {
-    /**
-     * @var Dompdf
-     */
-    private $pdf;
+    private Dompdf $pdf;
 
-    /**
-     * @var string
-     */
-    private $html;
+    private string $html;
 
     public function __construct(Dompdf $pdf, string $html)
     {
