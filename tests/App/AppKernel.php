@@ -31,6 +31,7 @@ final class AppKernel extends Kernel
     public function registerBundles(): iterable
     {
         yield new FrameworkBundle();
+
         yield new NucleosDompdfBundle();
     }
 
@@ -55,7 +56,7 @@ final class AppKernel extends Kernel
             $routes
                     ->add('test', '/test')
                     ->controller(SampleTestController::class)
-                ;
+            ;
 
             return;
         }
