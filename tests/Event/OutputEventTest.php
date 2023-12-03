@@ -20,13 +20,14 @@ final class OutputEventTest extends TestCase
     public function testEvent(): void
     {
         $dompdf = $this->createMock(Dompdf::class);
+
         /** @noinspection HtmlRequiredAltAttribute */
         /** @noinspection HtmlUnknownTarget */
         $html = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $event = new OutputEvent($dompdf, $html);
 
-        static::assertSame($dompdf, $event->getPdf());
-        static::assertSame($html, $event->getHtml());
+        self::assertSame($dompdf, $event->getPdf());
+        self::assertSame($html, $event->getHtml());
     }
 }

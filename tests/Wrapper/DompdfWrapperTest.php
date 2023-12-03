@@ -22,13 +22,13 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class DompdfWrapperTest extends TestCase
 {
-    private MockObject&DompdfFactoryInterface $dompdfFactory;
+    private DompdfFactoryInterface&MockObject $dompdfFactory;
 
-    private MockObject&EventDispatcherInterface $eventDispatcher;
+    private EventDispatcherInterface&MockObject $eventDispatcher;
 
     private DompdfWrapper $dompdfWrapper;
 
-    private MockObject&Dompdf $dompdf;
+    private Dompdf&MockObject $dompdf;
 
     protected function setUp(): void
     {
@@ -49,21 +49,21 @@ final class DompdfWrapperTest extends TestCase
             ->willReturn($this->dompdf)
         ;
 
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('loadHtml')
-            ->with(static::equalTo($input))
+            ->with(self::equalTo($input))
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('render')
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('stream')
-            ->with(static::equalTo('file.pdf'))
+            ->with(self::equalTo('file.pdf'))
         ;
 
-        $this->eventDispatcher->expects(static::once())
+        $this->eventDispatcher->expects(self::once())
             ->method('dispatch')
-            ->with(static::anything(), static::equalTo(DompdfEvents::STREAM))
+            ->with(self::anything(), self::equalTo(DompdfEvents::STREAM))
         ;
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf');
@@ -74,31 +74,32 @@ final class DompdfWrapperTest extends TestCase
         /** @noinspection HtmlRequiredAltAttribute */
         /** @noinspection HtmlUnknownTarget */
         $input  = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
+
         /** @noinspection HtmlRequiredAltAttribute */
         /** @noinspection HtmlUnknownTarget */
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $this->dompdfFactory
             ->method('create')
-            ->with(static::equalTo(['tempDir' => 'bar']))
+            ->with(self::equalTo(['tempDir' => 'bar']))
             ->willReturn($this->dompdf)
         ;
 
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('loadHtml')
-            ->with(static::equalTo($output))
+            ->with(self::equalTo($output))
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('render')
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('stream')
-            ->with(static::equalTo('file.pdf'))
+            ->with(self::equalTo('file.pdf'))
         ;
 
-        $this->eventDispatcher->expects(static::once())
+        $this->eventDispatcher->expects(self::once())
             ->method('dispatch')
-            ->with(static::anything(), static::equalTo(DompdfEvents::STREAM))
+            ->with(self::anything(), self::equalTo(DompdfEvents::STREAM))
         ;
 
         $this->dompdfWrapper->streamHtml($input, 'file.pdf', ['tempDir' => 'bar']);
@@ -112,9 +113,9 @@ final class DompdfWrapperTest extends TestCase
 
         $this->prepareOutput($input, 'BINARY_CONTENT');
 
-        $this->eventDispatcher->expects(static::once())
+        $this->eventDispatcher->expects(self::once())
             ->method('dispatch')
-            ->with(static::anything(), static::equalTo(DompdfEvents::OUTPUT))
+            ->with(self::anything(), self::equalTo(DompdfEvents::OUTPUT))
         ;
 
         $this->dompdfWrapper->getPdf($input, ['tempDir' => 'bar']);
@@ -128,9 +129,9 @@ final class DompdfWrapperTest extends TestCase
 
         $this->prepareOutput($input);
 
-        $this->eventDispatcher->expects(static::once())
+        $this->eventDispatcher->expects(self::once())
             ->method('dispatch')
-            ->with(static::anything(), static::equalTo(DompdfEvents::OUTPUT))
+            ->with(self::anything(), self::equalTo(DompdfEvents::OUTPUT))
         ;
 
         $this->dompdfWrapper->getPdf($input);
@@ -143,16 +144,16 @@ final class DompdfWrapperTest extends TestCase
             ->willReturn($this->dompdf)
         ;
 
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('loadHtml')
-            ->with(static::equalTo('<h1>Title</h1>'))
+            ->with(self::equalTo('<h1>Title</h1>'))
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('render')
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('stream')
-            ->with(static::equalTo('file.pdf'))
+            ->with(self::equalTo('file.pdf'))
         ;
 
         $response = $this->dompdfWrapper->getStreamResponse('<h1>Title</h1>', 'file.pdf');
@@ -166,14 +167,14 @@ final class DompdfWrapperTest extends TestCase
             ->willReturn($this->dompdf)
         ;
 
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('loadHtml')
-            ->with(static::equalTo($input))
+            ->with(self::equalTo($input))
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('render')
         ;
-        $this->dompdf->expects(static::once())
+        $this->dompdf->expects(self::once())
             ->method('output')
             ->willReturn($response)
         ;

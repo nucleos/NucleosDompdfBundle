@@ -13,6 +13,4 @@ namespace Nucleos\DompdfBundle\Exception;
 
 use Exception;
 
-final class PdfException extends Exception
-{
-}
+final class PdfException extends Exception {}

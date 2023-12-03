@@ -42,6 +42,5 @@ return static function (ContainerConfigurator $container): void {
             ->args([
                 new Parameter('nucleos_dompdf.options'),
             ])
-
     ;
 };

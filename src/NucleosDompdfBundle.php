@@ -13,6 +13,4 @@ namespace Nucleos\DompdfBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class NucleosDompdfBundle extends Bundle
-{
-}
+final class NucleosDompdfBundle extends Bundle {}
