@@ -40,13 +40,13 @@ final class DompdfWrapper implements DompdfWrapperInterface
     {
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
-        $pdf->render();
 
         if ($this->eventDispatcher instanceof EventDispatcherInterface) {
             $event = new StreamEvent($pdf, $filename, $html);
             $this->eventDispatcher->dispatch($event, DompdfEvents::STREAM);
         }
 
+        $pdf->render();
         $pdf->stream($filename, $options);
     }
 
@@ -54,13 +54,13 @@ final class DompdfWrapper implements DompdfWrapperInterface
     {
         $pdf = $this->dompdfFactory->create($options);
         $pdf->loadHtml($html);
-        $pdf->render();
 
         if ($this->eventDispatcher instanceof EventDispatcherInterface) {
             $event = new OutputEvent($pdf, $html);
             $this->eventDispatcher->dispatch($event, DompdfEvents::OUTPUT);
         }
 
+        $pdf->render();
         $out = $pdf->output();
 
         if (null === $out) {
