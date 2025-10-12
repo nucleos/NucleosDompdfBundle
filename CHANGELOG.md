@@ -2,27 +2,35 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 4.4.0 - TBD
+## 4.4.0 - 2025-10-12
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [4.4.0](https://github.com/nucleos/NucleosDompdfBundle/milestone/15)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 4.4.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **9**
+- Total contributors: **2**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [564: Update to phpunit v12](https://github.com/nucleos/NucleosDompdfBundle/pull/564) thanks to @core23
+ - [562: Drop support for PHP 8.2](https://github.com/nucleos/NucleosDompdfBundle/pull/562) thanks to @core23
+ - [554: Update PHPStan packages to v2 (major)](https://github.com/nucleos/NucleosDompdfBundle/pull/554) thanks to @renovate[bot]
+ - [552: Update dependency matthiasnoback/symfony-dependency-injection-test to v6](https://github.com/nucleos/NucleosDompdfBundle/pull/552) thanks to @renovate[bot]
 
-### Fixed
+#### Enhancement
 
-- Nothing.
+ - [563: Update phpstan baseline](https://github.com/nucleos/NucleosDompdfBundle/pull/563) thanks to @core23
+ - [560: Remove ci pipeline overrides ](https://github.com/nucleos/NucleosDompdfBundle/pull/560) thanks to @core23
+ - [559: Sync tool config ](https://github.com/nucleos/NucleosDompdfBundle/pull/559) thanks to @core23
+ - [558: Remove infection testing ](https://github.com/nucleos/NucleosDompdfBundle/pull/558) thanks to @core23
+ - [556: Remove psalm in favor of phpstan ](https://github.com/nucleos/NucleosDompdfBundle/pull/556) thanks to @core23
 
 ## 4.3.0 - 2024-08-14
 
