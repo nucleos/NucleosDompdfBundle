@@ -2,27 +2,25 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 4.5.0 - TBD
+## 4.5.0 - 2025-12-06
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [4.5.0](https://github.com/nucleos/NucleosDompdfBundle/milestone/17)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 4.5.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **2**
+- Total contributors: **2**
 
-### Removed
+#### dependency
 
-- Nothing.
-
-### Fixed
-
-- Nothing.
+ - [567: Add support for symfony 8](https://github.com/nucleos/NucleosDompdfBundle/pull/567) thanks to @core23
+ - [566: Update dependency symfony/phpunit-bridge to v8](https://github.com/nucleos/NucleosDompdfBundle/pull/566) thanks to @renovate[bot]
 
 ## 4.4.0 - 2025-10-12
 
