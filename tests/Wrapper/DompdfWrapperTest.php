@@ -80,7 +80,7 @@ final class DompdfWrapperTest extends TestCase
         $output = "<h1>Foo</h1>Bar <b>baz</b><img src='img/foo'>";
 
         $this->dompdfFactory
-            ->method('create')
+            ->expects(self::once())->method('create')
             ->with(self::equalTo(['tempDir' => 'bar']))
             ->willReturn($this->dompdf)
         ;
