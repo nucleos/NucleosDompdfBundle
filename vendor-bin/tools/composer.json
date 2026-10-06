@@ -6,7 +6,7 @@
         "friendsofphp/php-cs-fixer": "^3.3",
         "maglnet/composer-require-checker": "^4.0",
         "matthiasnoback/symfony-dependency-injection-test": "^6.0",
-        "phpmd/phpmd": "^2.10",
+        "phpmd/phpmd": "^3.0",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-doctrine": "^2.0",
